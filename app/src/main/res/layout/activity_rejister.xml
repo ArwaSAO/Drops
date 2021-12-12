@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.identity.RejisterActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/Poppins"
+        android:includeFontPadding="true"
+        android:text="Sign up"
+        android:textColor="@color/black"
+        android:textSize="36.41sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/Poppins"
+            android:paddingLeft="20dp"
+            android:text="Full name"
+            android:textColor="@color/cardview_dark_background"
+            android:textColorHighlight="@color/cardview_dark_background"
+            android:textSize="16sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:paddingLeft="20dp"
+            app:cardCornerRadius="15dp"
+            app:cardUseCompatPadding="true">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:fontFamily="@font/Poppins"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:shadowRadius="15" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/Poppins"
+            android:paddingLeft="20dp"
+            android:text="E-mail Addres"
+            android:textColor="@color/cardview_dark_background"
+            android:textColorHighlight="@color/cardview_dark_background"
+            android:textSize="16sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:paddingLeft="20dp"
+            app:cardCornerRadius="15dp"
+            app:cardUseCompatPadding="true">
+
+            <EditText
+                android:id="@+id/rejester_Emailadress"
+                android:layout_width="362dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/Poppins"
+            android:paddingLeft="20dp"
+            android:text="Password"
+            android:textColor="@color/cardview_dark_background"
+            android:textColorHighlight="@color/cardview_dark_background"
+            android:textSize="16sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:paddingLeft="20dp"
+            app:cardCornerRadius="15dp"
+            app:cardUseCompatPadding="true">
+
+            <EditText
+                android:id="@+id/password_register"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:fontFamily="@font/Poppins"
+                android:inputType="numberPassword"
+                android:paddingLeft="20dp"
+                android:shadowRadius="15" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/rejister_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#F1908C"
+            android:fontFamily="@font/Poppins"
+            android:text="SIGN UP"
+            app:cornerRadius="15dp" />
+
+        <TextView
+            android:id="@+id/login_textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/Poppins"
+            android:gravity="center"
+            android:text="Already have an account? Login"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
