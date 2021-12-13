@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Drops">
         <activity
+            android:name=".SignUpConfrmationActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.main.SplashActivity"
             android:exported="true"
             android:label="@string/title_activity_splash"

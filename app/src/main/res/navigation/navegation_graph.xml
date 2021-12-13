@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.kotlin.drops.view.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_paitentInfoFragment"
+            app:destination="@id/paitentInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bokkiingFragment"
+        android:name="com.kotlin.drops.view.fragments.BokkiingFragment"
+        android:label="fragment_bokkiing"
+        tools:layout="@layout/fragment_bokkiing" >
+        <action
+            android:id="@+id/action_bokkiingFragment_to_thankYouDialogFragment"
+            app:destination="@id/thankYouDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paitentInfoFragment"
+        android:name="com.kotlin.drops.view.fragments.PaitentInfoFragment"
+        android:label="fragment_paitent_info"
+        tools:layout="@layout/fragment_paitent_info" >
+        <action
+            android:id="@+id/action_paitentInfoFragment_to_bokkiingFragment"
+            app:destination="@id/bokkiingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.kotlin.drops.view.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/thankYouDialogFragment"
+        android:name="com.kotlin.drops.view.fragments.ThankYouDialogFragment"
+        android:label="fragment_thank_you_dialog"
+        tools:layout="@layout/fragment_thank_you_dialog" />
+</navigation>
