@@ -8,8 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.kotlin.drops.view.fragments.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_paitentInfoFragment"
             app:destination="@id/paitentInfoFragment" />
@@ -20,8 +19,8 @@
     <fragment
         android:id="@+id/bokkiingFragment"
         android:name="com.kotlin.drops.view.fragments.BokkiingFragment"
-        android:label="fragment_bokkiing"
-        tools:layout="@layout/fragment_bokkiing" >
+        android:label="PatientInfo"
+        tools:layout="@layout/fragment_bokkiing">
         <action
             android:id="@+id/action_bokkiingFragment_to_thankYouDialogFragment"
             app:destination="@id/thankYouDialogFragment" />
@@ -29,8 +28,8 @@
     <fragment
         android:id="@+id/paitentInfoFragment"
         android:name="com.kotlin.drops.view.fragments.PaitentInfoFragment"
-        android:label="fragment_paitent_info"
-        tools:layout="@layout/fragment_paitent_info" >
+        android:label="PatientInfo"
+        tools:layout="@layout/fragment_paitent_info">
         <action
             android:id="@+id/action_paitentInfoFragment_to_bokkiingFragment"
             app:destination="@id/bokkiingFragment" />
@@ -38,7 +37,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.kotlin.drops.view.fragments.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/thankYouDialogFragment"
