@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.ThankYouDialogFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="0dp"
+        android:layout_height="370dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardBackgroundColor="@color/lightblue"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="205dp"
+            android:layout_height="191dp"
+            android:layout_gravity="center_horizontal"
+            android:foregroundGravity="center_horizontal"
+            android:src="@drawable/handshake" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="337dp"
+            android:layout_height="168dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:foregroundGravity="bottom"
+            android:src="@drawable/note" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="72dp"
+            android:layout_height="67dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/lightblue"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_baseline_close_24" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.ProfileFragment">
+    tools:context=".view.fragments.ProfileFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView9"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="0.7"
+        app:cardBackgroundColor="@color/blue22"
+        app:cardCornerRadius="15dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:fontFamily="@font/Poppins"
+                android:hint="Full name..."
+                android:inputType="textPersonName"
+                android:textColorHint="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="84dp"
+                android:ems="10"
+                android:fontFamily="@font/Poppins"
+                android:hint="Phone..."
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView7"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="78dp"
+                android:layout_height="71dp"
+                android:ems="10"
+                android:fontFamily="@font/Poppins"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintStart_toStartOf="@+id/imageView7"
+                app:layout_constraintTop_toTopOf="@+id/imageView7"
+                app:layout_constraintVertical_bias="0.466" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="141dp"
+                android:layout_height="131dp"
+                android:src="@drawable/blooddrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.817" />
+
+            <Button
+                android:id="@+id/Edit_button"
+                android:layout_width="106dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue22"
+                android:text="Edit"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+                app:layout_constraintVertical_bias="0.866" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
+        app:layout_constraintVertical_bias="0"
+        app:menu="@menu/bottom_menu_bar" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="Donations:"
+        android:textColor="@color/bluegray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView9" />
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="52dp"
+        android:backgroundTint="@color/B6C6FF"
+        android:src="@drawable/ic_baseline_add_circle_24"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView9"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

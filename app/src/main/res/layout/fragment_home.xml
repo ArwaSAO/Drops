@@ -136,10 +136,11 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="45dp"
         android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar2"
         app:menu="@menu/bottom_menu_bar" />
