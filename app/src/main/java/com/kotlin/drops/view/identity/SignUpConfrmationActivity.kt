@@ -1,4 +1,4 @@
-package com.kotlin.drops
+package com.kotlin.drops.view.identity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
-import com.kotlin.drops.view.identity.LoginActivity
+import com.kotlin.drops.R
 
 class SignUpConfrmationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

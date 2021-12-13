@@ -97,7 +97,8 @@
                     android:layout_height="match_parent"
                     android:alpha="0.9"
                     android:backgroundTint="@color/blue22"
-                    android:src="@drawable/ic_baseline_access_time_filled_24" />
+                    android:src="@drawable/ic_baseline_access_time_filled_24"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <TextView
                     android:id="@+id/booking_donation_time"
