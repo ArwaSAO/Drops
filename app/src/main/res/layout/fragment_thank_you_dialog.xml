@@ -43,10 +43,10 @@
             android:layout_height="67dp"
             android:layout_gravity="right"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:backgroundTint="@color/lightblue"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:src="@drawable/ic_baseline_close_24"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

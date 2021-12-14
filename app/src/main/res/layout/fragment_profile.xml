@@ -30,12 +30,12 @@
             <EditText
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:ems="10"
-                android:fontFamily="@font/Poppins"
+                android:fontFamily="sans-serif-smallcaps"
                 android:hint="Full name..."
                 android:inputType="textPersonName"
                 android:textColorHint="@color/white"
@@ -48,11 +48,11 @@
             <EditText
                 android:id="@+id/editTextNumber"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="84dp"
                 android:ems="10"
-                android:fontFamily="@font/Poppins"
+                android:fontFamily="sans-serif-smallcaps"
                 android:hint="Phone..."
                 android:inputType="number"
                 android:textColorHint="@color/white"
@@ -95,6 +95,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/blue22"
+                android:fontFamily="sans-serif-smallcaps"
                 android:text="Edit"
                 app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -109,8 +110,9 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Donations:"
         android:textColor="@color/bluegray"
         android:textSize="20sp"
@@ -128,19 +130,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         app:layout_constraintVertical_bias="1.0" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="55dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/B6C6FF"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_baseline_add_circle_24"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/cardView9"
-        app:layout_constraintVertical_bias="0.687" />
 
     <ProgressBar
         android:id="@+id/progressBar"

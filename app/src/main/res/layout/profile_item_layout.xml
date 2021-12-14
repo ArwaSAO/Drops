@@ -19,25 +19,64 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/dopnationdate_textView"
-                android:layout_width="22dp"
+            <LinearLayout
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:fontFamily="@font/Poppins"
-                android:text="TextView"
-                android:textColor="@color/pink"
-                android:textSize="34sp" />
+                android:orientation="vertical"
+                android:layout_width="wrap_content">
 
-            <TextView
-                android:id="@+id/donation_Location_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/dopnationmont_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center"
+                    android:textColor="@color/pink"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/donation_date_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/pink"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="44dp"
+                android:layout_height="84dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/Poppins"
-                android:text="TextView"
-                android:textColor="@color/bluegray"
-                android:textSize="24sp" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/donation_Location_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/Date_time_donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/bluegray" />
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
