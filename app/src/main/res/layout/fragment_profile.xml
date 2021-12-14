@@ -36,14 +36,15 @@
                 android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:fontFamily="sans-serif-smallcaps"
-                android:hint="Full name..."
+                android:hint="@string/full_name"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/editTextNumber"
@@ -53,21 +54,34 @@
                 android:layout_marginTop="84dp"
                 android:ems="10"
                 android:fontFamily="sans-serif-smallcaps"
-                android:hint="Phone..."
+                android:hint="@string/phone"
                 android:inputType="number"
                 android:textColorHint="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/imageView7"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:autofillHints="" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="141dp"
+                android:layout_height="131dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/blooddrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.817"
+                tools:ignore="ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck,ImageContrastCheck" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
                 android:layout_width="78dp"
                 android:layout_height="71dp"
                 android:ems="10"
-                android:fontFamily="@font/Poppins"
+                android:fontFamily="@font/poppins"
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -76,17 +90,9 @@
                 app:layout_constraintHorizontal_bias="0.476"
                 app:layout_constraintStart_toStartOf="@+id/imageView7"
                 app:layout_constraintTop_toTopOf="@+id/imageView7"
-                app:layout_constraintVertical_bias="0.466" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="141dp"
-                android:layout_height="131dp"
-                android:src="@drawable/blooddrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.817" />
+                app:layout_constraintVertical_bias="0.466"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:autofillHints="" />
 
             <Button
                 android:id="@+id/Edit_button"
@@ -96,7 +102,7 @@
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/blue22"
                 android:fontFamily="sans-serif-smallcaps"
-                android:text="Edit"
+                android:text="@string/edit"
                 app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -112,8 +118,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Donations:"
+        android:fontFamily="@font/poppins"
+        android:text="@string/donations"
         android:textColor="@color/bluegray"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"

@@ -5,7 +5,9 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.BokkiingFragment" >
+    android:background="@color/blue22"
+    android:backgroundTint="@color/blue22"
+    tools:context=".view.fragments.BokkiingFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
@@ -37,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5" >
+        app:layout_constraintTop_toBottomOf="@+id/cardView5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -72,7 +74,7 @@
                     android:layout_width="84dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="@font/poppins"
                     android:foregroundGravity="right"
                     android:gravity="center"
                     android:text="TextView"
@@ -106,7 +108,7 @@
                     android:layout_width="82dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="@font/poppins"
                     android:gravity="center"
                     android:text="TextView"
                     android:textColor="@color/white" />
@@ -117,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins"
                 android:text="Choose date and time"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -133,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins"
                 android:text="TextView"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -146,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins"
                 android:text="TextView"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -164,7 +166,7 @@
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
         android:backgroundTint="@color/pink"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/poppins"
         android:shadowColor="@color/pink"
         android:text="Confirm"
         app:cornerRadius="15dp"

@@ -3,6 +3,8 @@ package com.kotlin.drops.view.identity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,11 +13,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
 import com.kotlin.drops.view.main.MainActivity
 
+private const val TAG = "LoginActivity"
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
+
 
 
         val emailAddress: EditText = findViewById(R.id.editTextTextEmailAddress2)

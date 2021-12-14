@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="1dp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/poppins"
         android:includeFontPadding="true"
         android:text="Sign up"
         android:textColor="@color/black"
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/poppins"
             android:paddingLeft="20dp"
             android:text="Full name"
             android:textColor="@color/cardview_dark_background"
@@ -49,7 +49,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="75dp"
             android:paddingLeft="20dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins"
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:shadowRadius="15" />
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/poppins"
             android:paddingLeft="20dp"
             android:text="E-mail Addres"
             android:textColor="@color/cardview_dark_background"
@@ -79,7 +79,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="75dp"
             android:paddingLeft="20dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
@@ -89,6 +89,7 @@
                 android:layout_width="362dp"
                 android:layout_height="65dp"
                 android:ems="10"
+                android:fontFamily="@font/poppins"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp" />
         </androidx.cardview.widget.CardView>
@@ -98,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/poppins"
             android:paddingLeft="20dp"
             android:text="Password"
             android:textColor="@color/cardview_dark_background"
@@ -107,7 +108,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="75dp"
             android:paddingLeft="20dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
@@ -117,7 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins"
                 android:inputType="numberPassword"
                 android:paddingLeft="20dp"
                 android:shadowRadius="15" />
@@ -129,7 +130,7 @@
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
             android:backgroundTint="#F1908C"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/poppins"
             android:text="SIGN UP"
             app:cornerRadius="15dp" />
 
@@ -138,7 +139,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/poppins"
             android:gravity="center"
             android:text="Already have an account? Login"
             android:textColor="@color/cardview_dark_background"

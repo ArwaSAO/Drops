@@ -25,31 +25,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:label="@string/title_activity_splash"
-            android:theme="@style/Theme.Drops.NoActionBar" />
+
         <activity
             android:name=".view.identity.RejisterActivity"
             android:exported="true" />
         <activity
             android:name=".view.identity.LoginActivity"
             android:exported="true" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RejesterActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.main.MainActivity"
             android:exported="true" />
 
         <meta-data

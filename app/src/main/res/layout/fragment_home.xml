@@ -126,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/poppins"
         android:text="Patient List"
         android:textColor="@color/bluegray"
         android:textSize="18sp"

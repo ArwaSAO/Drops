@@ -3,6 +3,8 @@ package com.kotlin.drops.view.identity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -12,11 +14,13 @@ import com.google.firebase.auth.FirebaseUser
 import com.kotlin.drops.R
 import com.kotlin.drops.view.main.MainActivity
 
+private const val TAG = "RejisterActivity"
 class RejisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rejister)
         supportActionBar?.hide()
+
 
         val emailAddress: EditText = findViewById(R.id.rejester_Emailadress)
         val password: EditText = findViewById(R.id.password_register)
@@ -45,7 +49,7 @@ class RejisterActivity : AppCompatActivity() {
 
                             // Navigate to main activity
 
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, SignUpConfrmationActivity::class.java)
                             intent.putExtra("UserId", fireBaseUser.uid)
                             intent.putExtra("Email",fireBaseUser.email)
                             startActivity(intent)
