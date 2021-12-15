@@ -6,8 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kotlin.drops.R
+import com.kotlin.drops.databinding.FragmentBokkiingBinding
 
 class BokkiingFragment : Fragment() {
+
+    private lateinit var binding: FragmentBokkiingBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

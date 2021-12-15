@@ -6,9 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kotlin.drops.R
+import com.kotlin.drops.databinding.FragmentHomeBinding
 
+private const val TAG = "HomeFragment"
 
 class HomeFragment : Fragment() {
+    private lateinit var binding: FragmentHomeBinding
+
 
 
 
@@ -17,7 +21,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 

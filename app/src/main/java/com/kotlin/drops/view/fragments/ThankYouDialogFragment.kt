@@ -1,22 +1,38 @@
 package com.kotlin.drops.view.fragments
 
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.kotlin.drops.R
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.DialogFragment
 
 
-class ThankYouDialogFragment : Fragment() {
+class ThankYouDialogFragment : DialogFragment() {
+
+    private lateinit var binding: ThankYouDialogFragment
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_thank_you_dialog, container, false)
+        binding = ThankYouDialogFragment().inflate(inflater, container, false)
+        return binding.root
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Close the dialog
+        binding.closeImageButton.setOnClickListener {
+            dismiss()
+        }
+
+
     }
 
 

@@ -1,10 +1,7 @@
 package com.kotlin.drops.reposetories
 
 import android.content.Context
-import androidx.room.Delete
-import androidx.room.Update
 import com.kotlin.drops.api.IDropsApi
-import com.kotlin.drops.model.PatientsInfo
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.Exception

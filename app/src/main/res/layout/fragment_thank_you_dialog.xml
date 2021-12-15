@@ -35,10 +35,11 @@
             android:layout_height="168dp"
             android:layout_gravity="bottom|center_horizontal"
             android:foregroundGravity="bottom"
-            android:src="@drawable/note" />
+            android:src="@drawable/note"
+            android:contentDescription="TODO" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/close_image_Button"
             android:layout_width="72dp"
             android:layout_height="67dp"
             android:layout_gravity="right"
@@ -47,6 +48,7 @@
             android:backgroundTint="@color/lightblue"
             android:paddingEnd="10dp"
             android:src="@drawable/ic_baseline_close_24"
-            tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
+            tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck"
+            android:contentDescription="TODO" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

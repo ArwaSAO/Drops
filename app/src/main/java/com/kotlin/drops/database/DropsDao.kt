@@ -2,26 +2,27 @@ package com.kotlin.drops.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.kotlin.drops.model.PatientsInfo
+import com.kotlin.drops.model.DonerInfo
+import com.kotlin.drops.model.PatientInfo
+import retrofit2.Response
 
 @Dao
 interface DropsDao {
 
 
-//
-//    @Insert
-//    suspend fun addItem(patientsInfo: PatientsInfo)
-//
-//    @Query("SELECT * FROM patientsinfo")
-//    fun addItem(): LiveData<List<PatientsInfo>>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addItem(patientInfo: PatientInfo)
+
+    @Query("SELECT * FROM donerinfo")
+    suspend fun getItems(): List<DonerInfo>
+
+    @Query("DELETE FROM donerinfo")
+    suspend fun deleteItem()
 
 
     @Update
-    suspend fun upDateItem(patients: PatientsInfo)
+    suspend fun updatePhoto(donerInfo: DonerInfo)
 
-
-    @Delete
-    suspend fun deleteItem(patients: PatientsInfo)
 
 
 }

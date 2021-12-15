@@ -1,6 +1,7 @@
 package com.kotlin.drops.api
 
-import com.kotlin.drops.model.PatientsInfo
+import com.kotlin.drops.model.DonerInfo
+import com.kotlin.drops.model.PatientInfo
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -13,7 +14,14 @@ interface IDropsApi {
 
 
     @GET("/PatientInfo")
-    suspend fun getPatientInfo(): Response<PatientsInfo>
+    suspend fun getPatientInfo(): Response<PatientInfo>
+
+
+
+    @GET("/donorInfo")
+    suspend fun getDonorInfo(): Response<DonerInfo>
+
+
 
 
 }

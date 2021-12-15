@@ -1,14 +1,9 @@
 package com.kotlin.drops.model
 
 
-import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
-
-@Entity
-data class PatientsInfoItem(
-
-
+data class PatientInfo(
     @SerializedName("bloodGroup")
     val bloodGroup: String,
     @SerializedName("fullName")
@@ -24,8 +19,5 @@ data class PatientsInfoItem(
     @SerializedName("need")
     val need: Int,
     @SerializedName("userId")
-    val userId: Int,
-
-    var isUpdate: Boolean = false
-
+    val userId: Int
 )
