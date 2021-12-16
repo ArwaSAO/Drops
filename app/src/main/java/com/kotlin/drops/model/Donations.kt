@@ -3,11 +3,9 @@ package com.kotlin.drops.model
 
 import com.google.gson.annotations.SerializedName
 
-data class PatientInfo(
-    @SerializedName("bloodGroup")
-    val bloodGroup: String,
-    @SerializedName("Diagnosis")
-    val diagnosis: String,
+data class Donations(
+    @SerializedName("date")
+    val date: String,
     @SerializedName("fullName")
     val fullName: String,
     @SerializedName("hospital")
@@ -16,14 +14,12 @@ data class PatientInfo(
     val id: String,
     @SerializedName("latitude")
     val latitude: String,
-    @SerializedName("left")
-    val left: Int,
-    @SerializedName("location")
+    @SerializedName("Location")
     val location: String,
     @SerializedName("longitude")
     val longitude: String,
-    @SerializedName("need")
-    val need: Int,
+    @SerializedName("time")
+    val time: String,
     @SerializedName("userId")
-    val userId: Int
+    val userId: String
 )

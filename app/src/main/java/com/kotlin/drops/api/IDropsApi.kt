@@ -1,7 +1,6 @@
 package com.kotlin.drops.api
 
 import com.kotlin.drops.model.DonerInfo
-import com.kotlin.drops.model.PatientInfo
 import retrofit2.Response
 import retrofit2.http.GET
 

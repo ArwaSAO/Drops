@@ -1,10 +1,7 @@
 package com.kotlin.drops.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.kotlin.drops.model.DonerInfo
-import com.kotlin.drops.model.PatientInfo
-import retrofit2.Response
 
 @Dao
 interface DropsDao {
