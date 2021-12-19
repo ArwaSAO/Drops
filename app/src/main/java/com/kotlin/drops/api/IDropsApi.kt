@@ -47,7 +47,7 @@ interface IDropsApi {
     suspend fun updateDonorInfo(): Response<DonorInfo>
 
     @DELETE("/donorInfo/:id")
-    suspend fun deleteDonerInfo(): Response<DonorInfo>
+    suspend fun deleteDonorInfo(): Response<DonorInfo>
 
 
     //==================  Donation Info  ============================================================//
