@@ -21,6 +21,8 @@ class HomeViewModel : ViewModel() {
     val patientInfoLiveData = MutableLiveData<List<PatientInfo>>()
     val patientInfoErrorLiveData = MutableLiveData<String>()
 
+
+
     fun callPatientList() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
