@@ -67,7 +67,7 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/Date_time_donation"
+                    android:id="@+id/time_donation_textview"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_gravity="center_horizontal"
