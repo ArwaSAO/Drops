@@ -3,7 +3,7 @@ package com.kotlin.drops.model
 
 import com.google.gson.annotations.SerializedName
 
-data class DonerInfo(
+data class DonorInfo(
     @SerializedName("bloodGroup")
     val bloodGroup: String,
     @SerializedName("conatctNumber")

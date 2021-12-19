@@ -8,7 +8,7 @@ import java.lang.Exception
 
 
 const val SHARED_PREF_FILE = "Auth"
-private const val BASE_URL = "https://61af59a53e2aba0017c49208.mockapi.i0"
+private const val BASE_URL = "https://61af59a53e2aba0017c49208.mockapi.io"
 
 
 class ApiServiceRepository(val context: Context) {
@@ -23,6 +23,8 @@ class ApiServiceRepository(val context: Context) {
     //we assign shared pref to request token
     private val sharedPref = context.getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
 
+
+    suspend fun
 
     //suspend fun upDateItem(patients: PatientsInfo)
 
