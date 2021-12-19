@@ -9,7 +9,7 @@ import com.kotlin.drops.databinding.HomeItemLayoutBinding
 import com.kotlin.drops.databinding.ProfileItemLayoutBinding
 import com.kotlin.drops.model.Donataitons
 
-
+private const val TAG = "ProfileAdapter"
 class ProfileAdapter(private val list: List<Donataitons>) :
 
 
