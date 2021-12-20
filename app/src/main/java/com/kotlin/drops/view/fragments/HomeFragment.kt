@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // we pass productViewModel to use it in favoriteToggleButton in adapter
-        homeAdapter = HomeAdapter(requireActivity(),homeViewModel)
+        homeAdapter = HomeAdapter(requireActivity())
         binding.homeRecyclerView.adapter = homeAdapter
 
         observers()

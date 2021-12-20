@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
-import com.kotlin.drops.databinding.HomeItemLayoutBinding
 import com.kotlin.drops.databinding.ProfileItemLayoutBinding
 import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.view.viewmodel.ProfileViewModel
 
 private const val TAG = "ProfileAdapter"
-class ProfileAdapter(private val list: List<Donataitons>) :
+class ProfileAdapter(private val list: ProfileViewModel) :
 
 
     RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() {

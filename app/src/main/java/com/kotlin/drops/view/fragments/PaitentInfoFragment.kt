@@ -21,9 +21,11 @@ import com.kotlin.drops.view.viewmodel.HomeViewModel
 class PaitentInfoFragment : Fragment() {
 
     private lateinit var binding: FragmentPaitentInfoBinding
+    private val homeViewModel: HomeViewModel by activityViewModels()
     private lateinit var sharedPref: SharedPreferences
     private lateinit var sharedPrefEditor: SharedPreferences.Editor
     private var allDonataitonsInfo = listOf<Donataitons>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,9 +41,16 @@ class PaitentInfoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_paitent_info, container, false)
+        binding = FragmentPaitentInfoBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
     }
 
 }
