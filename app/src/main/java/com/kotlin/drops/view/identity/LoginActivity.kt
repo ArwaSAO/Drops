@@ -1,5 +1,6 @@
 package com.kotlin.drops.view.identity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,8 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
 import com.kotlin.drops.view.main.MainActivity
+import com.kotlin.drops.view.main.sharedPref
+import com.kotlin.drops.view.main.sharedPrefEditor
 
 private const val TAG = "LoginActivity"
 class LoginActivity : AppCompatActivity() {
@@ -20,7 +23,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
 
-
+        sharedPref = getSharedPreferences("Auth", Context.MODE_PRIVATE)
+        sharedPrefEditor = sharedPref.edit()
 
         val emailAddress: EditText = findViewById(R.id.editTextTextEmailAddress2)
         val password: EditText = findViewById(R.id.editTextNumberPassword2)
@@ -44,6 +48,9 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             Toast.makeText(this, "User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
+
+                            sharedPrefEditor.putBoolean("status", true)
+//                            sharedPrefEditor.putString("")
 
                             // Navigate to main activity
 
