@@ -40,3 +40,20 @@ Figma link   https://www.figma.com/file/9BXtkOMcsvtkZswPx8xfI6/Final-capstone?no
 ![Figma Frame]()
 
 ## User Stories
+
+## Planning and Development
+
+Our plan was as follows:
+1. Brain storming and wireframe design.
+2. Front-end: XML design in Android Studio.
+3. Back-end:
+   -  Database schema.
+   -  Functionality implementation.
+4. Ask the experts
+
+<hr>
+
+##  Final App
+![Final Project]()
+
+
