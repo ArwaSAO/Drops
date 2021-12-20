@@ -43,12 +43,19 @@ Figma link   https://www.figma.com/file/9BXtkOMcsvtkZswPx8xfI6/Final-capstone?no
 
 ## Planning and Development
 
-Our plan was as follows:
+ planing was as follows:
 1. Brain storming and wireframe design.
 2. Front-end: XML design in Android Studio.
 3. Back-end:
    -  Database schema.
    -  Functionality implementation.
+4. Testing
+   
+###  Problem solving strategy:
+Solving the problems in the following order:
+1. Identify the problem
+2. Debugging the code
+3. Search about the error(Google, Stackoverflow)   
 4. Ask the experts
 
 <hr>
