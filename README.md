@@ -51,7 +51,7 @@ Figma link   https://www.figma.com/file/9BXtkOMcsvtkZswPx8xfI6/Final-capstone?no
    -  Functionality implementation.
 4. Testing
    
-###  Problem solving strategy:
+## Problem solving strategy:
 Solving the problems in the following order:
 1. Identify the problem
 2. Debugging the code
