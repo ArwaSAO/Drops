@@ -58,6 +58,7 @@ class HomeFragment : Fragment() {
         binding.homeRecyclerView.adapter = homeAdapter
 
         observers()
+        homeViewModel.callPatientList()
 
     }
 

@@ -26,11 +26,11 @@ class HomeViewModel : ViewModel() {
     fun callPatientList() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = apiRepo.getDonationsInfo()
+                val response = apiRepo.getPatientInfo()
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        patientInfoLiveData.postValue(this)
+                        patientInfoLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
                     }
                 } else {

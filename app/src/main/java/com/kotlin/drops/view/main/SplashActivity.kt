@@ -20,21 +20,9 @@ class SplashActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        sharedPref= getSharedPreferences("Auth", Context.MODE_PRIVATE)
-        sharedPrefEditor= sharedPref.edit()
 
-        if (sharedPref.getBoolean("status", false)){
-            val intent= Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        } else{
-            val intent= Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
-
-        }
-// set time for splash
-//        val intent= Intent(this, LoginActivity::class.java)
+// //set time for splash
+        val intent= Intent(this, LoginActivity::class.java)
 
 
         object : CountDownTimer(2000,1000){
@@ -46,6 +34,20 @@ class SplashActivity : AppCompatActivity() {
                 finish()
             }
         }.start()
+
+//                sharedPref= getSharedPreferences("Auth", Context.MODE_PRIVATE)
+//        sharedPrefEditor= sharedPref.edit()
+//
+//        if (sharedPref.getBoolean("status", false)){
+//            val intent= Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        } else{
+//            val intent= Intent(this, LoginActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//
+//        }
 
     }
 }

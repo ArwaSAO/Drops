@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
 
-        sharedPref = getSharedPreferences("Auth", Context.MODE_PRIVATE)
-        sharedPrefEditor = sharedPref.edit()
+//        sharedPref = getSharedPreferences("Auth", Context.MODE_PRIVATE)
+//        sharedPrefEditor = sharedPref.edit()
 
         val emailAddress: EditText = findViewById(R.id.editTextTextEmailAddress2)
         val password: EditText = findViewById(R.id.editTextNumberPassword2)
@@ -49,8 +49,8 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this, "User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
 
-                            sharedPrefEditor.putBoolean("status", true)
-//                            sharedPrefEditor.putString("")
+                          //  sharedPrefEditor.putBoolean("status", true)
+                          // sharedPrefEditor.putString("")
 
                             // Navigate to main activity
 
