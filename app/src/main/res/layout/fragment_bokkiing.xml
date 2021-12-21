@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView9">
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/calender_imagebutton"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:alpha="0.9"
@@ -101,7 +101,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView9">
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/time_image_button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:alpha="0.9"
@@ -166,7 +166,7 @@
 
 
     <Button
-        android:id="@+id/confirm_button"
+        android:id="@+id/Booking_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
