@@ -28,6 +28,7 @@ class ApiServiceRepository(val context: Context) {
         .build()
     private val retrofitApi = retrofitService.create(IDropsApi::class.java)
 
+
     //we assign shared pref to request token
     private val sharedPref = context.getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
 

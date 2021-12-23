@@ -71,6 +71,8 @@ class BokkiingFragment : Fragment() {
 
             findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
 
+
+
         }
 
     }
