@@ -37,7 +37,7 @@
 wireframes:
 Figma link   https://www.figma.com/file/9BXtkOMcsvtkZswPx8xfI6/Final-capstone?node-id=0%3A1
 
-![Drops](DropsProject.png)
+![FrameFigma](https://github.com/ArwaSAO/Drops/blob/d5ad5a0e77c6c7c236544bea2445b98b396875e4/DropsProject.png)
 
 ## User Stories
 
