@@ -24,7 +24,7 @@ class ApiServiceRepository(val context: Context) {
 
 
 
-    //we assign shared pref to request token
+    //we assign shared pref
     private val sharedPref = context.getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
 
 

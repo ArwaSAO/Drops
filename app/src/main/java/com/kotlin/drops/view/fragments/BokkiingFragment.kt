@@ -58,9 +58,9 @@ class BokkiingFragment : Fragment() {
         binding.calenderImagebutton.setOnClickListener {
             dateRangePicker.setButton(DialogInterface.BUTTON_POSITIVE, "OK") { _, _ ->
                 // set the date text
-                booking_donation_date.setText("${dateRangePicker.datePicker.year}/" +
-                        "${dateRangePicker.datePicker.month+1}/" +
-                        "${dateRangePicker.datePicker.dayOfMonth}")
+////                booking_donation_date.setText("${dateRangePicker.datePicker.year}/" +
+//                        "${dateRangePicker.datePicker.month+1}/" +
+//                        "${dateRangePicker.datePicker.dayOfMonth}")
             }
 
         }
@@ -74,7 +74,7 @@ class BokkiingFragment : Fragment() {
                 calendar.set(Calendar.HOUR_OF_DAY, hour)
                 calendar.set(Calendar.MINUTE, minute)
                 // display time text
-                booking_donation_time.setText( SimpleDateFormat("HH:mm a").format(calendar.time))
+//                booking_donation_time.setText( SimpleDateFormat("HH:mm a").format(calendar.time))
             }
             // time picker
             TimePickerDialog(view.context, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
