@@ -60,18 +60,17 @@ class HomeFragment : Fragment() {
         observers()
         homeViewModel.callPatientList()
 
-
-
     }
 
-    private fun observers() {
+    fun observers() {
         homeViewModel.patientInfoLiveData.observe(viewLifecycleOwner, {
 
-            Log.d(TAG, "photosLiveData observers ")
+            Log.d(TAG, "patient Info Live Data observers ")
             binding.homeProgressBar.animate().alpha(0f).setDuration(1000)
             homeAdapter.submitList(it)
             allPatientInfo = it
             binding.homeRecyclerView.animate().alpha(1f)
+
         })
 
         // handle the error

@@ -8,6 +8,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,15 +21,23 @@ import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentBokkiingBinding
 import com.kotlin.drops.databinding.FragmentPaitentInfoBinding
 import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.model.PatientInfo
+import com.kotlin.drops.view.viewmodel.BokkingViewModel
 import com.kotlin.drops.view.viewmodel.HomeViewModel
+import com.kotlin.drops.view.viewmodel.PatientInfoViewModel
 import java.text.SimpleDateFormat
 import java.util.*
+
+private const val TAG = "BokkiingFragment"
 
 class BokkiingFragment : Fragment() {
 
     private lateinit var binding: FragmentBokkiingBinding
+    private val bokkingViewModel: BokkingViewModel by activityViewModels()
+    private lateinit var sharedPref: SharedPreferences
+    private lateinit var sharedPrefEditor: SharedPreferences.Editor
+    private var allDonataitons = listOf<Donataitons>()
 
-    
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,9 +48,14 @@ class BokkiingFragment : Fragment() {
         return binding.root
     }
 
+
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+       observers()
+        bokkingViewModel.callDonations()
 
         binding.mapLocation.setOnClickListener {
 
@@ -65,8 +79,6 @@ class BokkiingFragment : Fragment() {
 
         }
 
-
-
         binding.timeImageButton.setOnClickListener {
 
             val calendar = Calendar.getInstance()
@@ -79,19 +91,24 @@ class BokkiingFragment : Fragment() {
             // time picker
             TimePickerDialog(view.context, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
                 calendar.get(Calendar.MINUTE), false).show()
-
-
         }
 
-        binding.BookingButton.setOnClickListener {
+        binding.confirmButton.setOnClickListener {
 
             findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
-
-
-
         }
-
     }
 
 
-}
+    fun observers() {
+        bokkingViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {
+
+            Log.d(TAG, "donations Info Live Data observers ")
+            allDonataitons = listOf(it)
+            binding.bookingDonationDate.text = it.date
+            binding.bookingDonationTime.text = it.time
+            binding.bookingDontationHospital.text = it.hospital
+            binding.cityTextview.text = it.location
+
+        })
+    }}

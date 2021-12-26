@@ -66,7 +66,7 @@ class ProfileFragment : Fragment() {
 //            binding.productsProgressBar.animate().alpha(0f).setDuration(1000)
             profileAdapter.submitList(it)
             allDonataitons = it
-//            binding.productsProgressBar.animate().alpha(1f)
+            binding.progressBar.animate().alpha(1f)
 
         })
         // handle the error

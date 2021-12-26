@@ -75,7 +75,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/location_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -90,7 +90,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/paitent_diagnosis_textview" />
 
             <TextView
-                android:id="@+id/paitent_location_textview"
+                android:id="@+id/hospital_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -102,7 +102,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.059"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                app:layout_constraintTop_toBottomOf="@+id/location_textview" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -130,7 +130,7 @@
                 android:backgroundTint="@color/lightblue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/paitent_location_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/hospital_textview" />
 
             <TextView
                 android:id="@+id/paitent_need_textview"
@@ -209,7 +209,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/Booking_button"
+        android:id="@+id/confirm_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"

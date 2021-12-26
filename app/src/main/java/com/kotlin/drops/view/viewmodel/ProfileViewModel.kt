@@ -19,6 +19,8 @@ class ProfileViewModel : ViewModel() {
     private val apiRepo = ApiServiceRepository.get()
     val donationsLiveData = MutableLiveData<List<Donataitons>>()
     val donationsErrorLiveData = MutableLiveData<String>()
+    var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
+
 
     fun callDonations() {
         viewModelScope.launch(Dispatchers.IO) {

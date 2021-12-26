@@ -12,40 +12,42 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 
 
-private const val TAG = "HomeViewModel"
 
-class HomeViewModel : ViewModel() {
+private const val TAG = "BokkingViewModel"
+
+
+class BokkingViewModel: ViewModel() {
 
 
     private val apiRepo = ApiServiceRepository.get()
-    val patientInfoLiveData = MutableLiveData<List<PatientInfo>>()
-    val patientInfoErrorLiveData = MutableLiveData<String>()
-    var selectedItemMutableLiveData = MutableLiveData<PatientInfo>()
+    val donationsLiveData = MutableLiveData<List<Donataitons>>()
+    val donationsErrorLiveData = MutableLiveData<String>()
+    var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
 
 
-
-    fun callPatientList() {
+    fun callDonations() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = apiRepo.getPatientInfo()
+                val response = apiRepo.getDonationsInfo()
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        patientInfoLiveData.postValue(listOf(this))
+                        donationsLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
                     }
                 } else {
                     Log.d(TAG, response.message())
-                    patientInfoErrorLiveData.postValue(response.message())
+                    donationsErrorLiveData.postValue(response.message())
                 }
 
             } catch (e: Exception) {
                 Log.d(TAG, e.message.toString())
-                patientInfoErrorLiveData.postValue(e.message.toString())
+                donationsErrorLiveData.postValue(e.message.toString())
 
             }
 
         }
     }
 
-    }
+
+}
