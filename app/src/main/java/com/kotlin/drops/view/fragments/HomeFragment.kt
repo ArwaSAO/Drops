@@ -60,6 +60,8 @@ class HomeFragment : Fragment() {
         observers()
         homeViewModel.callPatientList()
 
+
+
     }
 
     private fun observers() {
@@ -82,6 +84,8 @@ class HomeFragment : Fragment() {
             }
         })
     }
+
+
 
 
 
