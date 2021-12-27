@@ -58,7 +58,12 @@ class ProfileFragment : Fragment() {
         // call request here because when we open the application we want response
         // event
         profileViewModel.callDonations()
+
+        binding.EditButton.setOnClickListener {
+
+        }
     }
+
 
     // assign coming data to the adapter
     fun observers() {

@@ -48,8 +48,6 @@ class BokkiingFragment : Fragment() {
         return binding.root
     }
 
-
-
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,24 +57,26 @@ class BokkiingFragment : Fragment() {
 
         binding.mapLocation.setOnClickListener {
 
-            val gmapsIntentURI = Uri.parse("https://www.google.com/maps/place/Kingdom+Tower/@24.7113877," + "46.6722064," +
+            val gmapsIntentURI = Uri.parse(
+                "https://www.google.com/maps/place/Kingdom+Tower/@24.7113877," + "46.6722064," +
                     "17z/data=!3m1!4b1!4m5!3m4!1s0x3e2f03280e046f99:0x37737eab160a212!8m2!3d24.7113828!4d46.6743951")
+
             val mapIntent = Intent(Intent.ACTION_VIEW, gmapsIntentURI)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
 
         }
 
-        val dateRangePicker = DatePickerDialog(requireActivity())
-
         binding.calenderImagebutton.setOnClickListener {
+
+            val dateRangePicker = DatePickerDialog(requireActivity())
+
             dateRangePicker.setButton(DialogInterface.BUTTON_POSITIVE, "OK") { _, _ ->
                 // set the date text
-////                booking_donation_date.setText("${dateRangePicker.datePicker.year}/" +
-//                        "${dateRangePicker.datePicker.month+1}/" +
-//                        "${dateRangePicker.datePicker.dayOfMonth}")
+                binding.bookingDonationDate.text = "${dateRangePicker.datePicker.year}/" +
+                        "${dateRangePicker.datePicker.month+1}/" +
+                        "${dateRangePicker.datePicker.dayOfMonth}"
             }
-
         }
 
         binding.timeImageButton.setOnClickListener {
@@ -86,7 +86,7 @@ class BokkiingFragment : Fragment() {
                 calendar.set(Calendar.HOUR_OF_DAY, hour)
                 calendar.set(Calendar.MINUTE, minute)
                 // display time text
-//                booking_donation_time.setText( SimpleDateFormat("HH:mm a").format(calendar.time))
+                binding.bookingDonationTime.text = SimpleDateFormat("HH:mm a").format(calendar.time)
             }
             // time picker
             TimePickerDialog(view.context, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
@@ -94,11 +94,9 @@ class BokkiingFragment : Fragment() {
         }
 
         binding.confirmButton.setOnClickListener {
-
             findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
         }
     }
-
 
     fun observers() {
         bokkingViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {

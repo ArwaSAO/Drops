@@ -58,7 +58,7 @@ class PaitentInfoFragment : Fragment() {
         observers()
 
 
-        binding.BookingButton.setOnClickListener {
+        binding.confirmButton.setOnClickListener {
 
             findNavController().navigate(R.id.action_paitentInfoFragment_to_bokkiingFragment)
 

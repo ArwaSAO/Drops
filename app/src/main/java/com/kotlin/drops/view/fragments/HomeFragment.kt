@@ -53,12 +53,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // we pass productViewModel to use it in favoriteToggleButton in adapter
         homeAdapter = HomeAdapter(requireActivity())
         binding.homeRecyclerView.adapter = homeAdapter
 
         observers()
         homeViewModel.callPatientList()
+
+        binding.searchButton.setOnClickListener {
+            //binding.SearchEdittext.setText()= it.location
+            //binding.bloodGroupEdittext.setText() = it.bloodGroup
+        }
 
     }
 
