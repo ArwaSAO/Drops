@@ -3,18 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/font/Poppins.xml" value="0.1" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/font/poppins.xml" value="0.1" />
-        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_rejister.xml" value="0.22" />
-        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_sign_up_confrmation.xml" value="0.22" />
+        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_sign_up_confrmation.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/activity_splash.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_blank.xml" value="0.16197916666666667" />
-        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_bokkiing.xml" value="0.22" />
+        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_bokkiing.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_home.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_paitent_info.xml" value="0.22" />
-        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_profile.xml" value="1.0" />
+        <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/fragment_thank_you_dialog.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/home_item_layout.xml" value="0.22" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/profile_item_layout.xml" value="0.16666666666666666" />

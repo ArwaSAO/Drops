@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="center"
                     android:textColor="@color/pink"
                     android:textSize="16sp" />
@@ -41,7 +41,7 @@
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:foregroundGravity="center_vertical|center_horizontal"
                     android:gravity="center_horizontal"
                     android:textColor="@color/pink"
@@ -61,7 +61,7 @@
                     android:layout_height="64dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="24sp" />
@@ -72,7 +72,7 @@
                     android:layout_height="46dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppins"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="center_vertical"
                     android:textColor="@color/bluegray" />
             </LinearLayout>
