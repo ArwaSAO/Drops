@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp()|| super.onSupportNavigateUp()
 
     }
-
+// create notifications
     private fun createNotificationChannel(){
         // Create the NotificationChannel
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
