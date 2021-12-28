@@ -18,5 +18,33 @@
     <string name="edit">Edit</string>
     <string name="donations">Donations:</string>
     <string name="SEARCH">SEARCH</string>
+    <string name="login">LOGIN</string>
+    <string name="dont_have_an_acount">Dont Have an acount?</string>
+    <string name="password">Password:</string>
+    <string name="e_mail_addres">E-mail Addres:</string>
+    <string name="LogIn">login</string>
+    <string name="signup">Sign Up</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="you_are_logged_in_successfully">you are logged in successfully</string>
+    <string name="textview" />
+    <string name="choose_date_and_time">Choose date and time</string>
+    <string name="confirm">Confirm</string>
+    <string name="BookDonationDate">BookDonationDate</string>
+    <string name="BookDonationTime">BookDonationTime</string>
+    <string name="see_hospital_location">See Hospital Location</string>
+    <string name="Diagnosis">Diagnosis:</string>
+    <string name="need">Need</string>
+    <string name="left">Left</string>
+    <string name="book_time">Book</string>
+    <string name="blood_type">drop</string>
+    <string name="patient_list">Patient List</string>
+    <string name="choose_your_blood_group">Choose your blood group</string>
+    <string name="search_for_city">Search For City....</string>
+    <string name="pin">pin</string>
+    <string name="hadshake">handshake</string>
+    <string name="circle">circle</string>
+    <string name="thankyou">thanks</string>
+    <string name="x">x</string>
+    <string name="handshake">handshake</string>
 
 </resources>

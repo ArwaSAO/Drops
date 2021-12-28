@@ -23,14 +23,15 @@
             android:layout_height="191dp"
             android:layout_gravity="center_horizontal"
             android:foregroundGravity="center_horizontal"
-            android:src="@drawable/handshake" />
+            android:src="@drawable/handshake"
+            android:contentDescription="@string/handshake" />
 
         <ImageView
             android:id="@+id/imageView10"
             android:layout_width="337dp"
             android:layout_height="168dp"
             android:layout_gravity="bottom|center_horizontal"
-            android:contentDescription="TODO"
+            android:contentDescription="@string/thankyou"
             android:foregroundGravity="bottom"
             android:src="@drawable/note" />
 
@@ -43,7 +44,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:backgroundTint="@color/lightblue"
-            android:contentDescription="TODO"
+            android:contentDescription="@string/x"
             android:paddingEnd="10dp"
             android:src="@drawable/ic_baseline_close_24" />
     </androidx.cardview.widget.CardView>

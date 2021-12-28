@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="1dp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/poppins_bold"
         android:includeFontPadding="true"
-        android:text="Sign up"
+        android:text="@string/signup"
         android:textColor="@color/black"
         android:textSize="36.41sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -40,9 +40,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="20dp"
-            android:text="Full name"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="20dp"
+            android:text="@string/full_name"
             android:textColor="@color/cardview_dark_background"
             android:textColorHighlight="@color/cardview_dark_background"
             android:textSize="16sp" />
@@ -50,7 +50,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
 
@@ -59,11 +59,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins_light"
                 android:inputType="textPersonName"
-                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
                 android:shadowRadius="15"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -71,9 +72,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="20dp"
-            android:text="E-mail Addres"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="20dp"
+            android:text="@string/e_mail_addres"
             android:textColor="@color/cardview_dark_background"
             android:textColorHighlight="@color/cardview_dark_background"
             android:textSize="16sp" />
@@ -81,7 +82,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
 
@@ -90,10 +91,11 @@
                 android:layout_width="362dp"
                 android:layout_height="70dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins_light"
                 android:inputType="textEmailAddress"
-                android:paddingLeft="20dp"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                android:paddingStart="20dp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -101,9 +103,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="20dp"
-            android:text="Password"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="20dp"
+            android:text="@string/password"
             android:textColor="@color/cardview_dark_background"
             android:textColorHighlight="@color/cardview_dark_background"
             android:textSize="16sp" />
@@ -111,18 +113,19 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
 
             <EditText
                 android:id="@+id/password_register"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="64dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins_light"
+                android:importantForAutofill="no"
                 android:inputType="numberPassword"
-                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
                 android:shadowRadius="15"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
@@ -133,18 +136,19 @@
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
             android:backgroundTint="#F1908C"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="SIGN UP"
-            app:cornerRadius="15dp" />
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/signup"
+            app:cornerRadius="15dp"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
         <TextView
             android:id="@+id/login_textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/poppins_light"
             android:gravity="center"
-            android:text="Already have an account? Login"
+            android:text="@string/already_have_an_account_login"
             android:textColor="@color/cardview_dark_background"
             android:textSize="16sp" />
 

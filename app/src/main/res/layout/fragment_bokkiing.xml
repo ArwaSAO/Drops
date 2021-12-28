@@ -27,6 +27,7 @@
             android:id="@+id/map_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/see_hospital_location"
             android:src="@drawable/map"
             tools:ignore="ImageContrastCheck" />
     </androidx.cardview.widget.CardView>
@@ -72,18 +73,18 @@
                     android:layout_height="match_parent"
                     android:alpha="0.9"
                     android:backgroundTint="@color/blue22"
+                    android:contentDescription="@string/BookDonationDate"
                     android:src="@drawable/ic_baseline_calendar_month_24"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
 
                 <TextView
                     android:id="@+id/booking_donation_date"
                     android:layout_width="84dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="@font/poppins_light"
                     android:foregroundGravity="right"
                     android:gravity="center"
-                    android:text="TextView"
                     android:textColor="@color/white" />
             </androidx.cardview.widget.CardView>
 
@@ -106,17 +107,17 @@
                     android:layout_height="match_parent"
                     android:alpha="0.9"
                     android:backgroundTint="@color/blue22"
+                    android:contentDescription="@string/BookDonationTime"
                     android:src="@drawable/ic_baseline_access_time_filled_24"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
                 <TextView
                     android:id="@+id/booking_donation_time"
                     android:layout_width="82dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="@font/poppins_light"
                     android:gravity="center"
-                    android:text="TextView"
                     android:textColor="@color/white" />
             </androidx.cardview.widget.CardView>
 
@@ -125,8 +126,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="Choose date and time"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/choose_date_and_time"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -141,8 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="TextView"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -154,8 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="TextView"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -172,13 +171,14 @@
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
         android:backgroundTint="@color/pink"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/poppins_medium"
         android:shadowColor="@color/pink"
-        android:text="Confirm"
+        android:text="@string/confirm"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView6" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView6"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

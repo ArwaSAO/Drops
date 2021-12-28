@@ -12,11 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:layout_marginBottom="1dp"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/poppins_bold"
         android:scrollbarSize="36dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/black"
-        android:textSize="36.41dp"
+        android:textSize="36.41sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
@@ -40,9 +40,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="20dp"
-            android:text="E-mail Addres:"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="20dp"
+            android:text="@string/e_mail_addres"
             android:textColor="@color/cardview_dark_background"
             android:textSize="16sp" />
 
@@ -57,10 +57,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins_light"
+                android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
-                android:paddingLeft="20dp"
-                android:textSize="24sp" />
+                android:paddingStart="20dp"
+                android:textSize="24sp"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -68,9 +70,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="20dp"
-            android:text="Password:"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="20dp"
+            android:text="@string/password"
             android:textColor="@color/cardview_dark_background"
             android:textSize="16sp" />
 
@@ -85,10 +87,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins_light"
+                android:importantForAutofill="no"
                 android:inputType="numberPassword"
-                android:paddingLeft="20dp"
-                android:textSize="24sp" />
+                android:paddingStart="20dp"
+                android:textSize="24sp"
+                tools:ignore="SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
         <Button
@@ -97,18 +101,19 @@
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
             android:backgroundTint="#F1908C"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="login"
-            app:cornerRadius="15dp" />
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/LogIn"
+            app:cornerRadius="15dp"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/rejester_textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="@font/poppins_light"
             android:gravity="center"
-            android:text="Dont Have an acount?"
+            android:text="@string/dont_have_an_acount"
             android:textColor="@color/cardview_dark_background"
             android:textSize="16sp" />
     </LinearLayout>

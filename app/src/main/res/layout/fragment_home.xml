@@ -32,11 +32,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/Location"
                 android:textColor="@color/lightblue"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/Search_Edittext"
@@ -44,13 +45,14 @@
                 android:layout_height="49dp"
                 android:layout_marginStart="12dp"
                 android:ems="10"
-                android:fontFamily="sans-serif-smallcaps"
-                android:hint="Search For City...."
+                android:fontFamily="@font/poppins_light"
+                android:hint="@string/search_for_city"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                android:importantForAutofill="no" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -58,14 +60,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="Choose your blood group"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/choose_your_blood_group"
                 android:textColor="@color/lightblue"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Search_Edittext"
-                app:layout_constraintVertical_bias="0.052" />
+                app:layout_constraintVertical_bias="0.052"
+                tools:ignore="TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -73,20 +76,24 @@
                 android:layout_height="22dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
+                android:contentDescription="@string/pin"
                 android:src="@drawable/location"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="116dp"
                 android:layout_height="71dp"
                 android:layout_marginEnd="16dp"
+                android:contentDescription="@string/hadshake"
                 android:src="@drawable/hands"
                 app:layout_constraintBottom_toTopOf="@+id/cardView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="ImageContrastCheck" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
@@ -103,7 +110,7 @@
                     android:id="@+id/blood_group_edittext"
                     android:layout_width="65dp"
                     android:layout_height="50dp"
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="@font/poppins_light"
                     android:textColorHighlight="@color/pink" />
             </androidx.cardview.widget.CardView>
 
@@ -115,13 +122,14 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/pink"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="@font/poppins_medium"
                 android:text="@string/SEARCH"
                 android:textColor="@color/light"
                 app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TextContrastCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -144,14 +152,15 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Patient List"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/patient_list"
         android:textColor="@color/bluegray"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:ignore="TextContrastCheck" />
 
     <ProgressBar
         android:id="@+id/home_progressBar"

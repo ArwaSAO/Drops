@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "307501654773",
+    "project_id": "drops-c678f",
+    "storage_bucket": "drops-c678f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307501654773:android:63fbd28508ca3183771bbc",
+        "android_client_info": {
+          "package_name": "com.kotlin.drops"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307501654773-gu6n7l3qtfbcnkfkmj9pcnlk9plg409m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxGCUAOXfOoPMCW9OXpsAX8n547FKaWLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307501654773-gu6n7l3qtfbcnkfkmj9pcnlk9plg409m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
