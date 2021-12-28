@@ -53,23 +53,28 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // we pass productViewModel to use it in favoriteToggleButton in adapter
         homeAdapter = HomeAdapter(requireActivity())
         binding.homeRecyclerView.adapter = homeAdapter
 
         observers()
         homeViewModel.callPatientList()
 
+        binding.searchButton.setOnClickListener {
+            //binding.SearchEdittext.setText()= it.location
+            //binding.bloodGroupEdittext.setText() = it.bloodGroup
+        }
+
     }
 
-    private fun observers() {
+    fun observers() {
         homeViewModel.patientInfoLiveData.observe(viewLifecycleOwner, {
 
-            Log.d(TAG, "photosLiveData observers ")
+            Log.d(TAG, "patient Info Live Data observers ")
             binding.homeProgressBar.animate().alpha(0f).setDuration(1000)
             homeAdapter.submitList(it)
             allPatientInfo = it
             binding.homeRecyclerView.animate().alpha(1f)
+
         })
 
         // handle the error
@@ -82,6 +87,8 @@ class HomeFragment : Fragment() {
             }
         })
     }
+
+
 
 
 

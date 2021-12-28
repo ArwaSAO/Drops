@@ -5,14 +5,8 @@ import com.kotlin.drops.api.IDropsApi
 import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.model.DonorInfo
 import com.kotlin.drops.model.PatientInfo
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
-import java.lang.Exception
 
 
 const val SHARED_PREF_FILE = "Auth"
@@ -28,7 +22,9 @@ class ApiServiceRepository(val context: Context) {
         .build()
     private val retrofitApi = retrofitService.create(IDropsApi::class.java)
 
-    //we assign shared pref to request token
+
+
+    //we assign shared pref
     private val sharedPref = context.getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
 
 
@@ -39,11 +35,13 @@ class ApiServiceRepository(val context: Context) {
 
     suspend fun getPatientInfoId() = retrofitApi.getPatientInfoId()
 
-    suspend fun addPatientInfo() = retrofitApi.addPatientInfo()
+    suspend fun addPatientInfo(patientInfo: PatientInfo)
+    = retrofitApi.addPatientInfo(patientInfo)
 
-    suspend fun upDatePatientInfo() = retrofitApi.upDatePatientInfo()
+    suspend fun upDatePatientInfo(id:String, patientInfo: PatientInfo)
+    = retrofitApi.upDatePatientInfo(id, patientInfo)
 
-    suspend fun deletePatientInfo() = retrofitApi.deletePatientInfo()
+    suspend fun deletePatientInfo(id: String) = retrofitApi.deletePatientInfo(id)
 
 
     //============ Functionality of Donor Info =================================================//
@@ -53,11 +51,13 @@ class ApiServiceRepository(val context: Context) {
 
     suspend fun getDonorsId() = retrofitApi.getDonorsId()
 
-    suspend fun addDonorInfo() = retrofitApi.addDonorInfo()
+    suspend fun addDonorInfo(donorInfo: DonorInfo)
+    = retrofitApi.addDonorInfo(donorInfo)
 
-    suspend fun updateDonorInfo() = retrofitApi.updateDonorInfo()
+    suspend fun updateDonorInfo(id:String, donorInfo: DonorInfo)
+    = retrofitApi.updateDonorInfo(id,donorInfo)
 
-    suspend fun deleteDonorInfo() = retrofitApi.deleteDonorInfo()
+    suspend fun deleteDonorInfo(id: String) = retrofitApi.deleteDonorInfo(id)
 
 
     //=============  Functionality of Donations Info ===========================================//
@@ -66,11 +66,13 @@ class ApiServiceRepository(val context: Context) {
 
     suspend fun getDonationId() = retrofitApi.getDonationId()
 
-    suspend fun addDonationsId() = retrofitApi.addDonationsId()
+    suspend fun addDonationsId(donataitons: Donataitons)
+    = retrofitApi.addDonationsId(donataitons)
 
-    suspend fun updateDonations() = retrofitApi.updateDonations()
+    suspend fun updateDonations(id: String, donataitons: Donataitons)
+    = retrofitApi.updateDonations(id,donataitons)
 
-    suspend fun deleteDonations() = retrofitApi.deleteDonations()
+    suspend fun deleteDonations(id: String) = retrofitApi.deleteDonations(id)
 
 
     //===========================================================================================//

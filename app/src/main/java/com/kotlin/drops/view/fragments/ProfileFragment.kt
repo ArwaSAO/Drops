@@ -58,7 +58,12 @@ class ProfileFragment : Fragment() {
         // call request here because when we open the application we want response
         // event
         profileViewModel.callDonations()
+
+        binding.EditButton.setOnClickListener {
+
+        }
     }
+
 
     // assign coming data to the adapter
     fun observers() {
@@ -66,7 +71,7 @@ class ProfileFragment : Fragment() {
 //            binding.productsProgressBar.animate().alpha(0f).setDuration(1000)
             profileAdapter.submitList(it)
             allDonataitons = it
-//            binding.productsProgressBar.animate().alpha(1f)
+            binding.progressBar.animate().alpha(1f)
 
         })
         // handle the error

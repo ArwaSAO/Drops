@@ -41,7 +41,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/thankYouDialogFragment"
-        android:name="com.kotlin.drops.view.fragments.ThankYouDialogFragment"
+        android:name="com.kotlin.drops.view.fragments.ThankYouDialog"
         android:label="fragment_thank_you_dialog"
-        tools:layout="@layout/fragment_thank_you_dialog" />
+        tools:layout="@layout/thankyou_daialog_layout" />
 </navigation>

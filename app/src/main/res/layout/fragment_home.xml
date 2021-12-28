@@ -10,14 +10,15 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="215dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="76dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="@color/blue111"
         app:cardCornerRadius="15sp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -64,7 +65,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Search_Edittext"
-                app:layout_constraintVertical_bias="0.305" />
+                app:layout_constraintVertical_bias="0.052" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -85,14 +86,14 @@
                 app:layout_constraintBottom_toTopOf="@+id/cardView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.4" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="65dp"
                 android:layout_height="55dp"
                 android:layout_marginEnd="44dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="72dp"
                 android:backgroundTint="#B6C6FF"
                 app:cardCornerRadius="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -101,8 +102,26 @@
                 <TextView
                     android:id="@+id/blood_group_edittext"
                     android:layout_width="65dp"
-                    android:layout_height="50dp" />
+                    android:layout_height="50dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColorHighlight="@color/pink" />
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/SEARCH"
+                android:textColor="@color/light"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -127,7 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Patient List"
         android:textColor="@color/bluegray"
         android:textSize="18sp"

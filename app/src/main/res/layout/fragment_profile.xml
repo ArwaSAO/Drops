@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".view.fragments.ProfileFragment" >
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView9"
         android:layout_width="0dp"
