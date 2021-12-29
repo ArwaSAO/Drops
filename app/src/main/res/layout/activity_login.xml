@@ -61,7 +61,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:paddingStart="20dp"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
@@ -91,7 +91,7 @@
                 android:importantForAutofill="no"
                 android:inputType="numberPassword"
                 android:paddingStart="20dp"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 tools:ignore="SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
