@@ -52,7 +52,6 @@
     <string name="editbutton">Edit</string>
     <string name="age">age...</string>
     <string name="bloodtype">bloodtype</string>
-    <string name="todo">TODO</string>
     <string name="home">Home</string>
     <string name="hospitals">Hospitals</string>
     <string name="profile">Profile</string>
@@ -64,5 +63,6 @@
     <string name="save">Save</string>
     <string name="start">Start</string>
     <string name="startdonating">Donate</string>
+    <string name="todo">TODO</string>
 
 </resources>

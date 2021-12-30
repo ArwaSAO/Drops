@@ -32,7 +32,7 @@ class BokkingViewModel: ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        donationsLiveData.postValue(listOf(this))
+                        donationsLiveData.postValue(this)
                         Log.d(TAG, this.toString())
                     }
                 } else {

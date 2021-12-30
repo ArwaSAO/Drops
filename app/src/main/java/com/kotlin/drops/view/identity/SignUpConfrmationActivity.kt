@@ -17,7 +17,7 @@ class SignUpConfrmationActivity : AppCompatActivity() {
 
         val userIdTextView: TextView = findViewById(R.id.user_Id_textview)
         val emailAddressTextView: TextView = findViewById(R.id.email_adress_textview)
-        val logoutButton: Button = findViewById(R.id.start_button)
+        val satartDonataitons: Button = findViewById(R.id.start_button)
 
         val userId = intent.getStringExtra("UserId")
         val emailAddress = intent.getStringExtra("Email")
@@ -25,9 +25,8 @@ class SignUpConfrmationActivity : AppCompatActivity() {
         userIdTextView.text = " User ID: " + userId
         emailAddressTextView.text = " EmailAddress: " + emailAddress
 
-        logoutButton.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-
+        satartDonataitons.setOnClickListener {
+//            FirebaseAuth.getInstance().signOut()
 
             startActivity(Intent(this, MainActivity::class.java))
             finish()

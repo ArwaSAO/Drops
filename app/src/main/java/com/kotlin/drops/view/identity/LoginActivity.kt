@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         rejesterTextView.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, RejisterActivity::class.java))
             finish()
         }
 

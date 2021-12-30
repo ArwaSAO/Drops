@@ -48,7 +48,7 @@ class RejisterActivity : AppCompatActivity() {
 
                             // Navigate to main activity
 
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, SignUpConfrmationActivity::class.java)
                             intent.putExtra("UserId", fireBaseUser.uid)
                             intent.putExtra("Email",fireBaseUser.email)
                             startActivity(intent)
