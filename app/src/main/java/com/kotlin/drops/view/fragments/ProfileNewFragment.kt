@@ -58,7 +58,7 @@ class ProfileNewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         profileAdapter = ProfileAdapter(profileViewModel)
-        binding.profileRecyclerview.adapter = profileAdapter
+//        binding.profileRecyclerview.adapter = profileAdapter
         // then add it here
         // observe
         observers()
@@ -81,7 +81,7 @@ class ProfileNewFragment : Fragment() {
 //            binding.productsProgressBar.animate().alpha(0f).setDuration(1000)
             profileAdapter.submitList(it)
             allDonataitons = it
-            binding.profileProgressBar.animate().alpha(1f)
+//            binding.profileProgressBar.animate().alpha(1f)
             binding.ageEdittext.text
             binding.userName.text
             binding.phoneNumber.text

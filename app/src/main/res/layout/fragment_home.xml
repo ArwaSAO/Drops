@@ -7,145 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".view.fragments.HomeFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="215dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/blue111"
-        android:foregroundGravity="center"
-        app:cardCornerRadius="15sp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/Location"
-                android:textColor="@color/lightblue"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TextContrastCheck" />
-
-            <EditText
-                android:id="@+id/Search_Edittext"
-                android:layout_width="211dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="12dp"
-                android:ems="10"
-                android:fontFamily="@font/poppins_light"
-                android:hint="@string/search_for_city"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/choose_your_blood_group"
-                android:textColor="@color/lightblue"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Search_Edittext"
-                app:layout_constraintVertical_bias="0.052"
-                tools:ignore="TextContrastCheck" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="17dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/pin"
-                android:src="@drawable/location"
-                app:layout_constraintStart_toEndOf="@+id/textView5"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ImageContrastCheck" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="116dp"
-                android:layout_height="71dp"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/hadshake"
-                android:src="@drawable/hands"
-                app:layout_constraintBottom_toTopOf="@+id/cardView2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:ignore="ImageContrastCheck" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView2"
-                android:layout_width="65dp"
-                android:layout_height="55dp"
-                android:layout_marginEnd="44dp"
-                android:layout_marginBottom="72dp"
-                android:backgroundTint="#B6C6FF"
-                app:cardCornerRadius="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/blood_group_edittext"
-                        android:layout_width="65dp"
-                        android:layout_height="50dp"
-                        android:fontFamily="@font/poppins_light"
-                        android:textColorHighlight="@color/pink"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <Button
-                android:id="@+id/search_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/pink"
-                android:fontFamily="@font/poppins_medium"
-                android:text="@string/SEARCH"
-                android:textColor="@color/light"
-                app:cornerRadius="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="TextContrastCheck" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_recyclerView"
         android:layout_width="0dp"
@@ -164,14 +25,14 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/patient_list"
-        android:textColor="@color/bluegray"
+        android:textColor="@color/red"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <ProgressBar

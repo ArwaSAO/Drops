@@ -31,7 +31,7 @@ class HomeViewModel : ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        patientInfoLiveData.postValue(listOf(this))
+                        patientInfoLiveData.postValue(this)
                         Log.d(TAG, this.toString())
                     }
                 } else {

@@ -54,8 +54,15 @@
     <string name="bloodtype">bloodtype</string>
     <string name="todo">TODO</string>
     <string name="home">Home</string>
-    <string name="home">Home</string>
     <string name="hospitals">Hospitals</string>
     <string name="profile">Profile</string>
+    <string name="blood">BloodType</string>
+    <string name="age11">Age</string>
+    <string name="phonenumber">PhoneNumber</string>
+    <string name="fullname11">Full Name</string>
+    <string name="city">City</string>
+    <string name="save">Save</string>
+    <string name="start">Start</string>
+    <string name="startdonating">Donate</string>
 
 </resources>

@@ -100,7 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#F1908C"
+            android:backgroundTint="@color/red"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/LogIn"
             app:cornerRadius="15dp"

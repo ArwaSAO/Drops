@@ -13,7 +13,7 @@ interface IDropsApi {
 
 
     @GET("/PatientInfo")
-    suspend fun getPatientInfo(): Response<PatientInfo>
+    suspend fun getPatientInfo(): Response<List<PatientInfo>>
 
     @GET("/PatientInfo/{id}")
     suspend fun getPatientInfoId(): Response<PatientInfo>
@@ -33,7 +33,7 @@ interface IDropsApi {
 
 
     @GET("/donorInfo")
-    suspend fun getDonorInfo(): Response<DonorInfo>
+    suspend fun getDonorInfo(): Response<List<DonorInfo>>
 
     @GET("/donorInfo/{id}")
     suspend fun getDonorsId(): Response<DonorInfo>
@@ -53,7 +53,7 @@ interface IDropsApi {
 
 
     @GET("/donations")
-    suspend fun getDonationsInfo(): Response<Donataitons>
+    suspend fun getDonationsInfo(): Response<List<Donataitons>>
 
     @GET("/donations/{id}")
     suspend fun getDonationId(): Response<Donataitons>

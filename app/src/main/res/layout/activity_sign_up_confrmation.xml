@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light"
-    android:backgroundTint="@color/light"
+    android:background="@color/neu"
+    android:backgroundTint="@color/white"
     tools:context=".view.identity.SignUpConfrmationActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginRight="20dp"
-        app:cardBackgroundColor="@color/blue22"
-        app:cardCornerRadius="20dp"
-        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView11">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,11 +26,10 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
                 android:text="@string/you_are_logged_in_successfully"
-                android:textColor="@color/white"
+                android:textColor="@color/neu"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:textColor="@color/white"
+                android:textColor="@color/neu"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/user_Id_textview"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -56,19 +51,20 @@
                 tools:layout_conversion_absoluteWidth="379dp" />
 
             <Button
-                android:id="@+id/logout_button"
+                android:id="@+id/start_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginBottom="36dp"
-                android:backgroundTint="@color/pink"
+                android:layout_marginBottom="80dp"
+                android:backgroundTint="@color/red"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="@string/logout"
+                android:text="@string/startdonating"
                 app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="TextContrastCheck" />
 
@@ -79,9 +75,9 @@
                 android:layout_marginBottom="32dp"
                 android:fontFamily="@font/poppins_light"
                 android:gravity="center"
-                android:textColor="@color/white"
+                android:textColor="@color/neu"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/logout_button"
+                app:layout_constraintBottom_toTopOf="@+id/start_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
@@ -90,5 +86,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="0dp"
+        android:layout_height="377dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/donate2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
