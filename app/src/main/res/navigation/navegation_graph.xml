@@ -13,8 +13,11 @@
             android:id="@+id/action_homeFragment_to_paitentInfoFragment"
             app:destination="@id/paitentInfoFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_homeFragment_to_profileNewFragment"
+            app:destination="@id/profileNewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_donationsFragment"
+            app:destination="@id/donationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/bokkiingFragment"
@@ -35,13 +38,17 @@
             app:destination="@id/bokkiingFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.kotlin.drops.view.fragments.ProfileFragment"
-        android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
         android:id="@+id/thankYouDialogFragment"
         android:name="com.kotlin.drops.view.fragments.ThankYouDialog"
         android:label="fragment_thank_you_dialog"
         tools:layout="@layout/thankyou_daialog_layout" />
+    <fragment
+        android:id="@+id/profileNewFragment"
+        android:name="com.kotlin.drops.view.fragments.ProfileNewFragment"
+        android:label="fragment_profile_new2"
+        tools:layout="@layout/fragment_profile_new2" />
+    <fragment
+        android:id="@+id/donationsFragment"
+        android:name="com.kotlin.drops.view.fragments.DonationsFragment"
+        android:label="DonationsFragment" />
 </navigation>

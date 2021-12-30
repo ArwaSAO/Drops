@@ -28,15 +28,16 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/user_name_edittext"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:fontFamily="@font/poppins_medium"
-                android:hint="Full name..."
+                android:hint="@string/FullName"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/white"
                 android:textSize="18sp"
@@ -46,21 +47,22 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/phone_number_edittext"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="84dp"
                 android:ems="10"
                 android:fontFamily="@font/poppins_medium"
-                android:hint="Phone..."
+                android:hint="@string/phone"
                 android:inputType="number"
                 android:textColorHint="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/imageView7"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:importantForAutofill="no" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
@@ -76,7 +78,9 @@
                 app:layout_constraintHorizontal_bias="0.476"
                 app:layout_constraintStart_toStartOf="@+id/imageView7"
                 app:layout_constraintTop_toTopOf="@+id/imageView7"
-                app:layout_constraintVertical_bias="0.466" />
+                app:layout_constraintVertical_bias="0.466"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -86,7 +90,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.817" />
+                app:layout_constraintVertical_bias="0.817"
+                android:contentDescription="TODO" />
 
             <Button
                 android:id="@+id/Edit_button"
@@ -95,11 +100,11 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/blue22"
-                android:text="Edit"
+                android:text="@string/Edit"
                 app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+                app:layout_constraintTop_toBottomOf="@+id/phone_number_edittext"
                 app:layout_constraintVertical_bias="0.866" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -111,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="20dp"
-        android:text="Donations:"
+        android:text="@string/donations"
         android:textColor="@color/bluegray"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,12 +140,14 @@
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:backgroundTint="@color/B6C6FF"
+        android:contentDescription="@string/add"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_baseline_add_circle_24"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
         app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/cardView9"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintVertical_bias="0.687"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ProgressBar
         android:id="@+id/progressBar"

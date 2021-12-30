@@ -21,7 +21,6 @@ class RejisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_rejister)
         supportActionBar?.hide()
 
-
         val emailAddress: EditText = findViewById(R.id.rejester_Emailadress)
         val password: EditText = findViewById(R.id.password_register)
         val rejesterButton: Button = findViewById(R.id.rejister_button)
@@ -49,7 +48,7 @@ class RejisterActivity : AppCompatActivity() {
 
                             // Navigate to main activity
 
-                            val intent = Intent(this, SignUpConfrmationActivity::class.java)
+                            val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("UserId", fireBaseUser.uid)
                             intent.putExtra("Email",fireBaseUser.email)
                             startActivity(intent)
@@ -61,5 +60,6 @@ class RejisterActivity : AppCompatActivity() {
                     }
             }
         }
+
     }
 }

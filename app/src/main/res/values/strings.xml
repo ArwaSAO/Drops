@@ -14,9 +14,7 @@
     <string name="Location">Location</string>
     <string name="logout">LOGOUT</string>
     <string name="full_name">Full name...</string>
-    <string name="phone">Phone...</string>
     <string name="edit">Edit</string>
-    <string name="donations">Donations:</string>
     <string name="SEARCH">SEARCH</string>
     <string name="login">LOGIN</string>
     <string name="dont_have_an_acount">Dont Have an acount?</string>
@@ -46,5 +44,18 @@
     <string name="thankyou">thanks</string>
     <string name="x">x</string>
     <string name="handshake">handshake</string>
+    <string name="FullName">Full Name...</string>
+    <string name="phone">Phone...</string>
+    <string name="Edit">edit</string>
+    <string name="donations">Donations:</string>
+    <string name="add">add</string>
+    <string name="editbutton">Edit</string>
+    <string name="age">age...</string>
+    <string name="bloodtype">bloodtype</string>
+    <string name="todo">TODO</string>
+    <string name="home">Home</string>
+    <string name="home">Home</string>
+    <string name="hospitals">Hospitals</string>
+    <string name="profile">Profile</string>
 
 </resources>

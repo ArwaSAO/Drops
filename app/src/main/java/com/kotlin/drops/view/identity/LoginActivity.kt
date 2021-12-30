@@ -21,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         supportActionBar?.hide()
 
 //        sharedPref = getSharedPreferences("Auth", Context.MODE_PRIVATE)
@@ -33,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         rejesterTextView.setOnClickListener {
-            startActivity(Intent(this, RejisterActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
@@ -49,9 +50,6 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this, "User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
 
-                          //  sharedPrefEditor.putBoolean("status", true)
-                          // sharedPrefEditor.putString("")
-
                             // Navigate to main activity
 
                             val intent = Intent(this, MainActivity::class.java)
@@ -65,5 +63,7 @@ class LoginActivity : AppCompatActivity() {
                     }
             }
         }
+
+
     }
 }

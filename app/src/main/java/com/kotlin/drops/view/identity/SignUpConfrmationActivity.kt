@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
+import com.kotlin.drops.view.main.MainActivity
 
 class SignUpConfrmationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class SignUpConfrmationActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
 
 
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }

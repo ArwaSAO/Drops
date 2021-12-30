@@ -30,6 +30,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         // this line only wrote in fragment
         setHasOptionsMenu(true)
         // get data
