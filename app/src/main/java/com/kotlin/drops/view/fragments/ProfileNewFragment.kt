@@ -54,14 +54,9 @@ class ProfileNewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        profileAdapter = ProfileAdapter(profileViewModel)
-//        binding.profileRecyclerview.adapter = profileAdapter
-        // then add it here
-        // observe
+
         observers()
-        // call request here because when we open the application we want response
-        // event
-//        profileViewModel.callDonations()
+
 
         binding.editButton.setOnClickListener {
 
@@ -76,10 +71,7 @@ class ProfileNewFragment : Fragment() {
 
 
         profileViewModel.donationsLiveData.observe(viewLifecycleOwner, {
-//            binding.productsProgressBar.animate().alpha(0f).setDuration(1000)
-//            profileAdapter.submitList(it)
-//            allDonataitons = it
-//            binding.profileProgressBar.animate().alpha(1f)
+
             binding.ageTextview.text
             binding.fullnameTextview.text
             binding.phoneNumber.text

@@ -3,15 +3,16 @@ package com.kotlin.drops.view.adapters
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
+import com.kotlin.drops.R
 import com.kotlin.drops.databinding.DonationsItemLayoutBinding
 import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
-import com.kotlin.drops.view.viewmodel.ProfileViewModel
 
 private const val TAG = "ProfileAdapter"
-class DonationAdapter(private val list: ProfileViewModel) :
+class DonationAdapter(private val list: DonationsViewModel) :
 
 
     RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
@@ -53,10 +54,18 @@ class DonationAdapter(private val list: ProfileViewModel) :
         holder.bind(item)
         holder.binding.apointmentButton.setOnClickListener {
 
-
+            donationViewModel.selectedItemMutableLiveData.postValue(item)
+            holder.itemView.findNavController()
+                .navigate(R.id.action_homeFragment_to_donationsFragment)
         }
 
         holder.binding.deleteButton.setOnClickListener {
+
+            var listt = mutableListOf<Donataitons>()
+            listt.addAll(differ.currentList)
+            listt.remove(item)
+            differ.submitList(listt.toList())
+            donationViewModel.deleteDonations(item)
 
 
         }
@@ -74,6 +83,7 @@ class DonationAdapter(private val list: ProfileViewModel) :
             binding.donationDateTextview.text= item.date
             binding.donationLocationTextview.text = item.location
             binding.timeDonationTextview.text = item.time
+
         }
 
     }

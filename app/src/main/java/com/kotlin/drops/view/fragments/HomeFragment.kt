@@ -60,10 +60,6 @@ class HomeFragment : Fragment() {
         observers()
         homeViewModel.callPatientList()
 
-//        binding.searchButton.setOnClickListener {
-//            //binding.SearchEdittext.setText()= it.location
-//            //binding.bloodGroupEdittext.setText() = it.bloodGroup
-//        }
 
     }
 

@@ -17,9 +17,11 @@ class DonationsViewModel: ViewModel() {
     val donationsLiveData = MutableLiveData<List<Donataitons>>()
     val donationsErrorLiveData = MutableLiveData<String>()
     var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
+    var deletLiveData = MutableLiveData<String>()
+    var editLiveData = MutableLiveData<String>()
 
 
-    fun callDonations() {
+    fun callDonations(donataitons: Donataitons) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = apiRepo.getDonationsInfo()
@@ -43,16 +45,16 @@ class DonationsViewModel: ViewModel() {
         }
     }
 
-    fun callDeleteDonations(){
+    fun editDonation(donataitonsBody: Donataitons) {
         viewModelScope.launch(Dispatchers.IO) {
-
             try {
-                val response = apiRepo.getDonationsInfo()
+                val response = apiRepo.updateDonations(donataitonsBody.id, donataitonsBody)
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        donationsLiveData.postValue(this)
+                        donationsLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
+                        editLiveData.postValue("Successful")
                     }
                 } else {
                     Log.d(TAG, response.message())
@@ -64,6 +66,28 @@ class DonationsViewModel: ViewModel() {
                 donationsErrorLiveData.postValue(e.message.toString())
 
             }
+
+        }
+    }
+
+    fun deleteDonations(donataitons: Donataitons){
+        viewModelScope.launch(Dispatchers.IO) {
+
+
+                val response = apiRepo.deleteDonations(donataitons.id)
+
+                if (response.isSuccessful) {
+                    response.body()?.run {
+                        donationsLiveData.postValue(listOf(this))
+                        Log.d(TAG, this.toString())
+                        deletLiveData.postValue("Successful")
+                    }
+                } else {
+                    Log.d(TAG, response.message())
+                    donationsErrorLiveData.postValue(response.message())
+                }
+
+
 
         }
     }

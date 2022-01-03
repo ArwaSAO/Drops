@@ -8,14 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.kotlin.drops.R
-import com.kotlin.drops.databinding.FragmentBokkiingBinding
 import com.kotlin.drops.databinding.FragmentDonationsBinding
 import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.adapters.DonationAdapter
-import com.kotlin.drops.view.adapters.HomeAdapter
-import com.kotlin.drops.view.viewmodel.BokkingViewModel
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
 
 
@@ -51,17 +47,28 @@ class DonationsFragment : Fragment() {
         return binding.root
     }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        donationAdapter = DonationAdapter(donationViewModel)
+        binding.donationsRecyclerView.adapter = donationAdapter
+        observers()
+        // call request here because when we open the application we want response
+        // event
+        donationViewModel.callDonations()
+
+    }
+
+
     fun observers() {
 
-
         donationViewModel.donationsLiveData.observe(viewLifecycleOwner, {
+
             binding.donatonsProgressBar.animate().alpha(0f).setDuration(1000)
             donationAdapter.submitList(it)
             allDonataitons = it
-
-
         })
-
     }
 
 
