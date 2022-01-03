@@ -58,5 +58,9 @@
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.kotlin.drops.view.fragments.EditProfileFragment"
-        android:label="EditProfileFragment" />
+        android:label="EditProfileFragment" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileNewFragment"
+            app:destination="@id/profileNewFragment" />
+    </fragment>
 </navigation>

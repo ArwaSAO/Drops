@@ -14,7 +14,6 @@ import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentProfileNew2Binding
 import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.reposetories.SHARED_PREF_FILE
-import com.kotlin.drops.view.adapters.ProfileAdapter
 import com.kotlin.drops.view.viewmodel.ProfileViewModel
 
 
@@ -24,11 +23,9 @@ class ProfileNewFragment : Fragment() {
 
 
     private lateinit var binding: FragmentProfileNew2Binding
-    private lateinit var profileAdapter: ProfileAdapter
     private val profileViewModel: ProfileViewModel by activityViewModels()
     private lateinit var sharedPref: SharedPreferences
     private lateinit var sharedPrefEditor: SharedPreferences.Editor
-    private var allDonataitons = listOf<Donataitons>()
 
 
 
@@ -57,17 +54,18 @@ class ProfileNewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        profileAdapter = ProfileAdapter(profileViewModel)
+//        profileAdapter = ProfileAdapter(profileViewModel)
 //        binding.profileRecyclerview.adapter = profileAdapter
         // then add it here
         // observe
         observers()
         // call request here because when we open the application we want response
         // event
-        profileViewModel.callDonations()
+//        profileViewModel.callDonations()
 
         binding.editButton.setOnClickListener {
 
+            findNavController().navigate(R.id.action_profileNewFragment_to_editProfileFragment)
 
         }
     }
@@ -79,28 +77,16 @@ class ProfileNewFragment : Fragment() {
 
         profileViewModel.donationsLiveData.observe(viewLifecycleOwner, {
 //            binding.productsProgressBar.animate().alpha(0f).setDuration(1000)
-            profileAdapter.submitList(it)
-            allDonataitons = it
+//            profileAdapter.submitList(it)
+//            allDonataitons = it
 //            binding.profileProgressBar.animate().alpha(1f)
-            binding.ageEdittext.text
-            binding.userName.text
+            binding.ageTextview.text
+            binding.fullnameTextview.text
             binding.phoneNumber.text
-            binding.bloodtypeEdittext.text
+            binding.bloodGroup.text
 
         })
 
-
-
-        // handle the error
-        profileViewModel.donationsErrorLiveData.observe(viewLifecycleOwner, { error ->
-            error?.let {
-                Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
-                if (error == "Unauthorized")
-                    findNavController().navigate(R.id.action_homeFragment_to_profileNewFragment)
-                profileViewModel.donationsErrorLiveData.postValue(null)
-            }
-
-        })
     }
 
 }

@@ -5,15 +5,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
-import com.kotlin.drops.databinding.ProfileItemLayoutBinding
+import com.kotlin.drops.databinding.DonationsItemLayoutBinding
 import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.view.viewmodel.DonationsViewModel
 import com.kotlin.drops.view.viewmodel.ProfileViewModel
 
 private const val TAG = "ProfileAdapter"
-class ProfileAdapter(private val list: ProfileViewModel) :
+class DonationAdapter(private val list: ProfileViewModel) :
 
 
-    RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() {
+    RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
 
     val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Donataitons>() {
 
@@ -36,20 +37,29 @@ class ProfileAdapter(private val list: ProfileViewModel) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ProfileAdapter.ProfileViewHolder {
+    ): DonationAdapter.DonationViewHolder {
 
         val binding =
-            ProfileItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ProfileAdapter.ProfileViewHolder(binding)
+            DonationsItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return DonationAdapter.DonationViewHolder(binding)
 
     }
 
 
-    override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DonationViewHolder, position: Int) {
 
         val item = differ.currentList[position]
 
         holder.bind(item)
+        holder.binding.apointmentButton.setOnClickListener {
+
+
+        }
+
+        holder.binding.deleteButton.setOnClickListener {
+
+
+        }
     }
 
     override fun getItemCount(): Int {
@@ -57,7 +67,7 @@ class ProfileAdapter(private val list: ProfileViewModel) :
     }
 
 
-    class ProfileViewHolder(val binding: ProfileItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    class DonationViewHolder(val binding: DonationsItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Donataitons) {
 
             binding.dopnationmontTextView.text = item.date

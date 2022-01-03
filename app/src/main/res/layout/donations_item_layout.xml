@@ -64,7 +64,7 @@
                 android:text="AlmanaHospitals"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+                app:layout_constraintEnd_toStartOf="@+id/apointment_button"
                 app:layout_constraintHorizontal_bias="0.264"
                 app:layout_constraintStart_toEndOf="@+id/dopnationmont_textView"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -77,14 +77,14 @@
                 android:fontFamily="@font/poppins_medium"
                 android:text="3:34 a.m."
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+                app:layout_constraintEnd_toStartOf="@+id/delete_button"
                 app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toEndOf="@+id/donation_date_textview"
                 app:layout_constraintTop_toBottomOf="@+id/donation_Location_textview"
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/apointment_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -94,11 +94,11 @@
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_calendar_month_24"
+                app:srcCompat="@drawable/ic_baseline_calendar_today_24"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/delete_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -107,7 +107,7 @@
                 android:minHeight="48dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+                app:layout_constraintTop_toBottomOf="@+id/apointment_button"
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_baseline_delete_outline_24"
                 tools:ignore="SpeakableTextPresentCheck" />
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:gravity="center|fill_vertical"
-                android:text="."
+                android:text="@string/point"
                 android:textColor="@color/darkblue"
                 android:textSize="60sp"
                 app:layout_constraintBottom_toBottomOf="parent"

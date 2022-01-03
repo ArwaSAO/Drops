@@ -11,6 +11,7 @@
         android:icon="@drawable/hospitalsicon"
         android:title="@string/hospitals" />
     <item
+        android:id="@+id/donationsFragment"
         android:icon="@drawable/donationsicon"
         android:title="@string/donations" />
     <item
