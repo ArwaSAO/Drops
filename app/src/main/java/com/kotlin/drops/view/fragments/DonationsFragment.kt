@@ -10,6 +10,8 @@ import com.kotlin.drops.R
 
 class DonationsFragment : Fragment() {
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

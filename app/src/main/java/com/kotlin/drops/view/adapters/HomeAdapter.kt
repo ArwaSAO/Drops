@@ -4,8 +4,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
+import com.kotlin.drops.R
 import com.kotlin.drops.databinding.HomeItemLayoutBinding
 import com.kotlin.drops.model.PatientInfo
 
@@ -38,6 +40,10 @@ class HomeAdapter(private val list: FragmentActivity) :
         val binding =
             HomeItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeViewHolder(binding)
+
+//        binding.patientInfoCardview.setOnClickListener {
+//            findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
+//        }
     }
 
 
@@ -46,6 +52,7 @@ class HomeAdapter(private val list: FragmentActivity) :
         val item = differ.currentList[position]
 
         holder.bind(item)
+
     }
 
     override fun getItemCount(): Int {
@@ -61,6 +68,7 @@ class HomeAdapter(private val list: FragmentActivity) :
             binding.bloodGroupTextView.text = item.bloodGroup
             binding.leftBloodDonatedTextView.text = item.left.toString()
             binding.needBloodDonation.text = item.need.toString()
+
         }
     }
 

@@ -5,7 +5,18 @@
     android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfileFragment" >
+    tools:context="view.fragments.EditProfileFragment" >
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        android:src="@drawable/editprofilebackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView18"
@@ -15,7 +26,7 @@
         android:fontFamily="@font/poppins_medium"
         android:paddingLeft="20dp"
         android:text="@string/fullname11"
-        android:textColor="@color/neu"
+        android:textColor="@color/dark"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
@@ -38,7 +49,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:inputType="textPersonName"
@@ -55,7 +66,7 @@
         android:fontFamily="@font/poppins_medium"
         android:paddingLeft="20dp"
         android:text="@string/phonenumber"
-        android:textColor="@color/neu"
+        android:textColor="@color/dark"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
@@ -77,7 +88,7 @@
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:inputType="phone"
@@ -90,11 +101,11 @@
         android:layout_width="98dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_medium"
         android:paddingLeft="20dp"
         android:text="@string/age11"
-        android:textColor="@color/neu"
+        android:textColor="@color/dark"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView12" />
@@ -102,7 +113,6 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView13"
         android:layout_width="170dp"
-        android:layout_height="110dp"
         android:layout_marginStart="16dp"
         android:paddingLeft="20dp"
         app:cardCornerRadius="15dp"
@@ -113,7 +123,7 @@
         <EditText
             android:id="@+id/age_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="122dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:inputType="number"
@@ -125,11 +135,11 @@
         android:id="@+id/textView25"
         android:layout_width="131dp"
         android:layout_height="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_medium"
         android:paddingLeft="20dp"
         android:text="@string/blood"
-        android:textColor="@color/neu"
+        android:textColor="@color/dark"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.674"
@@ -138,7 +148,6 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="170dp"
-        android:layout_height="110dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="15dp"
         app:cardUseCompatPadding="true"
@@ -150,7 +159,7 @@
         <EditText
             android:id="@+id/blood_type_edittext"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:inputType="number"
@@ -165,7 +174,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/city"
-        android:textColor="@color/neu"
+        android:textColor="@color/dark"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
@@ -187,7 +196,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:inputType="textPersonName"
@@ -198,7 +207,7 @@
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
-        android:layout_height="63dp"
+        android:layout_height="65dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:alpha="0.8"

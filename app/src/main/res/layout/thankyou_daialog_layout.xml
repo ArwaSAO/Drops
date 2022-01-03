@@ -9,7 +9,7 @@
         android:id="@+id/cardView4"
         android:layout_width="0dp"
         android:layout_height="370dp"
-        app:cardBackgroundColor="@color/lightblue"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="20dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,9 +22,9 @@
             android:layout_width="205dp"
             android:layout_height="191dp"
             android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/handshake"
             android:foregroundGravity="center_horizontal"
-            android:src="@drawable/handshake"
-            android:contentDescription="@string/handshake" />
+            android:src="@drawable/handshake" />
 
         <ImageView
             android:id="@+id/imageView10"
@@ -37,16 +37,16 @@
 
         <ImageButton
             android:id="@+id/close_image_Button"
-            tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck"
             android:layout_width="72dp"
             android:layout_height="67dp"
             android:layout_gravity="right"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:backgroundTint="@color/lightblue"
+            android:backgroundTint="@color/white"
             android:contentDescription="@string/x"
             android:paddingEnd="10dp"
-            android:src="@drawable/ic_baseline_close_24" />
+            android:src="@drawable/ic_baseline_close_24"
+            tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

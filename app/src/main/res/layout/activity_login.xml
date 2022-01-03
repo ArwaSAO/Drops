@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".view.identity.LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="426dp"
+        android:layout_height="726dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:srcCompat="@drawable/loginbackground"
+        tools:ignore="ImageContrastCheck" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -14,9 +26,9 @@
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/poppins_bold"
         android:scrollbarSize="36dp"
-        android:text="@string/login"
+        android:text="@string/login2"
         android:textColor="@color/black"
-        android:textSize="36.41sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
@@ -48,7 +60,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="75dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
 
@@ -78,9 +90,9 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="75dp"
             app:cardCornerRadius="15dp"
-            app:cardUseCompatPadding="true" >
+            app:cardUseCompatPadding="true">
 
             <EditText
                 android:id="@+id/editTextNumberPassword2"
@@ -98,7 +110,7 @@
         <Button
             android:id="@+id/login_button"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="65dp"
             android:layout_marginTop="30dp"
             android:backgroundTint="@color/red"
             android:fontFamily="@font/poppins_medium"

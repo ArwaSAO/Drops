@@ -46,9 +46,17 @@
         android:id="@+id/profileNewFragment"
         android:name="com.kotlin.drops.view.fragments.ProfileNewFragment"
         android:label="fragment_profile_new2"
-        tools:layout="@layout/fragment_profile_new2" />
+        tools:layout="@layout/fragment_profile_new2" >
+        <action
+            android:id="@+id/action_profileNewFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/donationsFragment"
         android:name="com.kotlin.drops.view.fragments.DonationsFragment"
         android:label="DonationsFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.kotlin.drops.view.fragments.EditProfileFragment"
+        android:label="EditProfileFragment" />
 </navigation>

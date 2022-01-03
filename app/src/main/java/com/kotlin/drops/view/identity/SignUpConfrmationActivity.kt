@@ -14,6 +14,8 @@ class SignUpConfrmationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_confrmation)
 
+        supportActionBar?.hide()
+
 
         val userIdTextView: TextView = findViewById(R.id.user_Id_textview)
         val emailAddressTextView: TextView = findViewById(R.id.email_adress_textview)

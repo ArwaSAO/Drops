@@ -64,5 +64,8 @@
     <string name="start">Start</string>
     <string name="startdonating">Donate</string>
     <string name="todo">TODO</string>
+    <string name="login2">Log in</string>
+    <string name="patientinfo">PatientInfo</string>
+    <string name="Profile">Profile</string>
 
 </resources>

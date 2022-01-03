@@ -19,6 +19,7 @@ class RejisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rejister)
+
         supportActionBar?.hide()
 
         val emailAddress: EditText = findViewById(R.id.rejester_Emailadress)
