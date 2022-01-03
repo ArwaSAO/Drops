@@ -12,7 +12,7 @@ import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
 
 private const val TAG = "ProfileAdapter"
-class DonationAdapter(private val list: DonationsViewModel) :
+class DonationAdapter( val donationsViewModel: DonationsViewModel) :
 
 
     RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
@@ -54,9 +54,9 @@ class DonationAdapter(private val list: DonationsViewModel) :
         holder.bind(item)
         holder.binding.apointmentButton.setOnClickListener {
 
-            donationViewModel.selectedItemMutableLiveData.postValue(item)
+            donationsViewModel.selectedItemMutableLiveData.postValue(item)
             holder.itemView.findNavController()
-                .navigate(R.id.action_homeFragment_to_donationsFragment)
+                .navigate(R.id.action_donationsFragment_to_bokkiingFragment)
         }
 
         holder.binding.deleteButton.setOnClickListener {
@@ -65,7 +65,7 @@ class DonationAdapter(private val list: DonationsViewModel) :
             listt.addAll(differ.currentList)
             listt.remove(item)
             differ.submitList(listt.toList())
-            donationViewModel.deleteDonations(item)
+            donationsViewModel.deleteDonations(item)
 
 
         }

@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.DiffUtil
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.HomeItemLayoutBinding
 import com.kotlin.drops.model.PatientInfo
+import com.kotlin.drops.view.viewmodel.HomeViewModel
 
 
-class HomeAdapter(private val list: FragmentActivity) :
+class HomeAdapter(val homeViewModel: HomeViewModel) :
 
 
     RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {

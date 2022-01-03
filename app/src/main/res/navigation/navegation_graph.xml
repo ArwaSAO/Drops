@@ -54,7 +54,11 @@
     <fragment
         android:id="@+id/donationsFragment"
         android:name="com.kotlin.drops.view.fragments.DonationsFragment"
-        android:label="DonationsFragment" />
+        android:label="DonationsFragment" >
+        <action
+            android:id="@+id/action_donationsFragment_to_bokkiingFragment"
+            app:destination="@id/bokkiingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.kotlin.drops.view.fragments.EditProfileFragment"
