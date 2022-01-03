@@ -83,9 +83,6 @@ class DonationAdapter( val donationsViewModel: DonationsViewModel) :
             binding.donationDateTextview.text= item.date
             binding.donationLocationTextview.text = item.location
             binding.timeDonationTextview.text = item.time
-
         }
-
     }
-
 }

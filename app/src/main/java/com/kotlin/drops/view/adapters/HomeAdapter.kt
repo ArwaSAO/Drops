@@ -3,8 +3,8 @@ package com.kotlin.drops.view.adapters
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.kotlin.drops.R
@@ -13,10 +13,8 @@ import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.view.viewmodel.HomeViewModel
 
 
-class HomeAdapter(val homeViewModel: HomeViewModel) :
+class HomeAdapter(val homeViewModel: HomeViewModel) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
-
-    RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     val DIFF_CALLBACK = object : DiffUtil.ItemCallback<PatientInfo>() {
 
@@ -53,6 +51,13 @@ class HomeAdapter(val homeViewModel: HomeViewModel) :
         val item = differ.currentList[position]
 
         holder.bind(item)
+
+        // make the patient info card view clickable
+        holder.binding.patientInfoCardview.setOnClickListener {
+            homeViewModel.selectedItemMutableLiveData.postValue(item)
+            holder.itemView.findNavController()
+                .navigate(R.id.action_homeFragment_to_paitentInfoFragment)
+        }
 
     }
 

@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeAdapter = HomeAdapter(requireActivity())
+        homeAdapter = HomeAdapter()
         binding.homeRecyclerView.adapter = homeAdapter
 
         observers()
@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
             binding.homeProgressBar.animate().alpha(0f).setDuration(1000)
             homeAdapter.submitList(it)
             allPatientInfo = it
-            binding.homeRecyclerView.animate().alpha(1f)
+//            binding.homeRecyclerView.animate().alpha(1f)
 
         })
 

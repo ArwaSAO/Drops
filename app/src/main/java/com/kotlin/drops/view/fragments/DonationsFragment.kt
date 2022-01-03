@@ -57,13 +57,14 @@ class DonationsFragment : Fragment() {
         // call request here because when we open the application we want response
         // event
         donationViewModel.callDonations()
-
+        donationViewModel.editDonation()
+        donationViewModel.deleteDonations()
     }
 
 
     fun observers() {
 
-        donationViewModel.donationsLiveData.observe(viewLifecycleOwner, {
+        donationViewModel.getDonationsLiveData.observe(viewLifecycleOwner, {
 
             binding.donatonsProgressBar.animate().alpha(0f).setDuration(1000)
             donationAdapter.submitList(it)

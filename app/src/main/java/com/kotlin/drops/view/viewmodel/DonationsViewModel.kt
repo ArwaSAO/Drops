@@ -14,11 +14,11 @@ private const val TAG = "DonationsViewModel"
 class DonationsViewModel: ViewModel() {
 
     private val apiRepo = ApiServiceRepository.get()
-    val donationsLiveData = MutableLiveData<List<Donataitons>>()
+    val getDonationsLiveData = MutableLiveData<List<Donataitons>>()
     val donationsErrorLiveData = MutableLiveData<String>()
     var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
-    var deletLiveData = MutableLiveData<String>()
-    var editLiveData = MutableLiveData<String>()
+    var deleteDonationsLiveData = MutableLiveData<String>()
+    var editDonationsLiveData = MutableLiveData<String>()
 
 
     fun callDonations(donataitons: Donataitons) {
@@ -28,7 +28,7 @@ class DonationsViewModel: ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        donationsLiveData.postValue(this)
+                        getDonationsLiveData.postValue(this)
                         Log.d(TAG, this.toString())
                     }
                 } else {
@@ -52,9 +52,9 @@ class DonationsViewModel: ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        donationsLiveData.postValue(listOf(this))
+                        getDonationsLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
-                        editLiveData.postValue("Successful")
+                        editDonationsLiveData.postValue("Successful")
                     }
                 } else {
                     Log.d(TAG, response.message())
@@ -78,9 +78,9 @@ class DonationsViewModel: ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        donationsLiveData.postValue(listOf(this))
+                        getDonationsLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
-                        deletLiveData.postValue("Successful")
+                        deleteDonationsLiveData.postValue("Successful")
                     }
                 } else {
                     Log.d(TAG, response.message())
