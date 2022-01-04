@@ -15,19 +15,34 @@ private const val TAG = "DonationsViewModel"
 class DonationsViewModel: ViewModel() {
 
     private val apiRepo = ApiServiceRepository.get()
+
+    //for the live data
     val getDonationsLiveData = MutableLiveData<List<Donataitons>>()
+
+    //for Error live data
     val donationsErrorLiveData = MutableLiveData<String>()
+
+    //select single item from the live data
     var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
+
+    // delete from live data
     var deleteDonationsLiveData = MutableLiveData<String>()
+
+    //edit live data
     var editDonationsLiveData = MutableLiveData<String>()
 
 
 
 
-    // get donations List from Api
+    // get donations from data model
 
-    fun callDonationsList(donataitons: Donataitons) {
+    fun callDonationsList() {
+
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
+
         viewModelScope.launch(Dispatchers.IO) {
+            // send request
             try {
                 val response = apiRepo.getDonationsInfo()
 
@@ -53,7 +68,13 @@ class DonationsViewModel: ViewModel() {
 
     // Edit donations data from Api
     fun editDonation(donataitonsBody: Donataitons) {
+
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
+
         viewModelScope.launch(Dispatchers.IO) {
+
+            //send request
             try {
                 val response = apiRepo.updateDonations(donataitonsBody.id, donataitonsBody)
 
@@ -77,7 +98,12 @@ class DonationsViewModel: ViewModel() {
         }
     }
 
+    // delete Donations from Api
     fun deleteDonations(donataitons: Donataitons){
+
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
+
         viewModelScope.launch(Dispatchers.IO) {
 
 

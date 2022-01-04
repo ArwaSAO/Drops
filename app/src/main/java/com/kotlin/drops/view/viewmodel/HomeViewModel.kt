@@ -18,20 +18,32 @@ class HomeViewModel : ViewModel() {
 
 
     private val apiRepo = ApiServiceRepository.get()
-    val patientInfoLiveData = MutableLiveData<List<PatientInfo>>()
+
+    //for the live data
+    val getPatientInfoLiveData = MutableLiveData<List<PatientInfo>>()
+
+    //for Error live data
     val patientInfoErrorLiveData = MutableLiveData<String>()
+
+    //select single item from the live data
     var selectedItemMutableLiveData = MutableLiveData<PatientInfo>()
 
 
 
-    fun callPatientList(patientInfo: PatientInfo) {
+    // get PatientInfo from Api
+    fun callPatientList() {
+
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
         viewModelScope.launch(Dispatchers.IO) {
+
+            // send request
             try {
                 val response = apiRepo.getPatientInfo()
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        patientInfoLiveData.postValue(this)
+                        getPatientInfoLiveData.postValue(this)
                         Log.d(TAG, this.toString())
                     }
                 } else {

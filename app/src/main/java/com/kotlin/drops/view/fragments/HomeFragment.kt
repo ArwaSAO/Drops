@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var sharedPref: SharedPreferences
     private lateinit var sharedPrefEditor: SharedPreferences.Editor
     private var allPatientInfo = listOf<PatientInfo>()
+    private lateinit var logoutItem: MenuItem
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +50,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+        // setHasOptionsMenu(true)
     }
 
 
@@ -63,8 +66,19 @@ class HomeFragment : Fragment() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        requireActivity().menuInflater.inflate(R.menu.search_app_bar, menu)
+        val searchItem = menu.findItem(R.id.app_bar_search)
+        val searchView = searchItem.actionView as SearchView
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+
+    }
+
     fun observers() {
-        homeViewModel.patientInfoLiveData.observe(viewLifecycleOwner, {
+        homeViewModel.getPatientInfoLiveData.observe(viewLifecycleOwner, {
 
             Log.d(TAG, "patient Info Live Data observers ")
             binding.homeProgressBar.animate().alpha(0f).setDuration(1000)
@@ -84,9 +98,6 @@ class HomeFragment : Fragment() {
             }
         })
     }
-
-
-
 
 
 }

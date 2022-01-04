@@ -19,15 +19,30 @@ private const val TAG = "BokkingViewModel"
 class BokkingViewModel: ViewModel() {
 
 
+
     private val apiRepo = ApiServiceRepository.get()
+
+    //for the live data
     val getDonationsLiveData = MutableLiveData<List<Donataitons>>()
+
+    // for the Error live data
     val donationsErrorLiveData = MutableLiveData<String>()
+
+    //select single item from the live data
     var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
+
+    // for add new to the live data
     var addDonationsLiveData = MutableLiveData<String>()
 
 
+    // get Donations data model
     fun callDonations() {
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
         viewModelScope.launch(Dispatchers.IO) {
+
+            // send request
+
             try {
                 val response = apiRepo.getDonationsInfo()
 
@@ -39,6 +54,7 @@ class BokkingViewModel: ViewModel() {
                 } else {
                     Log.d(TAG, response.message())
                     donationsErrorLiveData.postValue(response.message())
+
                 }
 
             } catch (e: Exception) {
@@ -50,6 +66,7 @@ class BokkingViewModel: ViewModel() {
         }
     }
 
+    // add new to Donations data model
     fun addDonations(donataitonsBody: Donataitons) {
         viewModelScope.launch(Dispatchers.IO) {
             try {

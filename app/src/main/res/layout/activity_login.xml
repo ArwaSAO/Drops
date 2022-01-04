@@ -4,19 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/loginbackground"
     tools:context=".view.identity.LoginActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="426dp"
-        android:layout_height="726dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
-        app:srcCompat="@drawable/loginbackground"
-        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/textView"

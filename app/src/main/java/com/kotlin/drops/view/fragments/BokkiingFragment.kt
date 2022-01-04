@@ -39,6 +39,7 @@ class BokkiingFragment : Fragment() {
     private var allDonataitons = listOf<Donataitons>()
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,7 +55,7 @@ class BokkiingFragment : Fragment() {
 
        observers()
         bokkingViewModel.callDonations()
-        bokkingViewModel.addDonations()
+//        bokkingViewModel.addDonations()
 
         binding.mapLocation.setOnClickListener {
 
@@ -70,14 +71,17 @@ class BokkiingFragment : Fragment() {
 
         binding.calenderImagebutton.setOnClickListener {
 
-            val dateRangePicker = DatePickerDialog(requireActivity())
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
 
-            dateRangePicker.setButton(DialogInterface.BUTTON_POSITIVE, "OK") { _, _ ->
-                // set the date text
-                binding.bookingDonationDate.text = "${dateRangePicker.datePicker.year}/" +
-                        "${dateRangePicker.datePicker.month+1}/" +
-                        "${dateRangePicker.datePicker.dayOfMonth}"
-            }
+
+                val dpd = DatePickerDialog(requireActivity(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    // Display Selected date in TextView
+                    binding.bookingDonationDate.setText("" + dayOfMonth + " " + month + ", " + year)
+                }, year, month, day)
+                dpd.show()
         }
 
         binding.timeImageButton.setOnClickListener {

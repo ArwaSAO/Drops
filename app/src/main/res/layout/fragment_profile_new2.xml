@@ -5,18 +5,8 @@
     android:id="@+id/frameLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.ProfileNewFragment" >
-
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitEnd"
-        android:src="@drawable/loginbackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="@drawable/profilebackground"
+    tools:context=".view.fragments.ProfileNewFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -118,12 +108,10 @@
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="15dp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView5"
-        app:layout_constraintVertical_bias="0.064" >
+        app:layout_constraintTop_toBottomOf="@+id/cardView5">
 
         <TextView
             android:id="@+id/city_text_view"

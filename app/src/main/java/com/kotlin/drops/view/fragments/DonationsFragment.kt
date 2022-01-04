@@ -63,8 +63,8 @@ class DonationsFragment : Fragment() {
         // call request here because when we open the application we want response
         // event
         donationViewModel.callDonationsList()
-        donationViewModel.editDonation()
-        donationViewModel.deleteDonations()
+//        donationViewModel.editDonation()
+//        donationViewModel.deleteDonations()
 
     }
 

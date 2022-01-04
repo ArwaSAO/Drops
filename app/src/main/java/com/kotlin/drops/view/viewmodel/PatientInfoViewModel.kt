@@ -16,14 +16,27 @@ private const val TAG = "PatientInfoViewModel"
 class PatientInfoViewModel: ViewModel() {
 
     private val apiRepo = ApiServiceRepository.get()
+
+    //for the live data
     val patientInfoLiveData = MutableLiveData<List<PatientInfo>>()
+
+    // for Error live data
     val patientInfoErrorLiveData = MutableLiveData<String>()
+
+    //select single item from the live data
     var selectedItemMutableLiveData = MutableLiveData<PatientInfo>()
 
 
 
-    fun callPatientList(patientInfo: PatientInfo) {
+    // get PatientInfo from Api
+    fun callPatientList() {
+
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
+
         viewModelScope.launch(Dispatchers.IO) {
+
+            //send request
             try {
                 val response = apiRepo.getPatientInfo()
 

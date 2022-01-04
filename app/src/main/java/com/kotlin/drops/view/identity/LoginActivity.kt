@@ -2,6 +2,7 @@ package com.kotlin.drops.view.identity
 
 import android.content.Context
 import android.content.Intent
+import android.net.wifi.rtt.CivicLocationKeys.STATE
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -12,15 +13,15 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
-import com.kotlin.drops.view.main.MainActivity
-import com.kotlin.drops.view.main.sharedPref
-import com.kotlin.drops.view.main.sharedPrefEditor
+import com.kotlin.drops.view.main.*
 
 private const val TAG = "LoginActivity"
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        val sharedPreferences = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
+        val sharedPrefEditor = sharedPreferences.edit()
 
         supportActionBar?.hide()
 
@@ -49,6 +50,10 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             Toast.makeText(this, "User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
+
+                            sharedPrefEditor.putBoolean(com.kotlin.drops.view.main.STATE, true)
+                            sharedPrefEditor.putString(USER_ID, FirebaseAuth.getInstance().currentUser!!.uid)
+                            sharedPrefEditor.commit()
 
                             // Navigate to main activity
 

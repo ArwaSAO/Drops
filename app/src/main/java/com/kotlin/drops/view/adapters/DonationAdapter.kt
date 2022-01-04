@@ -14,6 +14,8 @@ import com.kotlin.drops.view.viewmodel.DonationsViewModel
 private const val TAG = "ProfileAdapter"
 class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
 
+    // DiffUtil --> will keep old data and just change or add the new one
+
     val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Donataitons>() {
 
         override fun areItemsTheSame(oldItem: Donataitons, newItem: Donataitons): Boolean {
@@ -27,6 +29,8 @@ class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerVie
     }
 
     private val differ = AsyncListDiffer(this, DIFF_CALLBACK)
+
+    // to give the differ our data (the list)
 
     fun submitList(list: List<Donataitons>) {
         differ.submitList(list)

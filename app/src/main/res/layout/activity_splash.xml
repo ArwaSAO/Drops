@@ -4,18 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.main.SplashActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="423dp"
-        android:layout_height="745dp"
-        android:contentDescription="@string/todo"
-        android:scaleType="fitEnd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/splashscreen1"
-        tools:ignore="ImageContrastCheck" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:background="@drawable/splashscreen1"
+    tools:context=".view.main.SplashActivity" />

@@ -5,20 +5,8 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:backgroundTint="@color/white"
+    android:background="@drawable/bokkingbackground"
     tools:context=".view.fragments.BokkiingFragment">
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="433dp"
-        android:layout_height="756dp"
-        android:scaleType="fitEnd"
-        android:src="@drawable/bokkingbackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.cardview.widget.CardView

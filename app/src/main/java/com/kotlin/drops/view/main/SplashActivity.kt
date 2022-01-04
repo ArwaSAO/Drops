@@ -10,17 +10,23 @@ import android.util.Log
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.ActivitySplashBinding
 import com.kotlin.drops.reposetories.ApiServiceRepository
+import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.identity.LoginActivity
 import com.kotlin.drops.view.identity.SignUpConfrmationActivity
 
-lateinit var sharedPref: SharedPreferences
-lateinit var sharedPrefEditor: SharedPreferences.Editor
+const val SHARED_PREF_FILE = " login state"
+const val STATE = "state"
+const val USER_ID = "userId"
 private const val TAG = "SplashActivity"
 
 class SplashActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivitySplashBinding
+//  val  sharedPref= getSharedPreferences("Auth", Context.MODE_PRIVATE)
+//   val  sharedPrefEditor= sharedPref.edit()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +34,8 @@ class SplashActivity : AppCompatActivity() {
 
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sharedPref= getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
 
         supportActionBar?.hide()
         ApiServiceRepository.init(this)
@@ -46,19 +54,19 @@ class SplashActivity : AppCompatActivity() {
             }
         }.start()
 
-//                sharedPref= getSharedPreferences("Auth", Context.MODE_PRIVATE)
+//        sharedPref= getSharedPreferences("Auth", Context.MODE_PRIVATE)
 //        sharedPrefEditor= sharedPref.edit()
-//
-//        if (sharedPref.getBoolean("status", false)){
-//            val intent= Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        } else{
-//            val intent= Intent(this, LoginActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//
-//        }
+
+        if (sharedPref.getBoolean("status", false)){
+            val intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else{
+            val intent= Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+
+        }
 
     }
 }

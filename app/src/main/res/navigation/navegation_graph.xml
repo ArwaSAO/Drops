@@ -22,7 +22,6 @@
     <fragment
         android:id="@+id/bokkiingFragment"
         android:name="com.kotlin.drops.view.fragments.BokkiingFragment"
-        android:label="PatientInfo"
         tools:layout="@layout/fragment_bokkiing">
         <action
             android:id="@+id/action_bokkiingFragment_to_thankYouDialogFragment"
@@ -31,7 +30,6 @@
     <fragment
         android:id="@+id/paitentInfoFragment"
         android:name="com.kotlin.drops.view.fragments.PaitentInfoFragment"
-        android:label="PatientInfo"
         tools:layout="@layout/fragment_paitent_info">
         <action
             android:id="@+id/action_paitentInfoFragment_to_bokkiingFragment"
@@ -40,29 +38,25 @@
     <fragment
         android:id="@+id/thankYouDialogFragment"
         android:name="com.kotlin.drops.view.fragments.ThankYouDialog"
-        android:label="fragment_thank_you_dialog"
         tools:layout="@layout/thankyou_daialog_layout" />
     <fragment
         android:id="@+id/profileNewFragment"
         android:name="com.kotlin.drops.view.fragments.ProfileNewFragment"
-        android:label="fragment_profile_new2"
-        tools:layout="@layout/fragment_profile_new2" >
+        tools:layout="@layout/fragment_profile_new2">
         <action
             android:id="@+id/action_profileNewFragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/donationsFragment"
-        android:name="com.kotlin.drops.view.fragments.DonationsFragment"
-        android:label="DonationsFragment" >
+        android:name="com.kotlin.drops.view.fragments.DonationsFragment">
         <action
             android:id="@+id/action_donationsFragment_to_bokkiingFragment"
             app:destination="@id/bokkiingFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.kotlin.drops.view.fragments.EditProfileFragment"
-        android:label="EditProfileFragment" >
+        android:name="com.kotlin.drops.view.fragments.EditProfileFragment">
         <action
             android:id="@+id/action_editProfileFragment_to_profileNewFragment"
             app:destination="@id/profileNewFragment" />

@@ -54,9 +54,10 @@ class ProfileNewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         observers()
 
+//        profileViewModel.editDonorInfo()
+        profileViewModel.callDonorInfo()
 
         binding.editButton.setOnClickListener {
 
@@ -70,7 +71,7 @@ class ProfileNewFragment : Fragment() {
     fun observers() {
 
 
-        profileViewModel.donationsLiveData.observe(viewLifecycleOwner, {
+        profileViewModel.getDonorInfoLiveData.observe(viewLifecycleOwner, {
 
             binding.ageTextview.text
             binding.fullnameTextview.text

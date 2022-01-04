@@ -16,13 +16,26 @@ private const val TAG = "ProfileViewModel"
 class ProfileViewModel : ViewModel() {
 
     private val apiRepo = ApiServiceRepository.get()
+
+    //for the live data
     val getDonorInfoLiveData = MutableLiveData<List<DonorInfo>>()
+
+    //for Error live data
     val donorInfoErrorLiveData = MutableLiveData<String>()
+
+    //select single item from the live data
     var selectedItemMutableLiveData = MutableLiveData<DonorInfo>()
+
+    //edit live data
     var editDonorInfoLiveData = MutableLiveData<DonorInfo>()
 
 
+    // get DonorInfo from Api
     fun callDonorInfo() {
+
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
+
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = apiRepo.getDonorInfo()
@@ -46,7 +59,14 @@ class ProfileViewModel : ViewModel() {
         }
     }
 
+
+
+    // edit DonorInfo Api
     fun editDonorInfo(donorInfoBody: DonorInfo){
+
+        // we need Scope with the suspend function
+        //viewModelScope -->> the Scope  end after the function end
+
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = apiRepo.updateDonorInfo(donorInfoBody.id, donorInfoBody)
@@ -55,7 +75,7 @@ class ProfileViewModel : ViewModel() {
                     response.body()?.run {
                         getDonorInfoLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
-                        editDonorInfoLiveData.postValue("Successful")
+//                        editDonorInfoLiveData.postValue("Successful")
                     }
                 } else {
                     Log.d(TAG, response.message())

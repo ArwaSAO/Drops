@@ -58,7 +58,7 @@ class EditProfileFragment : Fragment() {
 
     fun observers(){
 
-        profileViewModel.donationsLiveData.observe(viewLifecycleOwner,{
+        profileViewModel.getDonorInfoLiveData.observe(viewLifecycleOwner,{
             binding.fullNameEditText.text
             binding.phoneNumberEditText.text
             binding.ageEditText.text

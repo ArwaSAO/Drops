@@ -10,6 +10,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:alpha="0.85"
         android:background="@color/red"
         app:itemHorizontalTranslationEnabled="false"
         app:itemIconSize="25dp"

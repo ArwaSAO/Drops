@@ -16,6 +16,8 @@ import com.kotlin.drops.view.viewmodel.HomeViewModel
 class HomeAdapter(val homeViewModel: HomeViewModel) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
 
+    // DiffUtil --> will keep old data and just change or add the new one
+
     val DIFF_CALLBACK = object : DiffUtil.ItemCallback<PatientInfo>() {
 
         override fun areItemsTheSame(oldItem: PatientInfo, newItem: PatientInfo): Boolean {
@@ -28,6 +30,8 @@ class HomeAdapter(val homeViewModel: HomeViewModel) : RecyclerView.Adapter<HomeA
         }
     }
     private val differ = AsyncListDiffer(this, DIFF_CALLBACK)
+
+    // to give the differ our data (the list)
 
     fun submitList(list: List<PatientInfo>) {
         differ.submitList(list)

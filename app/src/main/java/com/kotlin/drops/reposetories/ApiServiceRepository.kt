@@ -92,6 +92,8 @@ class ApiServiceRepository(val context: Context) {
     //===========================================================================================//
 
 
+    // to initialize and get the repository we use the companion object
+    //singleton (single object)
 
     companion object {
         private var instance: ApiServiceRepository? = null

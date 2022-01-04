@@ -24,7 +24,7 @@ class ThankYouDialog: DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Close the dialog
+        // Close the dialog & return to HomeFragment
         binding.closeImageButton.setOnClickListener {
             dismiss()
         }

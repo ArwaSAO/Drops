@@ -56,7 +56,7 @@ class PaitentInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         patientInfoViewModel.callPatientList()
         observers()
-
+        patientInfoViewModel.callPatientList()
 
         binding.confirmButton.setOnClickListener {
 
