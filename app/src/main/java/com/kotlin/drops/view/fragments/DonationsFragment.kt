@@ -9,10 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.kotlin.drops.databinding.FragmentDonationsBinding
+import com.kotlin.drops.databinding.FragmentHomeBinding
 import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.adapters.DonationAdapter
+import com.kotlin.drops.view.adapters.HomeAdapter
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
+import com.kotlin.drops.view.viewmodel.HomeViewModel
 
 
 class DonationsFragment : Fragment() {
@@ -24,6 +28,8 @@ class DonationsFragment : Fragment() {
     private lateinit var sharedPref: SharedPreferences
     private lateinit var sharedPrefEditor: SharedPreferences.Editor
     private var allDonataitons = listOf<Donataitons>()
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,9 +62,10 @@ class DonationsFragment : Fragment() {
         observers()
         // call request here because when we open the application we want response
         // event
-        donationViewModel.callDonations()
+        donationViewModel.callDonationsList()
         donationViewModel.editDonation()
         donationViewModel.deleteDonations()
+
     }
 
 

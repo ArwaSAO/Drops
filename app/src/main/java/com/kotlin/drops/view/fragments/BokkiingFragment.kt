@@ -54,6 +54,7 @@ class BokkiingFragment : Fragment() {
 
        observers()
         bokkingViewModel.callDonations()
+        bokkingViewModel.addDonations()
 
         binding.mapLocation.setOnClickListener {
 

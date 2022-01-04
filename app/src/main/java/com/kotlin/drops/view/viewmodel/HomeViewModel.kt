@@ -24,7 +24,7 @@ class HomeViewModel : ViewModel() {
 
 
 
-    fun callPatientList() {
+    fun callPatientList(patientInfo: PatientInfo) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = apiRepo.getPatientInfo()

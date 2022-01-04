@@ -31,47 +31,61 @@ class ApiServiceRepository(val context: Context) {
     //====== functionality of Patient Info =====================================================//
 
 
+    //get PatientInfo data model
     suspend fun getPatientInfo() = retrofitApi.getPatientInfo()
 
+    //get PatientInfo data model by Id
     suspend fun getPatientInfoId() = retrofitApi.getPatientInfoId()
 
+    //add PatientInfo data model
     suspend fun addPatientInfo(patientInfo: PatientInfo)
     = retrofitApi.addPatientInfo(patientInfo)
 
+    //update PatientInfo data model
     suspend fun upDatePatientInfo(id:String, patientInfo: PatientInfo)
     = retrofitApi.upDatePatientInfo(id, patientInfo)
 
+    //delete data from PatientInfo data model
     suspend fun deletePatientInfo(id: String) = retrofitApi.deletePatientInfo(id)
 
 
     //============ Functionality of Donor Info =================================================//
 
-
+    //get data from DonorInfo data model
     suspend fun getDonorInfo() = retrofitApi.getDonorInfo()
 
+    //get data by Id from DonorInfo data model
     suspend fun getDonorsId() = retrofitApi.getDonorsId()
 
+    //add new data to DonorInfo data model
     suspend fun addDonorInfo(donorInfo: DonorInfo)
     = retrofitApi.addDonorInfo(donorInfo)
 
+    // update data from DonorInfo data model
     suspend fun updateDonorInfo(id:String, donorInfo: DonorInfo)
     = retrofitApi.updateDonorInfo(id,donorInfo)
 
+    // delete data from DonorInfo data model
     suspend fun deleteDonorInfo(id: String) = retrofitApi.deleteDonorInfo(id)
 
 
     //=============  Functionality of Donations Info ===========================================//
 
+    //get data for Donations data model
     suspend fun getDonationsInfo() = retrofitApi.getDonationsInfo()
 
+    //get data by Id from Donations data model
     suspend fun getDonationId() = retrofitApi.getDonationId()
 
+    //add the data to Donations data model
     suspend fun addDonationsId(donataitons: Donataitons)
     = retrofitApi.addDonationsId(donataitons)
 
+    //update Donations data model
     suspend fun updateDonations(id: String, donataitons: Donataitons)
     = retrofitApi.updateDonations(id,donataitons)
 
+    //delete from Donations data model
     suspend fun deleteDonations(id: String) = retrofitApi.deleteDonations(id)
 
 

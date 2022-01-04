@@ -12,10 +12,7 @@ import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
 
 private const val TAG = "ProfileAdapter"
-class DonationAdapter( val donationsViewModel: DonationsViewModel) :
-
-
-    RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
+class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
 
     val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Donataitons>() {
 

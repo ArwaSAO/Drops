@@ -40,9 +40,7 @@ class HomeAdapter(val homeViewModel: HomeViewModel) : RecyclerView.Adapter<HomeA
             HomeItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeViewHolder(binding)
 
-//        binding.patientInfoCardview.setOnClickListener {
-//            findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
-//        }
+
     }
 
 

@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter(homeViewModel)
         binding.homeRecyclerView.adapter = homeAdapter
 
         observers()

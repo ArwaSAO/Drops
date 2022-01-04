@@ -22,7 +22,7 @@ class PatientInfoViewModel: ViewModel() {
 
 
 
-    fun callPatientList() {
+    fun callPatientList(patientInfo: PatientInfo) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = apiRepo.getPatientInfo()
@@ -45,4 +45,7 @@ class PatientInfoViewModel: ViewModel() {
 
         }
     }
+
+
+
 }

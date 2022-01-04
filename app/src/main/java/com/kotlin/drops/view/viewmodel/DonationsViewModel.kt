@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 
 private const val TAG = "DonationsViewModel"
+
 class DonationsViewModel: ViewModel() {
 
     private val apiRepo = ApiServiceRepository.get()
@@ -21,7 +22,11 @@ class DonationsViewModel: ViewModel() {
     var editDonationsLiveData = MutableLiveData<String>()
 
 
-    fun callDonations(donataitons: Donataitons) {
+
+
+    // get donations List from Api
+
+    fun callDonationsList(donataitons: Donataitons) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val response = apiRepo.getDonationsInfo()
@@ -45,6 +50,8 @@ class DonationsViewModel: ViewModel() {
         }
     }
 
+
+    // Edit donations data from Api
     fun editDonation(donataitonsBody: Donataitons) {
         viewModelScope.launch(Dispatchers.IO) {
             try {

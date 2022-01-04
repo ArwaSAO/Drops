@@ -20,9 +20,10 @@ class BokkingViewModel: ViewModel() {
 
 
     private val apiRepo = ApiServiceRepository.get()
-    val donationsLiveData = MutableLiveData<List<Donataitons>>()
+    val getDonationsLiveData = MutableLiveData<List<Donataitons>>()
     val donationsErrorLiveData = MutableLiveData<String>()
     var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
+    var addDonationsLiveData = MutableLiveData<String>()
 
 
     fun callDonations() {
@@ -32,7 +33,7 @@ class BokkingViewModel: ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        donationsLiveData.postValue(this)
+                        getDonationsLiveData.postValue(this)
                         Log.d(TAG, this.toString())
                     }
                 } else {
@@ -48,6 +49,32 @@ class BokkingViewModel: ViewModel() {
 
         }
     }
+
+    fun addDonations(donataitonsBody: Donataitons) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = apiRepo.addDonationsId(donataitonsBody)
+
+                if (response.isSuccessful) {
+                    response.body()?.run {
+                        getDonationsLiveData.postValue(listOf(this))
+                        Log.d(TAG, this.toString())
+                        addDonationsLiveData.postValue("Successful")
+                    }
+                } else {
+                    Log.d(TAG, response.message())
+                    donationsErrorLiveData.postValue(response.message())
+                }
+
+            } catch (e: Exception) {
+                Log.d(TAG, e.message.toString())
+                donationsErrorLiveData.postValue(e.message.toString())
+
+            }
+
+        }
+    }
+
 
 
 }

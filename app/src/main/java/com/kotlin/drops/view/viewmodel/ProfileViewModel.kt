@@ -4,8 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kotlin.drops.model.Donataitons
-import com.kotlin.drops.model.PatientInfo
+import com.kotlin.drops.model.DonorInfo
 import com.kotlin.drops.reposetories.ApiServiceRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,33 +16,60 @@ private const val TAG = "ProfileViewModel"
 class ProfileViewModel : ViewModel() {
 
     private val apiRepo = ApiServiceRepository.get()
-    val donationsLiveData = MutableLiveData<List<Donataitons>>()
-    val donationsErrorLiveData = MutableLiveData<String>()
-    var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
+    val getDonorInfoLiveData = MutableLiveData<List<DonorInfo>>()
+    val donorInfoErrorLiveData = MutableLiveData<String>()
+    var selectedItemMutableLiveData = MutableLiveData<DonorInfo>()
+    var editDonorInfoLiveData = MutableLiveData<DonorInfo>()
 
 
-    fun callDonations() {
+    fun callDonorInfo() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = apiRepo.getDonationsInfo()
+                val response = apiRepo.getDonorInfo()
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        donationsLiveData.postValue(this)
+                        getDonorInfoLiveData.postValue(this)
                         Log.d(TAG, this.toString())
                     }
                 } else {
                     Log.d(TAG, response.message())
-                    donationsErrorLiveData.postValue(response.message())
+                    donorInfoErrorLiveData.postValue(response.message())
                 }
 
             } catch (e: Exception) {
                 Log.d(TAG, e.message.toString())
-                donationsErrorLiveData.postValue(e.message.toString())
+                donorInfoErrorLiveData.postValue(e.message.toString())
 
             }
 
         }
+    }
+
+    fun editDonorInfo(donorInfoBody: DonorInfo){
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = apiRepo.updateDonorInfo(donorInfoBody.id, donorInfoBody)
+
+                if (response.isSuccessful) {
+                    response.body()?.run {
+                        getDonorInfoLiveData.postValue(listOf(this))
+                        Log.d(TAG, this.toString())
+                        editDonorInfoLiveData.postValue("Successful")
+                    }
+                } else {
+                    Log.d(TAG, response.message())
+                    donorInfoErrorLiveData.postValue(response.message())
+                }
+
+            } catch (e: Exception) {
+                Log.d(TAG, e.message.toString())
+                donorInfoErrorLiveData.postValue(e.message.toString())
+
+            }
+
+        }
+
     }
 
 
