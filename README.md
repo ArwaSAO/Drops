@@ -37,9 +37,21 @@
 wireframes:
 Figma link   https://www.figma.com/file/9BXtkOMcsvtkZswPx8xfI6/Final-capstone?node-id=0%3A1
 
-![FrameFigma](https://github.com/ArwaSAO/Drops/blob/d5ad5a0e77c6c7c236544bea2445b98b396875e4/DropsProject.png)
+![FrameFigma](https://github.com/ArwaSAO/Drops/blob/081328b3eb77b2235933e63c776579af82c49beb/FinalCapstoneDesign.png)
 
 ## User Stories
+
+-	As a user I want the application to show list of patients that could I donate for them
+-	As a user I want the application to the show Information of the patient: name,diagnoses,hospital name, 
+     hospital location, blood group, the need of blood point & the left of blood point
+-	As a user I want to click on Book button to be able to choose date & time to donate for the patient.
+-	As a user I want to share Patient Information to a friend's to see if some one could donate to the patient.
+-	As a user I want I want to click on confirm button to confirm the appointment and save it to the Donations list.
+-   As a user I want to see appointment conformation note after Booking an appointment.   
+-   As a user I want to close appointment conformation note then go to the donations screen.    
+-	As a user I want I want to click on map to see the location of the hospital.
+-   As a user I want to Edit my personal information and save it to the profile. 
+
 
 ## Planning and Development
 
