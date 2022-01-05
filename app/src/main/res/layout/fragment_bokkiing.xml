@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bokkingbackground">
+    android:background="@drawable/bookapointment">
 
 
     <androidx.cardview.widget.CardView
@@ -26,7 +26,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="358dp"
-            android:layout_height="437dp">
+            android:layout_height="437dp"
+            android:layout_gravity="center"
+            android:foregroundGravity="center">
 
             <ImageView
                 android:id="@+id/map_location"
@@ -34,6 +36,7 @@
                 android:layout_height="188dp"
                 android:layout_marginTop="16dp"
                 android:contentDescription="@string/see_hospital_location"
+                android:foregroundGravity="center"
                 android:src="@drawable/map"
                 app:layout_constraintBottom_toTopOf="@+id/textView9"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +53,7 @@
                 android:layout_marginTop="16dp"
                 android:alpha="0.9"
                 android:backgroundTint="@color/red"
+                android:foregroundGravity="center"
                 app:cardCornerRadius="15dp"
                 app:cardUseCompatPadding="false"
                 app:layout_constraintEnd_toStartOf="@+id/cardView7"
@@ -64,6 +68,7 @@
                     android:alpha="0.9"
                     android:backgroundTint="@color/red"
                     android:contentDescription="@string/BookDonationDate"
+                    android:foregroundGravity="center"
                     android:src="@drawable/ic_baseline_calendar_month_24"
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
 
@@ -73,7 +78,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
                     android:fontFamily="@font/poppins_light"
-                    android:foregroundGravity="right"
+                    android:foregroundGravity="center"
                     android:gravity="center"
                     android:textColor="@color/white" />
             </androidx.cardview.widget.CardView>
@@ -86,6 +91,7 @@
                 android:layout_marginEnd="32dp"
                 android:alpha="0.9"
                 android:backgroundTint="@color/red"
+                android:foregroundGravity="center"
                 app:cardCornerRadius="15dp"
                 app:cardUseCompatPadding="false"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -95,9 +101,9 @@
                     android:id="@+id/time_image_button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:alpha="0.9"
                     android:backgroundTint="@color/red"
                     android:contentDescription="@string/BookDonationTime"
+                    android:foregroundGravity="center"
                     android:src="@drawable/ic_baseline_access_time_filled_24"
                     tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
@@ -117,6 +123,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="236dp"
                 android:fontFamily="@font/poppins_medium"
+                android:foregroundGravity="center"
+                android:gravity="right"
                 android:text="@string/choose_date_and_time"
                 android:textColor="@color/darkblue"
                 android:textSize="20sp"
@@ -131,8 +139,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="36dp"
                 android:fontFamily="@font/poppins_medium"
+                android:foregroundGravity="center"
                 android:textColor="@color/darkblue"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -145,6 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:fontFamily="@font/poppins_light"
+                android:foregroundGravity="center"
                 android:textColor="@color/darkblue"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -154,7 +164,8 @@
                 android:id="@+id/divider4"
                 android:layout_width="300dp"
                 android:layout_height="1dp"
-                android:background="?android:attr/listDivider"
+                android:background="@color/darkblue"
+                android:foregroundGravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -172,8 +183,12 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/red"
         android:fontFamily="@font/poppins_medium"
-        android:shadowColor="@color/red"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:shadowColor="@color/white"
+        android:shadowDx="@dimen/material_emphasis_medium"
         android:text="@string/confirm"
+        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

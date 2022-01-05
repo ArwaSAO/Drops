@@ -39,7 +39,6 @@ class BokkiingFragment : Fragment() {
     private var allDonataitons = listOf<Donataitons>()
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,13 +46,27 @@ class BokkiingFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentBokkiingBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       observers()
+        val donations = Donataitons(
+            bokkingViewModel.date,
+            bokkingViewModel.fullName,
+            bokkingViewModel.hospital,
+            bokkingViewModel.id,
+            bokkingViewModel.latitude,
+            bokkingViewModel.location,
+            bokkingViewModel.longitude,
+            bokkingViewModel.time,
+            bokkingViewModel.userId,
+        )
+
+        observers()
         bokkingViewModel.callDonations()
 //        bokkingViewModel.addDonations()
 
@@ -61,7 +74,8 @@ class BokkiingFragment : Fragment() {
 
             val gmapsIntentURI = Uri.parse(
                 "https://www.google.com/maps/place/Kingdom+Tower/@24.7113877," + "46.6722064," +
-                    "17z/data=!3m1!4b1!4m5!3m4!1s0x3e2f03280e046f99:0x37737eab160a212!8m2!3d24.7113828!4d46.6743951")
+                        "17z/data=!3m1!4b1!4m5!3m4!1s0x3e2f03280e046f99:0x37737eab160a212!8m2!3d24.7113828!4d46.6743951"
+            )
 
             val mapIntent = Intent(Intent.ACTION_VIEW, gmapsIntentURI)
             mapIntent.setPackage("com.google.android.apps.maps")
@@ -77,11 +91,17 @@ class BokkiingFragment : Fragment() {
             val day = c.get(Calendar.DAY_OF_MONTH)
 
 
-                val dpd = DatePickerDialog(requireActivity(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            val dpd = DatePickerDialog(
+                requireActivity(),
+                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                     // Display Selected date in TextView
                     binding.bookingDonationDate.setText("" + dayOfMonth + " " + month + ", " + year)
-                }, year, month, day)
-                dpd.show()
+                },
+                year,
+                month,
+                day
+            )
+            dpd.show()
         }
 
         binding.timeImageButton.setOnClickListener {
@@ -94,12 +114,18 @@ class BokkiingFragment : Fragment() {
                 binding.bookingDonationTime.text = SimpleDateFormat("HH:mm a").format(calendar.time)
             }
             // time picker
-            TimePickerDialog(view.context, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
-                calendar.get(Calendar.MINUTE), false).show()
+            TimePickerDialog(
+                view.context, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY),
+                calendar.get(Calendar.MINUTE), false
+            ).show()
         }
 
         binding.confirmButton.setOnClickListener {
+
+            observers()
+            bokkingViewModel.addDonations(donations)
             findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
+
         }
     }
 
@@ -114,4 +140,5 @@ class BokkiingFragment : Fragment() {
             binding.cityTextview.text = it.location
 
         })
-    }}
+    }
+}

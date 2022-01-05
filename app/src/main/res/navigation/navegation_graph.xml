@@ -38,7 +38,11 @@
     <fragment
         android:id="@+id/thankYouDialogFragment"
         android:name="com.kotlin.drops.view.fragments.ThankYouDialog"
-        tools:layout="@layout/thankyou_daialog_layout" />
+        tools:layout="@layout/thankyou_daialog_layout" >
+        <action
+            android:id="@+id/action_thankYouDialogFragment_to_donationsFragment"
+            app:destination="@id/donationsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileNewFragment"
         android:name="com.kotlin.drops.view.fragments.ProfileNewFragment"

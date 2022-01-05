@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
+import com.kotlin.drops.R
 import com.kotlin.drops.databinding.ThankyouDaialogLayoutBinding
 
 class ThankYouDialog: DialogFragment() {
@@ -27,6 +29,8 @@ class ThankYouDialog: DialogFragment() {
         // Close the dialog & return to HomeFragment
         binding.closeImageButton.setOnClickListener {
             dismiss()
+            findNavController().navigate(R.id.action_thankYouDialogFragment_to_donationsFragment)
+
         }
 
 

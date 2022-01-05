@@ -56,16 +56,20 @@ class PaitentInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         patientInfoViewModel.callPatientList()
         observers()
-        patientInfoViewModel.callPatientList()
 
-        binding.confirmButton.setOnClickListener {
+        binding.bookButton.setOnClickListener {
 
             findNavController().navigate(R.id.action_paitentInfoFragment_to_bokkiingFragment)
 
         }
+
+        binding.shareButton.setOnClickListener {
+
+
+        }
     }
 
-    private fun observers() {
+     fun observers() {
         patientInfoViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {
 
             Log.d(TAG, "patient Info Live Data observers ")

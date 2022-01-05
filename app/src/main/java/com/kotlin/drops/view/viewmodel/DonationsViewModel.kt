@@ -32,6 +32,15 @@ class DonationsViewModel: ViewModel() {
     var editDonationsLiveData = MutableLiveData<String>()
 
 
+    var latitude = "  "
+    var longitude = " "
+    var date = " "
+    var fullName = " "
+    var hospital = " "
+    var id = " "
+    var location = " "
+    var time = " "
+    var userId = " "
 
 
     // get donations from data model
@@ -76,7 +85,7 @@ class DonationsViewModel: ViewModel() {
 
             //send request
             try {
-                val response = apiRepo.updateDonations(donataitonsBody.id, donataitonsBody)
+                val response = apiRepo.updateDonations(donataitonsBody.id,donataitonsBody)
 
                 if (response.isSuccessful) {
                     response.body()?.run {

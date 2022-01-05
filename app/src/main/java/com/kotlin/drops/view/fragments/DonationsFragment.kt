@@ -77,6 +77,10 @@ class DonationsFragment : Fragment() {
             donationAdapter.submitList(it)
             allDonataitons = it
         })
+
+        donationViewModel
+
+
     }
 
 
