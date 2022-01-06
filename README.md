@@ -49,7 +49,7 @@ Figma link   https://www.figma.com/file/9BXtkOMcsvtkZswPx8xfI6/Final-capstone?no
 -	As a user I want I want to click on confirm button to confirm the appointment and save it to the Donations list.
 -   As a user I want to see appointment conformation note after Booking an appointment.   
 -   As a user I want to close appointment conformation note then go to the donations screen.    
--	As a user I want I want to click on map to see the location of the hospital.
+-   As a user I want I want to click on map to see the location of the hospital.
 -   As a user I want to Edit my personal information and save it to the profile. 
 
 
