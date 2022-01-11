@@ -16,7 +16,7 @@ import java.util.*
 private const val TAG = "BokkingViewModel"
 
 
-class BokkingViewModel: ViewModel() {
+class BookingViewModel: ViewModel() {
 
 
 
@@ -47,6 +47,7 @@ class BokkingViewModel: ViewModel() {
 
     // get Donations data model
     fun callDonations() {
+
         // we need Scope with the suspend function
         //viewModelScope -->> the Scope  end after the function end
         viewModelScope.launch(Dispatchers.IO) {
@@ -75,8 +76,6 @@ class BokkingViewModel: ViewModel() {
 
         }
     }
-
-
 
     // add new to Donations data model
     fun addDonations(donataitonsBody: Donataitons) {

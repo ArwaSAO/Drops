@@ -57,14 +57,27 @@ class DonationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val donations = Donataitons(
+            donationViewModel.date,
+            donationViewModel.fullName,
+            donationViewModel.hospital,
+            donationViewModel.id,
+            donationViewModel.latitude,
+            donationViewModel.location,
+            donationViewModel.longitude,
+            donationViewModel.time,
+            donationViewModel.userId,
+        )
+
         donationAdapter = DonationAdapter(donationViewModel)
         binding.donationsRecyclerView.adapter = donationAdapter
         observers()
         // call request here because when we open the application we want response
         // event
         donationViewModel.callDonationsList()
-//        donationViewModel.editDonation()
-//        donationViewModel.deleteDonations()
+        donationViewModel.editDonation(donations)
+        donationViewModel.deleteDonations(donations)
+        donationViewModel.addDonations(donations)
 
     }
 

@@ -2,7 +2,6 @@ package com.kotlin.drops.view.fragments
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
@@ -13,30 +12,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentBokkiingBinding
-import com.kotlin.drops.databinding.FragmentPaitentInfoBinding
 import com.kotlin.drops.model.Donataitons
-import com.kotlin.drops.model.PatientInfo
-import com.kotlin.drops.view.viewmodel.BokkingViewModel
-import com.kotlin.drops.view.viewmodel.HomeViewModel
-import com.kotlin.drops.view.viewmodel.PatientInfoViewModel
+import com.kotlin.drops.view.viewmodel.BookingViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
-private const val TAG = "BokkiingFragment"
+private const val TAG = "BookingFragment"
 
-class BokkiingFragment : Fragment() {
+class BookingFragment : Fragment() {
 
     private lateinit var binding: FragmentBokkiingBinding
-    private val bokkingViewModel: BokkingViewModel by activityViewModels()
+    private val bookingViewModel: BookingViewModel by activityViewModels()
     private lateinit var sharedPref: SharedPreferences
     private lateinit var sharedPrefEditor: SharedPreferences.Editor
-    private var allDonataitons = listOf<Donataitons>()
+    private var allDonations = listOf<Donataitons>()
 
 
     override fun onCreateView(
@@ -55,20 +49,20 @@ class BokkiingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val donations = Donataitons(
-            bokkingViewModel.date,
-            bokkingViewModel.fullName,
-            bokkingViewModel.hospital,
-            bokkingViewModel.id,
-            bokkingViewModel.latitude,
-            bokkingViewModel.location,
-            bokkingViewModel.longitude,
-            bokkingViewModel.time,
-            bokkingViewModel.userId,
+            bookingViewModel.date,
+            bookingViewModel.fullName,
+            bookingViewModel.hospital,
+            bookingViewModel.id,
+            bookingViewModel.latitude,
+            bookingViewModel.location,
+            bookingViewModel.longitude,
+            bookingViewModel.time,
+            bookingViewModel.userId,
         )
 
         observers()
-        bokkingViewModel.callDonations()
-//        bokkingViewModel.addDonations()
+        bookingViewModel.callDonations()
+        bookingViewModel.addDonations(donations)
 
         binding.mapLocation.setOnClickListener {
 
@@ -123,17 +117,17 @@ class BokkiingFragment : Fragment() {
         binding.confirmButton.setOnClickListener {
 
             observers()
-            bokkingViewModel.addDonations(donations)
+            bookingViewModel.addDonations(donations)
             findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
 
         }
     }
 
     fun observers() {
-        bokkingViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {
+        bookingViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {
 
             Log.d(TAG, "donations Info Live Data observers ")
-            allDonataitons = listOf(it)
+            allDonations = listOf(it)
             binding.bookingDonationDate.text = it.date
             binding.bookingDonationTime.text = it.time
             binding.bookingDontationHospital.text = it.hospital

@@ -25,11 +25,16 @@ class DonationsViewModel: ViewModel() {
     //select single item from the live data
     var selectedItemMutableLiveData = MutableLiveData<Donataitons>()
 
+    // add donations live data
+    var addDonationsLiveData = MutableLiveData<String>()
+
     // delete from live data
     var deleteDonationsLiveData = MutableLiveData<String>()
 
     //edit live data
     var editDonationsLiveData = MutableLiveData<String>()
+
+
 
 
     var latitude = "  "
@@ -73,6 +78,36 @@ class DonationsViewModel: ViewModel() {
 
         }
     }
+
+    // add new to Donations data model
+    fun addDonations(donataitonsBody: Donataitons) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = apiRepo.addDonationsId(
+                    Donataitons (donataitonsBody.date, donataitonsBody.fullName, donataitonsBody.hospital, donataitonsBody.id,
+                        donataitonsBody.latitude, donataitonsBody.location, donataitonsBody.longitude, donataitonsBody.time,
+                        donataitonsBody.userId))
+
+                if (response.isSuccessful) {
+                    response.body()?.run {
+                        getDonationsLiveData.postValue(listOf(this))
+                        Log.d(TAG, this.toString())
+                        addDonationsLiveData.postValue("Successful")
+                    }
+                } else {
+                    Log.d(TAG, response.message())
+                    donationsErrorLiveData.postValue(response.message())
+                }
+
+            } catch (e: Exception) {
+                Log.d(TAG, e.message.toString())
+                donationsErrorLiveData.postValue(e.message.toString())
+
+            }
+
+        }
+    }
+
 
 
     // Edit donations data from Api

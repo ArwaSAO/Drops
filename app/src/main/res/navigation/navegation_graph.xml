@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/bokkiingFragment"
-        android:name="com.kotlin.drops.view.fragments.BokkiingFragment"
+        android:name="com.kotlin.drops.view.fragments.BookingFragment"
         tools:layout="@layout/fragment_bokkiing">
         <action
             android:id="@+id/action_bokkiingFragment_to_thankYouDialogFragment"

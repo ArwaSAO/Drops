@@ -29,6 +29,9 @@ class ProfileViewModel : ViewModel() {
     //edit live data
     var editDonorInfoLiveData = MutableLiveData<DonorInfo>()
 
+    // add live data
+    var addDonorInfoLiveData = MutableLiveData<DonorInfo>()
+
 
     // get DonorInfo from Api
     fun callDonorInfo() {
@@ -60,14 +63,53 @@ class ProfileViewModel : ViewModel() {
     }
 
 
+    // add new to Donations data model
+    fun addDonorInfo(donorInfoBody: DonorInfo) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = apiRepo.addDonorInfo(
+                    DonorInfo(
+                        donorInfoBody.bloodGroup,
+                        donorInfoBody.age,
+                        donorInfoBody.name,
+                        donorInfoBody.conatctNumber,
+                        donorInfoBody.id,
+                        donorInfoBody.userId
+
+                    )
+                )
+
+                if (response.isSuccessful) {
+                    response.body()?.run {
+                        getDonorInfoLiveData.postValue(listOf(this))
+                        Log.d(TAG, this.toString())
+//                        addDonorInfoLiveData.postValue("Successful")
+                    }
+                } else {
+                    Log.d(TAG, response.message())
+                    donorInfoErrorLiveData.postValue(response.message())
+                }
+
+            } catch (e: Exception) {
+                Log.d(TAG, e.message.toString())
+                donorInfoErrorLiveData.postValue(e.message.toString())
+
+            }
+
+        }
+    }
+
+
 
     // edit DonorInfo Api
-    fun editDonorInfo(donorInfoBody: DonorInfo){
+    fun editDonorInfo(donorInfoBody: DonorInfo) {
 
         // we need Scope with the suspend function
         //viewModelScope -->> the Scope  end after the function end
 
         viewModelScope.launch(Dispatchers.IO) {
+
+            //send request
             try {
                 val response = apiRepo.updateDonorInfo(donorInfoBody.id, donorInfoBody)
 
@@ -91,7 +133,6 @@ class ProfileViewModel : ViewModel() {
         }
 
     }
-
 
 
 }

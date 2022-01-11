@@ -68,5 +68,9 @@
     <string name="patientinfo">PatientInfo</string>
     <string name="Profile">Profile</string>
     <string name="point">.</string>
+    <string name="edit2">start edit your profile....</string>
+    <string name="logout12">logout</string>
+    <string name="fullname2">Full Name</string>
+    <string name="Booking_your_appointment">Booking your appointment</string>
 
 </resources>

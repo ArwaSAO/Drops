@@ -94,7 +94,7 @@ interface IDropsApi {
 
     //delete from Donations data model
 
-    @DELETE("/donations/:id")
+    @DELETE("/donations/{id}")
     suspend fun deleteDonations(@Path("id")Id: String): Response<Donataitons>
 
 
