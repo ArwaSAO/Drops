@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/patientllayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/patientinfo"
-    tools:context=".view.fragments.PaitentInfoFragment">
+    tools:context=".view.fragments.PatientInfoFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/patientInfo_cardview"
@@ -27,13 +27,13 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="435dp">
+            android:layout_height="485dp">
 
             <TextView
                 android:id="@+id/paitent_diagnosis_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/poppins_light"
                 android:textColor="@color/darkblue"
                 android:textSize="12sp"
@@ -47,14 +47,14 @@
                 android:id="@+id/location_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:backgroundTint="@color/lightblue"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/Location"
                 android:textColor="@color/blue22"
                 android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.054"
+                app:layout_constraintHorizontal_bias="0.051"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/paitent_diagnosis_textview"
                 tools:ignore="TextContrastCheck" />
@@ -77,14 +77,14 @@
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="156dp"
                 android:backgroundTint="@color/lightblue"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/Diagnosis"
                 android:textColor="@color/blue22"
                 android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.056"
+                app:layout_constraintHorizontal_bias="0.052"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TextContrastCheck" />
@@ -195,11 +195,12 @@
                 android:id="@+id/paitent_name_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="56dp"
                 android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/darkblue"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -209,13 +210,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/light"
+                android:minHeight="48dp"
                 android:src="@drawable/ic_baseline_share_24"
                 app:layout_constraintBottom_toTopOf="@+id/divider"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/paitent_name_textview"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.035" />
+                app:layout_constraintVertical_bias="0.035"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/map_button"
+                android:layout_width="50dp"
+                android:layout_height="47dp"
+                android:background="@color/B6C6FF"
+                android:src="@drawable/ic_baseline_map_24"
+                app:layout_constraintBottom_toTopOf="@+id/textView14"
+                app:layout_constraintEnd_toStartOf="@+id/paitent_name_textview"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.091" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

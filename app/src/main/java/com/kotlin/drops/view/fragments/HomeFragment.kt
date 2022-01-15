@@ -1,6 +1,6 @@
 package com.kotlin.drops.view.fragments
 
-import android.content.Context
+import android.app.ProgressDialog
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +13,6 @@ import androidx.navigation.fragment.findNavController
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentHomeBinding
 import com.kotlin.drops.model.PatientInfo
-import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.adapters.HomeAdapter
 import com.kotlin.drops.view.viewmodel.HomeViewModel
 
@@ -24,8 +23,8 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var homeAdapter: HomeAdapter
     private val homeViewModel: HomeViewModel by activityViewModels()
-    private lateinit var sharedPref: SharedPreferences
-    private lateinit var sharedPrefEditor: SharedPreferences.Editor
+//    private lateinit var sharedPref: SharedPreferences
+//    private lateinit var sharedPrefEditor: SharedPreferences.Editor
     private var allPatientInfo = listOf<PatientInfo>()
     private lateinit var logoutItem: MenuItem
 
@@ -35,10 +34,11 @@ class HomeFragment : Fragment() {
 
         // this line only wrote in fragment
         setHasOptionsMenu(true)
-        // get data
-        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
-        // edit data
-        sharedPrefEditor = sharedPref.edit()
+
+//        // get data
+//        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
+//        // edit data
+//        sharedPrefEditor = sharedPref.edit()
 
     }
 
@@ -84,7 +84,6 @@ class HomeFragment : Fragment() {
             binding.homeProgressBar.animate().alpha(0f).setDuration(1000)
             homeAdapter.submitList(it)
             allPatientInfo = it
-//            binding.homeRecyclerView.animate().alpha(1f)
 
         })
 
@@ -93,7 +92,11 @@ class HomeFragment : Fragment() {
             error?.let {
                 Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
                 if (error == "Unauthorized")
+
+                    //to transfer from home fragment to PatientInfo fragment
                     findNavController().navigate(R.id.action_homeFragment_to_paitentInfoFragment)
+
+
                 homeViewModel.patientInfoErrorLiveData.postValue(null)
             }
         })

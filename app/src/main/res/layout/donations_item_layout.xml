@@ -58,16 +58,16 @@
                 android:id="@+id/donation_Location_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
                 android:text="AlmanaHospitals"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/apointment_button"
-                app:layout_constraintHorizontal_bias="0.264"
+                app:layout_constraintHorizontal_bias="0.202"
                 app:layout_constraintStart_toEndOf="@+id/dopnationmont_textView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/patient_name_textview" />
 
             <TextView
                 android:id="@+id/time_donation_textview"
@@ -76,12 +76,13 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="3:34 a.m."
+                android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/delete_button"
-                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintHorizontal_bias="0.09"
                 app:layout_constraintStart_toEndOf="@+id/donation_date_textview"
                 app:layout_constraintTop_toBottomOf="@+id/donation_Location_textview"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.407" />
 
             <ImageButton
                 android:id="@+id/apointment_button"
@@ -125,6 +126,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/patient_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/apointment_button"
+                app:layout_constraintHorizontal_bias="0.159"
+                app:layout_constraintStart_toEndOf="@+id/dopnationmont_textView"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

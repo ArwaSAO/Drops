@@ -1,5 +1,6 @@
 package com.kotlin.drops.view.identity
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,10 @@ class RejisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rejister)
+
+        var progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Loading...")
+        progressDialog.setCancelable(false)
 
         supportActionBar?.hide()
 

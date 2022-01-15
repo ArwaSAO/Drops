@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentEditProfileBinding
 import com.kotlin.drops.databinding.FragmentProfileNew2Binding
+import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.model.DonorInfo
 import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.viewmodel.ProfileViewModel
 
@@ -21,18 +23,19 @@ class EditProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentEditProfileBinding
     private val profileViewModel: ProfileViewModel by activityViewModels()
-    private lateinit var sharedPref: SharedPreferences
-    private lateinit var sharedPrefEditor: SharedPreferences.Editor
+    private lateinit var allDonorInfo: DonorInfo
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // this line only wrote in fragment
         setHasOptionsMenu(true)
-        // get data
-        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
-        // edit data
-        sharedPrefEditor = sharedPref.edit()
+//        // get data
+//        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
+//        // edit data
+//        sharedPrefEditor = sharedPref.edit()
 
     }
 
@@ -52,13 +55,16 @@ class EditProfileFragment : Fragment() {
         observers()
 
         binding.saveButton.setOnClickListener {
+
+            profileViewModel.addDonorInfo(allDonorInfo)
             findNavController().navigate(R.id.action_editProfileFragment_to_profileNewFragment)
+
         }
     }
 
-    fun observers(){
+    fun observers() {
 
-        profileViewModel.getDonorInfoLiveData.observe(viewLifecycleOwner,{
+        profileViewModel.donorInfoLiveData.observe(viewLifecycleOwner, {
             binding.fullNameEditText.text
             binding.phoneNumberEditText.text
             binding.ageEditText.text

@@ -2,8 +2,7 @@ package com.kotlin.drops.view.fragments
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Intent
-import android.content.SharedPreferences
+import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -18,7 +17,9 @@ import androidx.navigation.fragment.findNavController
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentBokkiingBinding
 import com.kotlin.drops.model.Donataitons
-import com.kotlin.drops.view.viewmodel.BookingViewModel
+import com.kotlin.drops.model.PatientInfo
+import com.kotlin.drops.view.viewmodel.DonationsViewModel
+import com.kotlin.drops.view.viewmodel.HomeViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,10 +28,11 @@ private const val TAG = "BookingFragment"
 class BookingFragment : Fragment() {
 
     private lateinit var binding: FragmentBokkiingBinding
-    private val bookingViewModel: BookingViewModel by activityViewModels()
-    private lateinit var sharedPref: SharedPreferences
-    private lateinit var sharedPrefEditor: SharedPreferences.Editor
-    private var allDonations = listOf<Donataitons>()
+    private val donationsViewModel: DonationsViewModel by activityViewModels()
+    private val homeViewModel:HomeViewModel by activityViewModels()
+    private lateinit var allPatientInfo: PatientInfo
+    private lateinit var allDonataitons: Donataitons
+
 
 
     override fun onCreateView(
@@ -48,34 +50,10 @@ class BookingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val donations = Donataitons(
-            bookingViewModel.date,
-            bookingViewModel.fullName,
-            bookingViewModel.hospital,
-            bookingViewModel.id,
-            bookingViewModel.latitude,
-            bookingViewModel.location,
-            bookingViewModel.longitude,
-            bookingViewModel.time,
-            bookingViewModel.userId,
-        )
 
         observers()
-        bookingViewModel.callDonations()
-        bookingViewModel.addDonations(donations)
+        homeViewModel.callPatientList()
 
-        binding.mapLocation.setOnClickListener {
-
-            val gmapsIntentURI = Uri.parse(
-                "https://www.google.com/maps/place/Kingdom+Tower/@24.7113877," + "46.6722064," +
-                        "17z/data=!3m1!4b1!4m5!3m4!1s0x3e2f03280e046f99:0x37737eab160a212!8m2!3d24.7113828!4d46.6743951"
-            )
-
-            val mapIntent = Intent(Intent.ACTION_VIEW, gmapsIntentURI)
-            mapIntent.setPackage("com.google.android.apps.maps")
-            startActivity(mapIntent)
-
-        }
 
         binding.calenderImagebutton.setOnClickListener {
 
@@ -116,20 +94,26 @@ class BookingFragment : Fragment() {
 
         binding.confirmButton.setOnClickListener {
 
-            observers()
-            bookingViewModel.addDonations(donations)
-            findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
+            donationsViewModel.addDonations(allPatientInfo,"","")
+            findNavController().navigate(R.id.action_bokkiingFragment_to_donationsFragment)
 
         }
     }
 
     fun observers() {
-        bookingViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {
+
+        donationsViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner,{
 
             Log.d(TAG, "donations Info Live Data observers ")
-            allDonations = listOf(it)
+            allDonataitons = it
             binding.bookingDonationDate.text = it.date
             binding.bookingDonationTime.text = it.time
+        })
+
+        homeViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner,{
+
+            Log.d(TAG, "patient Info Live Data observers ")
+            allPatientInfo = it
             binding.bookingDontationHospital.text = it.hospital
             binding.cityTextview.text = it.location
 

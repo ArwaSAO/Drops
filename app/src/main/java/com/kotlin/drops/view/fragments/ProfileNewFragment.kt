@@ -13,6 +13,8 @@ import androidx.navigation.fragment.findNavController
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentProfileNew2Binding
 import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.model.DonorInfo
+import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.viewmodel.ProfileViewModel
 
@@ -24,8 +26,8 @@ class ProfileNewFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileNew2Binding
     private val profileViewModel: ProfileViewModel by activityViewModels()
-    private lateinit var sharedPref: SharedPreferences
-    private lateinit var sharedPrefEditor: SharedPreferences.Editor
+//    private lateinit var allDonorInfo : DonorInfo
+
 
 
 
@@ -33,10 +35,6 @@ class ProfileNewFragment : Fragment() {
         super.onCreate(savedInstanceState)
         // this line only wrote in fragment
         setHasOptionsMenu(true)
-        // get data
-        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
-        // edit data
-        sharedPrefEditor = sharedPref.edit()
 
     }
 
@@ -56,7 +54,6 @@ class ProfileNewFragment : Fragment() {
 
         observers()
 
-//        profileViewModel.editDonorInfo()
         profileViewModel.callDonorInfo()
 
         binding.editButton.setOnClickListener {
@@ -71,12 +68,13 @@ class ProfileNewFragment : Fragment() {
     fun observers() {
 
 
-        profileViewModel.getDonorInfoLiveData.observe(viewLifecycleOwner, {
+        profileViewModel.donorInfoLiveData.observe(viewLifecycleOwner, {
 
             binding.ageTextview.text
             binding.fullnameTextview.text
             binding.phoneNumber.text
             binding.bloodGroup.text
+            binding.cityTextView.text
 
         })
 

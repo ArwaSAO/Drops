@@ -11,24 +11,24 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/poppins_bold"
         android:includeFontPadding="true"
         android:text="@string/signup"
         android:textColor="@color/black"
-        android:textSize="36.41sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="521dp"
         android:orientation="vertical"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
             android:text="@string/fullname11"
             android:textColor="@color/cardview_dark_background"
             android:textColorHighlight="@color/cardview_dark_background"
-            android:textSize="20sp" />
+            android:textSize="10sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                 android:inputType="textPersonName"
                 android:paddingStart="20dp"
                 android:shadowRadius="15"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
@@ -79,7 +79,7 @@
             android:text="@string/e_mail_addres"
             android:textColor="@color/cardview_dark_background"
             android:textColorHighlight="@color/cardview_dark_background"
-            android:textSize="20sp" />
+            android:textSize="10sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:paddingStart="20dp"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
@@ -111,7 +111,7 @@
             android:text="@string/password"
             android:textColor="@color/cardview_dark_background"
             android:textColorHighlight="@color/cardview_dark_background"
-            android:textSize="20sp" />
+            android:textSize="10sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -130,7 +130,7 @@
                 android:inputType="numberPassword"
                 android:paddingStart="20dp"
                 android:shadowRadius="15"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
@@ -142,6 +142,7 @@
             android:backgroundTint="@color/red"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/signup"
+            android:textSize="12sp"
             app:cornerRadius="15dp"
             tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
@@ -154,7 +155,7 @@
             android:gravity="center"
             android:text="@string/already_have_an_account_login"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp" />
+            android:textSize="12sp" />
 
     </LinearLayout>
 

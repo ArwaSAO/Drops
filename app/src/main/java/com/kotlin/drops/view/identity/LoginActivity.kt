@@ -1,5 +1,6 @@
 package com.kotlin.drops.view.identity
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.net.wifi.rtt.CivicLocationKeys.STATE
@@ -14,7 +15,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
 import com.kotlin.drops.view.main.*
-
+private lateinit var progressDialog: ProgressDialog
 private const val TAG = "LoginActivity"
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         val sharedPreferences = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
         val sharedPrefEditor = sharedPreferences.edit()
+
+        var progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Loading...")
+        progressDialog.setCancelable(false)
+
 
         supportActionBar?.hide()
 

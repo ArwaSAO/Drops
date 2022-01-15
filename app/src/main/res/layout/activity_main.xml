@@ -13,7 +13,7 @@
         android:alpha="0.85"
         android:background="@color/red"
         app:itemHorizontalTranslationEnabled="false"
-        app:itemIconSize="25dp"
+        app:itemIconSize="20dp"
         app:itemIconTint="@color/white"
         app:itemRippleColor="@color/design_default_color_secondary"
         app:itemTextColor="@color/design_default_color_secondary"

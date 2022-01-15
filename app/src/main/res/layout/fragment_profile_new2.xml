@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="80dp"
         android:background="@color/B6C6FF"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Profile"
@@ -64,8 +64,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
-        android:layout_width="170dp"
-        android:layout_height="131dp"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
         android:layout_marginStart="36dp"
         app:cardCornerRadius="15dp"
         app:cardUseCompatPadding="true"
@@ -80,8 +80,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView9"
-        android:layout_width="166dp"
-        android:layout_height="129dp"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="15dp"
         app:cardUseCompatPadding="true"
@@ -118,8 +118,8 @@
         android:id="@+id/edit_button"
         android:layout_width="62dp"
         android:layout_height="50dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
         android:background="@color/B6C6FF"
         android:src="@drawable/ic_baseline_edit_24"
         app:layout_constraintStart_toEndOf="@+id/textView15"
@@ -130,12 +130,12 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/fullname2"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_button" />
 
@@ -147,7 +147,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="@string/phonenumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
@@ -168,7 +168,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginEnd="96dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/blood"
         app:layout_constraintEnd_toEndOf="parent"
@@ -178,10 +178,11 @@
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/city"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView5" />
 

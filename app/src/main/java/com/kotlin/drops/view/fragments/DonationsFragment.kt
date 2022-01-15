@@ -1,33 +1,28 @@
 package com.kotlin.drops.view.fragments
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentDonationsBinding
-import com.kotlin.drops.databinding.FragmentHomeBinding
 import com.kotlin.drops.model.Donataitons
-import com.kotlin.drops.model.PatientInfo
-import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.adapters.DonationAdapter
-import com.kotlin.drops.view.adapters.HomeAdapter
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
-import com.kotlin.drops.view.viewmodel.HomeViewModel
 
-
+private const val TAG = "DonationsFragment"
 class DonationsFragment : Fragment() {
 
 
     private lateinit var binding: FragmentDonationsBinding
     private lateinit var donationAdapter: DonationAdapter
     private val donationViewModel: DonationsViewModel by activityViewModels()
-    private lateinit var sharedPref: SharedPreferences
-    private lateinit var sharedPrefEditor: SharedPreferences.Editor
-    private var allDonataitons = listOf<Donataitons>()
+    private var allDonations = listOf<Donataitons>()
 
 
 
@@ -36,11 +31,6 @@ class DonationsFragment : Fragment() {
         super.onCreate(savedInstanceState)
         // this line only wrote in fragment
         setHasOptionsMenu(true)
-        // get data
-        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
-        // edit data
-        sharedPrefEditor = sharedPref.edit()
-
     }
 
 
@@ -57,41 +47,34 @@ class DonationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val donations = Donataitons(
-            donationViewModel.date,
-            donationViewModel.fullName,
-            donationViewModel.hospital,
-            donationViewModel.id,
-            donationViewModel.latitude,
-            donationViewModel.location,
-            donationViewModel.longitude,
-            donationViewModel.time,
-            donationViewModel.userId,
-        )
-
         donationAdapter = DonationAdapter(donationViewModel)
         binding.donationsRecyclerView.adapter = donationAdapter
         observers()
-        // call request here because when we open the application we want response
-        // event
         donationViewModel.callDonationsList()
-        donationViewModel.editDonation(donations)
-        donationViewModel.deleteDonations(donations)
-        donationViewModel.addDonations(donations)
-
     }
-
 
     fun observers() {
 
         donationViewModel.getDonationsLiveData.observe(viewLifecycleOwner, {
 
+            Log.d(TAG, "patient Info Live Data observers ")
             binding.donatonsProgressBar.animate().alpha(0f).setDuration(1000)
             donationAdapter.submitList(it)
-            allDonataitons = it
+            allDonations = it
+
         })
 
-        donationViewModel
+        // handle the error
+        donationViewModel.donationsErrorLiveData.observe(viewLifecycleOwner, { error ->
+            error?.let {
+                Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
+                if (error == "Unauthorized")
+
+                donationViewModel.donationsErrorLiveData.postValue(null)
+            }
+        })
+
+
 
 
     }

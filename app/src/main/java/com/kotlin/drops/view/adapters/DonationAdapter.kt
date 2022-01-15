@@ -1,5 +1,6 @@
 package com.kotlin.drops.view.adapters
 
+import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,10 +10,15 @@ import androidx.recyclerview.widget.DiffUtil
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.DonationsItemLayoutBinding
 import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
 
 private const val TAG = "ProfileAdapter"
-class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
+
+
+class DonationAdapter(val donationsViewModel: DonationsViewModel) :
+    RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
+
 
     // DiffUtil --> will keep old data and just change or add the new one
 
@@ -27,6 +33,7 @@ class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerVie
             return oldItem == newItem
         }
     }
+
 
     private val differ = AsyncListDiffer(this, DIFF_CALLBACK)
 
@@ -53,13 +60,21 @@ class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerVie
         val item = differ.currentList[position]
 
         holder.bind(item)
+
+
+        // edit appointment live data from api
         holder.binding.apointmentButton.setOnClickListener {
 
-            donationsViewModel.selectedItemMutableLiveData.postValue(item)
-            holder.itemView.findNavController()
-                .navigate(R.id.action_donationsFragment_to_bokkiingFragment)
+            var listt = mutableListOf<Donataitons>()
+            listt.addAll(differ.currentList)
+            listt.add(item)
+            differ.submitList(listt.toList())
+            donationsViewModel.editDonation(item)
+//            holder.itemView.findNavController()
+//                .navigate(R.id.action_donationsFragment_to_bokkiingFragment)
         }
 
+        // this function is for delete appointment  live data from api
         holder.binding.deleteButton.setOnClickListener {
 
             var listt = mutableListOf<Donataitons>()
@@ -67,7 +82,6 @@ class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerVie
             listt.remove(item)
             differ.submitList(listt.toList())
             donationsViewModel.deleteDonations(item)
-
 
         }
     }
@@ -77,13 +91,16 @@ class DonationAdapter( val donationsViewModel: DonationsViewModel) : RecyclerVie
     }
 
 
-    class DonationViewHolder(val binding: DonationsItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    class DonationViewHolder(val binding: DonationsItemLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Donataitons) {
 
-            binding.dopnationmontTextView.text = item.date
-            binding.donationDateTextview.text= item.date
-            binding.donationLocationTextview.text = item.location
-            binding.timeDonationTextview.text = item.time
+            binding.dopnationmontTextView.text = item.time
+            binding.donationDateTextview.text = item.date
+            binding.donationLocationTextview.text = item.hospital
+            binding.timeDonationTextview.text = item.location
+            binding.patientNameTextview.text = item.fullName
+
         }
     }
 }

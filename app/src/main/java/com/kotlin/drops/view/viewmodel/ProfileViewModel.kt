@@ -18,7 +18,7 @@ class ProfileViewModel : ViewModel() {
     private val apiRepo = ApiServiceRepository.get()
 
     //for the live data
-    val getDonorInfoLiveData = MutableLiveData<List<DonorInfo>>()
+    val donorInfoLiveData = MutableLiveData<List<DonorInfo>>()
 
     //for Error live data
     val donorInfoErrorLiveData = MutableLiveData<String>()
@@ -27,10 +27,10 @@ class ProfileViewModel : ViewModel() {
     var selectedItemMutableLiveData = MutableLiveData<DonorInfo>()
 
     //edit live data
-    var editDonorInfoLiveData = MutableLiveData<DonorInfo>()
+    var editDonorInfoLiveData = MutableLiveData<String>()
 
     // add live data
-    var addDonorInfoLiveData = MutableLiveData<DonorInfo>()
+    var ddDonorInfoLiveData = MutableLiveData<String>()
 
 
     // get DonorInfo from Api
@@ -45,7 +45,9 @@ class ProfileViewModel : ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        getDonorInfoLiveData.postValue(this)
+//                        donorInfoLiveData.postValue(this)
+
+                        // return data inside to strings
                         Log.d(TAG, this.toString())
                     }
                 } else {
@@ -65,8 +67,17 @@ class ProfileViewModel : ViewModel() {
 
     // add new to Donations data model
     fun addDonorInfo(donorInfoBody: DonorInfo) {
+
+        // Use try and catch for handling http exceptions
+
         viewModelScope.launch(Dispatchers.IO) {
+
+            // Use try and catch for handling http exceptions
+
             try {
+
+                // Calling the API Methods and handles the result
+
                 val response = apiRepo.addDonorInfo(
                     DonorInfo(
                         donorInfoBody.bloodGroup,
@@ -75,15 +86,16 @@ class ProfileViewModel : ViewModel() {
                         donorInfoBody.conatctNumber,
                         donorInfoBody.id,
                         donorInfoBody.userId
-
+//                     ,FirebaseAuth.getInstance().currentUser!!.uid,
                     )
                 )
 
                 if (response.isSuccessful) {
+                    Log.d(TAG, "Success")
                     response.body()?.run {
-                        getDonorInfoLiveData.postValue(listOf(this))
-                        Log.d(TAG, this.toString())
-//                        addDonorInfoLiveData.postValue("Successful")
+                        Log.d(TAG, "DonorInfo: $this")
+                        ddDonorInfoLiveData.postValue("Success")
+
                     }
                 } else {
                     Log.d(TAG, response.message())
@@ -99,9 +111,7 @@ class ProfileViewModel : ViewModel() {
         }
     }
 
-
-
-    // edit DonorInfo Api
+    // Edit Donor Info data from Api
     fun editDonorInfo(donorInfoBody: DonorInfo) {
 
         // we need Scope with the suspend function
@@ -111,13 +121,13 @@ class ProfileViewModel : ViewModel() {
 
             //send request
             try {
-                val response = apiRepo.updateDonorInfo(donorInfoBody.id, donorInfoBody)
+
+                val response = apiRepo.updateDonorInfo(donorInfoBody.id,donorInfoBody)
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        getDonorInfoLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
-//                        editDonorInfoLiveData.postValue("Successful")
+                        editDonorInfoLiveData.postValue("Successful")
                     }
                 } else {
                     Log.d(TAG, response.message())
@@ -131,7 +141,6 @@ class ProfileViewModel : ViewModel() {
             }
 
         }
-
     }
 
 

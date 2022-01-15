@@ -4,7 +4,9 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.model.Donataitons
+import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.reposetories.ApiServiceRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -37,15 +39,7 @@ class DonationsViewModel: ViewModel() {
 
 
 
-    var latitude = "  "
-    var longitude = " "
-    var date = " "
-    var fullName = " "
-    var hospital = " "
-    var id = " "
-    var location = " "
-    var time = " "
-    var userId = " "
+
 
 
     // get donations from data model
@@ -80,21 +74,50 @@ class DonationsViewModel: ViewModel() {
     }
 
     // add new to Donations data model
-    fun addDonations(donataitonsBody: Donataitons) {
+    fun addDonations(donations: PatientInfo,date:String, time:String) {
+
+        // Coroutines Dispatchers
+
         viewModelScope.launch(Dispatchers.IO) {
+            // Use try and catch for handling http exceptions
+
             try {
-                val response = apiRepo.addDonationsId(
-                    Donataitons (donataitonsBody.date, donataitonsBody.fullName, donataitonsBody.hospital, donataitonsBody.id,
-                        donataitonsBody.latitude, donataitonsBody.location, donataitonsBody.longitude, donataitonsBody.time,
-                        donataitonsBody.userId))
+
+                // Calling the API Methods and handles the result
+
+                val response = apiRepo.addDonations(
+                    Donataitons (
+                        date,
+                        donations.fullName,
+                        donations.hospital,
+                        donations.id,
+                        donations.latitude,
+                        donations.location,
+                        donations.longitude,
+                        time,
+                        FirebaseAuth.getInstance().currentUser!!.uid,
+                    )
+                )
+
+//                donations.fullName,
+//                donations.hospital,
+//                donations.id,
+//                donations.latitude,
+//                donations.location,
+//                donations.longitude,
+//                donations.diagnosis,
+//                time,
+//                date
 
                 if (response.isSuccessful) {
+                    Log.d(TAG,"Success")
                     response.body()?.run {
-                        getDonationsLiveData.postValue(listOf(this))
-                        Log.d(TAG, this.toString())
-                        addDonationsLiveData.postValue("Successful")
+                        Log.d(TAG, "Donataitions: $this")
+                        addDonationsLiveData.postValue("Success")
                     }
-                } else {
+
+
+                    } else {
                     Log.d(TAG, response.message())
                     donationsErrorLiveData.postValue(response.message())
                 }
@@ -120,11 +143,11 @@ class DonationsViewModel: ViewModel() {
 
             //send request
             try {
+
                 val response = apiRepo.updateDonations(donataitonsBody.id,donataitonsBody)
 
                 if (response.isSuccessful) {
                     response.body()?.run {
-                        getDonationsLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
                         editDonationsLiveData.postValue("Successful")
                     }
@@ -143,6 +166,7 @@ class DonationsViewModel: ViewModel() {
     }
 
     // delete Donations from Api
+
     fun deleteDonations(donataitons: Donataitons){
 
         // we need Scope with the suspend function
@@ -151,23 +175,35 @@ class DonationsViewModel: ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
 
 
+            try {
+
                 val response = apiRepo.deleteDonations(donataitons.id)
 
+
                 if (response.isSuccessful) {
+                    Log.d(TAG,"Success")
                     response.body()?.run {
-                        getDonationsLiveData.postValue(listOf(this))
                         Log.d(TAG, this.toString())
                         deleteDonationsLiveData.postValue("Successful")
                     }
                 } else {
                     Log.d(TAG, response.message())
+                    Log.d(TAG,"fail-${response.message()}")
                     donationsErrorLiveData.postValue(response.message())
                 }
 
+            }catch (e:Exception){
+
+                Log.d(TAG,e.message.toString())
+                donationsErrorLiveData.postValue(e.message.toString())
+
+            }
 
 
         }
     }
+
+
 
 
 }

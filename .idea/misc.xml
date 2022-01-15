@@ -22,22 +22,26 @@
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/layout/thankyou_daialog_layout.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/menu/bottom_menu_bar.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/Arwa/AndroidStudioProjects/Drops/app/src/main/res/menu/search_app_bar.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/drawable/ic_baseline_access_time_filled_24.xml" value="0.1" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.1" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.1" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/font/poppins.xml" value="0.1" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/font/poppins_bold.xml" value="0.1" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/font/poppins_light.xml" value="0.1" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/Donations_item_layout.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/activity_rejister.xml" value="0.22" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/activity_main2.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/activity_rejister.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/activity_sign_up_confrmation.xml" value="0.22" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/activity_splash.xml" value="0.22" />
-        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/donations_item_layout.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/donations_item_layout.xml" value="0.5" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_blank.xml" value="0.5" />
-        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_bokkiing.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_bokkiing.xml" value="0.22" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_donations.xml" value="0.22" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_edit_profile.xml" value="0.22" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_paitent_info.xml" value="0.22" />
+        <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_paitent_info.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_profile_new2.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Arwa/Documents/Drops/app/src/main/res/layout/fragment_thank_you_dialog.xml" value="0.1" />

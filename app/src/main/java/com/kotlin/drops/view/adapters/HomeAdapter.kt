@@ -56,6 +56,7 @@ class HomeAdapter(val homeViewModel: HomeViewModel) : RecyclerView.Adapter<HomeA
 
         // make the patient info card view clickable
         holder.binding.patientInfoCardview.setOnClickListener {
+            // take Patient Info data to the the detail fragment
             homeViewModel.selectedItemMutableLiveData.postValue(item)
             holder.itemView.findNavController()
                 .navigate(R.id.action_homeFragment_to_paitentInfoFragment)

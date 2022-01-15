@@ -17,17 +17,17 @@
         android:scrollbarSize="36dp"
         android:text="@string/login2"
         android:textColor="@color/black"
-        android:textSize="48sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="401dp"
+        android:layout_height="421dp"
         android:layout_margin="15dp"
         android:orientation="vertical"
         android:padding="15dp"
@@ -45,7 +45,7 @@
             android:paddingStart="20dp"
             android:text="@string/e_mail_addres"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp" />
+            android:textSize="12sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -56,13 +56,13 @@
             <EditText
                 android:id="@+id/editTextTextEmailAddress2"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="75dp"
                 android:ems="10"
                 android:fontFamily="@font/poppins_light"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:paddingStart="20dp"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
@@ -75,7 +75,7 @@
             android:paddingStart="20dp"
             android:text="@string/password"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp" />
+            android:textSize="12sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -86,13 +86,13 @@
             <EditText
                 android:id="@+id/editTextNumberPassword2"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="75dp"
                 android:ems="10"
                 android:fontFamily="@font/poppins_light"
                 android:importantForAutofill="no"
                 android:inputType="numberPassword"
                 android:paddingStart="20dp"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 tools:ignore="SpeakableTextPresentCheck" />
         </androidx.cardview.widget.CardView>
 
@@ -104,6 +104,7 @@
             android:backgroundTint="@color/red"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/LogIn"
+            android:textSize="12sp"
             app:cornerRadius="15dp"
             tools:ignore="TextContrastCheck" />
 
@@ -116,7 +117,7 @@
             android:gravity="center"
             android:text="@string/dont_have_an_acount"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="16sp" />
+            android:textSize="12sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,10 +26,13 @@
         <action
             android:id="@+id/action_bokkiingFragment_to_thankYouDialogFragment"
             app:destination="@id/thankYouDialogFragment" />
+        <action
+            android:id="@+id/action_bokkiingFragment_to_donationsFragment"
+            app:destination="@id/donationsFragment" />
     </fragment>
     <fragment
         android:id="@+id/paitentInfoFragment"
-        android:name="com.kotlin.drops.view.fragments.PaitentInfoFragment"
+        android:name="com.kotlin.drops.view.fragments.PatientInfoFragment"
         tools:layout="@layout/fragment_paitent_info">
         <action
             android:id="@+id/action_paitentInfoFragment_to_bokkiingFragment"

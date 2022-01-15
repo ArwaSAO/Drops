@@ -7,13 +7,9 @@
         android:icon="@drawable/homeicon"
         android:title="@string/home" />
     <item
-        android:id="@+id/hospital_button"
-        android:icon="@drawable/hospitalsicon"
-        android:title="@string/hospitals" />
-    <item
         android:id="@+id/donationsFragment"
         android:icon="@drawable/donationsicon"
-        android:title="@string/donations" />
+        android:title="@string/donations1" />
     <item
         android:id="@+id/profileNewFragment"
         android:icon="@drawable/profileicon"

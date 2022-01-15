@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.reposetories.ApiServiceRepository
 import kotlinx.coroutines.Dispatchers
