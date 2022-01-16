@@ -23,8 +23,6 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var homeAdapter: HomeAdapter
     private val homeViewModel: HomeViewModel by activityViewModels()
-//    private lateinit var sharedPref: SharedPreferences
-//    private lateinit var sharedPrefEditor: SharedPreferences.Editor
     private var allPatientInfo = listOf<PatientInfo>()
     private lateinit var logoutItem: MenuItem
 
@@ -34,12 +32,6 @@ class HomeFragment : Fragment() {
 
         // this line only wrote in fragment
         setHasOptionsMenu(true)
-
-//        // get data
-//        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
-//        // edit data
-//        sharedPrefEditor = sharedPref.edit()
-
     }
 
 

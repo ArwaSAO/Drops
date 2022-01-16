@@ -20,4 +20,5 @@
     <color name="neu">#979797</color>
     <color name="peach">#F1908C</color>
     <color name="dark">#4F4F4F</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

@@ -10,23 +10,22 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
-        android:layout_width="0dp"
-        android:layout_height="500dp"
+        android:layout_width="340dp"
+        android:layout_height="640dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="70dp"
         android:layout_marginEnd="20dp"
         android:foregroundGravity="center"
         app:cardBackgroundColor="@color/light"
         app:cardCornerRadius="20dp"
         app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="358dp"
-            android:layout_height="437dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:foregroundGravity="center">
 
@@ -35,34 +34,34 @@
                 android:layout_width="280dp"
                 android:layout_height="188dp"
                 android:layout_marginTop="16dp"
+                android:backgroundTint="@color/red"
                 android:contentDescription="@string/see_hospital_location"
                 android:foregroundGravity="center"
                 android:src="@drawable/map"
                 app:layout_constraintBottom_toTopOf="@+id/textView9"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.475"
+                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="ImageContrastCheck" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView8"
-                android:layout_width="130dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="24dp"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/bluegray"
                 android:foregroundGravity="center"
                 app:cardCornerRadius="15dp"
                 app:cardUseCompatPadding="false"
-                app:layout_constraintEnd_toStartOf="@+id/cardView7"
-                app:layout_constraintHorizontal_bias="0.163"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9">
 
                 <ImageButton
                     android:id="@+id/calender_imagebutton"
-                    android:layout_width="48dp"
+                    android:layout_width="81dp"
                     android:layout_height="match_parent"
                     android:alpha="0.9"
                     android:backgroundTint="@color/bluegray"
@@ -73,7 +72,7 @@
 
                 <TextView
                     android:id="@+id/booking_donation_date"
-                    android:layout_width="84dp"
+                    android:layout_width="189dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
                     android:fontFamily="@font/poppins_light"
@@ -84,20 +83,21 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView7"
-                android:layout_width="130dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
+                android:layout_width="270dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/bluegray"
                 android:foregroundGravity="center"
                 app:cardCornerRadius="15dp"
                 app:cardUseCompatPadding="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9">
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView8">
 
                 <ImageButton
                     android:id="@+id/time_image_button"
-                    android:layout_width="wrap_content"
+                    android:layout_width="85dp"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/bluegray"
                     android:contentDescription="@string/BookDonationTime"
@@ -107,7 +107,7 @@
 
                 <TextView
                     android:id="@+id/booking_donation_time"
-                    android:layout_width="82dp"
+                    android:layout_width="185dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
                     android:fontFamily="@font/poppins_light"
@@ -119,7 +119,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="236dp"
+                android:layout_marginTop="228dp"
                 android:fontFamily="@font/poppins_medium"
                 android:foregroundGravity="center"
                 android:gravity="right"
@@ -128,7 +128,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.242"
+                app:layout_constraintHorizontal_bias="0.173"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -137,14 +137,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="52dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/poppins_medium"
                 android:foregroundGravity="center"
                 android:textColor="@color/darkblue"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView8" />
+                app:layout_constraintTop_toBottomOf="@+id/divider4" />
 
             <TextView
                 android:id="@+id/city_textview"
@@ -158,57 +158,42 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/booking_dontation_hospital"
-                app:layout_constraintVertical_bias="0.578" />
+                app:layout_constraintVertical_bias="0.117" />
 
             <View
                 android:id="@+id/divider4"
-                android:layout_width="300dp"
+                android:layout_width="255dp"
                 android:layout_height="0.2dp"
-                android:background="@color/darkblue"
+                android:background="@color/bluegray"
                 android:foregroundGravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/confirm_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView7"
+                app:layout_constraintVertical_bias="0.151" />
+
+            <Button
+                android:id="@+id/confirm_button"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="36dp"
+                android:backgroundTint="@color/red"
+                android:fontFamily="@font/poppins_medium"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:shadowColor="@color/white"
+                android:shadowDx="@dimen/material_emphasis_medium"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
+                app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9"
-                app:layout_constraintVertical_bias="0.447" />
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/confirm_button"
-        android:layout_width="0dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/red"
-        android:fontFamily="@font/poppins_medium"
-        android:foregroundGravity="center"
-        android:gravity="center"
-        android:shadowColor="@color/white"
-        android:shadowDx="@dimen/material_emphasis_medium"
-        android:text="@string/confirm"
-        app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView6"
-        app:layout_constraintVertical_bias="0.356" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:text="@string/Booking_your_appointment"
-        android:textColor="@color/bluegray"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

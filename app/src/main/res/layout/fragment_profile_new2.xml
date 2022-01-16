@@ -32,8 +32,8 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="60dp"
         android:background="@color/B6C6FF"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Profile"
@@ -118,8 +118,8 @@
         android:id="@+id/edit_button"
         android:layout_width="62dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="60dp"
         android:background="@color/B6C6FF"
         android:src="@drawable/ic_baseline_edit_24"
         app:layout_constraintStart_toEndOf="@+id/textView15"
@@ -130,7 +130,7 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/fullname2"
         android:textSize="14sp"
@@ -185,5 +185,30 @@
         app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
+    <ImageButton
+        android:id="@+id/logout_imageButton"
+        android:layout_width="58dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/logout"
+        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="68dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="88dp"
+        android:gravity="center"
+        android:text="@string/logout"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/edit_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

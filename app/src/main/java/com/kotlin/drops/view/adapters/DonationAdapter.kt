@@ -70,8 +70,8 @@ class DonationAdapter(val donationsViewModel: DonationsViewModel) :
             listt.add(item)
             differ.submitList(listt.toList())
             donationsViewModel.editDonation(item)
-//            holder.itemView.findNavController()
-//                .navigate(R.id.action_donationsFragment_to_bokkiingFragment)
+            holder.itemView.findNavController()
+                .navigate(R.id.action_donationsFragment_to_bokkiingFragment)
         }
 
         // this function is for delete appointment  live data from api
@@ -95,10 +95,9 @@ class DonationAdapter(val donationsViewModel: DonationsViewModel) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Donataitons) {
 
-            binding.dopnationmontTextView.text = item.time
-            binding.donationDateTextview.text = item.date
+            binding.dopnationmontTextView.text = item.date
+            binding.donationDateTextview.text = item.time
             binding.donationLocationTextview.text = item.hospital
-            binding.timeDonationTextview.text = item.location
             binding.patientNameTextview.text = item.fullName
 
         }

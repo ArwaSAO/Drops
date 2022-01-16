@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.ktx.oAuthProvider
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentBokkiingBinding
 import com.kotlin.drops.model.Donataitons
@@ -32,7 +33,6 @@ class BookingFragment : Fragment() {
     private val homeViewModel:HomeViewModel by activityViewModels()
     private lateinit var allPatientInfo: PatientInfo
     private lateinit var allDonataitons: Donataitons
-
 
 
     override fun onCreateView(
@@ -54,7 +54,8 @@ class BookingFragment : Fragment() {
         observers()
         homeViewModel.callPatientList()
 
-
+        var date = binding.bookingDonationDate.text
+        var time =  binding.bookingDonationTime.text
         binding.calenderImagebutton.setOnClickListener {
 
             val c = Calendar.getInstance()
@@ -64,10 +65,10 @@ class BookingFragment : Fragment() {
 
 
             val dpd = DatePickerDialog(
-                requireActivity(),
+                view.context,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                     // Display Selected date in TextView
-                    binding.bookingDonationDate.setText("" + dayOfMonth + " " + month + ", " + year)
+                   date = "" + dayOfMonth + " " + (monthOfYear +1).toString() + ", " + year
                 },
                 year,
                 month,
@@ -83,7 +84,7 @@ class BookingFragment : Fragment() {
                 calendar.set(Calendar.HOUR_OF_DAY, hour)
                 calendar.set(Calendar.MINUTE, minute)
                 // display time text
-                binding.bookingDonationTime.text = SimpleDateFormat("HH:mm a").format(calendar.time)
+              time = SimpleDateFormat("HH:mm a").format(calendar.time)
             }
             // time picker
             TimePickerDialog(
@@ -94,7 +95,7 @@ class BookingFragment : Fragment() {
 
         binding.confirmButton.setOnClickListener {
 
-            donationsViewModel.addDonations(allPatientInfo,"","")
+            donationsViewModel.addDonations(allPatientInfo,date.toString(),time.toString())
             findNavController().navigate(R.id.action_bokkiingFragment_to_donationsFragment)
 
         }

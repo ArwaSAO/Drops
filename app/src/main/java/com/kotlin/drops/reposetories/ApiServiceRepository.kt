@@ -5,11 +5,11 @@ import com.kotlin.drops.api.IDropsApi
 import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.model.DonorInfo
 import com.kotlin.drops.model.PatientInfo
+import com.kotlin.drops.view.main.SHARED_PREF_FILE
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-const val SHARED_PREF_FILE = "Auth"
 private const val BASE_URL = "https://61af59a53e2aba0017c49208.mockapi.io"
 
 
@@ -22,11 +22,6 @@ class ApiServiceRepository(val context: Context) {
         .build()
 
     private val retrofitApi = retrofitService.create(IDropsApi::class.java)
-
-
-
-    //we assign shared pref
-    private val sharedPref = context.getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
 
 
     //====== functionality of Patient Info =====================================================//

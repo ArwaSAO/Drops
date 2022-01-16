@@ -11,9 +11,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/patientInfo_cardview"
         android:layout_width="0dp"
-        android:layout_height="500dp"
+        android:layout_height="600dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="20dp"
         android:background="@color/lightblue"
         android:foregroundGravity="center_vertical|center"
@@ -21,13 +21,13 @@
         app:cardCornerRadius="20dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="485dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/paitent_diagnosis_textview"
@@ -163,9 +163,10 @@
                 android:src="@drawable/drop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textView20"
+                app:layout_constraintHorizontal_bias="0.526"
                 app:layout_constraintStart_toEndOf="@+id/textView21"
                 app:layout_constraintTop_toBottomOf="@+id/divider"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.075" />
 
             <TextView
                 android:id="@+id/paitent_blood_type_textview"
@@ -188,14 +189,16 @@
                 android:textSize="10sp"
                 app:layout_constraintBottom_toTopOf="@+id/textView14"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/paitent_name_textview" />
+                app:layout_constraintTop_toBottomOf="@+id/paitent_name_textview"
+                app:layout_constraintVertical_bias="0.217" />
 
             <TextView
                 android:id="@+id/paitent_name_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="72dp"
                 android:fontFamily="@font/poppins_bold"
                 android:textColor="@color/darkblue"
                 android:textSize="14sp"
@@ -208,48 +211,53 @@
                 android:id="@+id/share_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/light"
                 android:minHeight="48dp"
                 android:src="@drawable/ic_baseline_share_24"
                 app:layout_constraintBottom_toTopOf="@+id/divider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.035"
+                app:layout_constraintVertical_bias="0.062"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/map_button"
                 android:layout_width="50dp"
-                android:layout_height="47dp"
+                android:layout_height="48dp"
                 android:background="@color/B6C6FF"
                 android:src="@drawable/ic_baseline_map_24"
                 app:layout_constraintBottom_toTopOf="@+id/textView14"
                 app:layout_constraintEnd_toStartOf="@+id/paitent_name_textview"
-                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintHorizontal_bias="0.125"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.091" />
+                app:layout_constraintVertical_bias="0.146"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/book_button"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/red"
+                android:fontFamily="@font/poppins_medium"
+                android:shadowColor="@color/red"
+                android:text="@string/book_time"
+                android:textColor="@color/white"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.542"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="TextContrastCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/book_button"
-        android:layout_width="0dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/red"
-        android:fontFamily="@font/poppins_medium"
-        android:shadowColor="@color/red"
-        android:text="@string/book_time"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patientInfo_cardview"
-        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView5"

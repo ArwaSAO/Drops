@@ -77,10 +77,13 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
 
     // Maps - view map service
-    implementation 'com.google.android.gms:play-services-maps:18.0.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     // Maps - location
-    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+
+
+
 
 
 }

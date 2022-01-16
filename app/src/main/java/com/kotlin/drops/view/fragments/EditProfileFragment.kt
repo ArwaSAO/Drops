@@ -14,7 +14,6 @@ import com.kotlin.drops.databinding.FragmentEditProfileBinding
 import com.kotlin.drops.databinding.FragmentProfileNew2Binding
 import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.model.DonorInfo
-import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.viewmodel.ProfileViewModel
 
 
@@ -32,10 +31,6 @@ class EditProfileFragment : Fragment() {
         super.onCreate(savedInstanceState)
         // this line only wrote in fragment
         setHasOptionsMenu(true)
-//        // get data
-//        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
-//        // edit data
-//        sharedPrefEditor = sharedPref.edit()
 
     }
 

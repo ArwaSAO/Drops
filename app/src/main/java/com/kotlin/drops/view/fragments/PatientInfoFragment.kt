@@ -19,7 +19,6 @@ import androidx.navigation.fragment.findNavController
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentPaitentInfoBinding
 import com.kotlin.drops.model.PatientInfo
-import com.kotlin.drops.reposetories.SHARED_PREF_FILE
 import com.kotlin.drops.view.viewmodel.HomeViewModel
 import java.io.ByteArrayOutputStream
 
@@ -36,12 +35,8 @@ class PatientInfoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // this line only wrote in fragment
-//        setHasOptionsMenu(true)
-        // get data
-        sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_FILE, Context.MODE_PRIVATE)
-        // edit data
-        sharedPrefEditor = sharedPref.edit()
+//         this line only wrote in fragment
+        setHasOptionsMenu(true)
 
     }
 

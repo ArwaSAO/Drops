@@ -99,15 +99,6 @@ class DonationsViewModel: ViewModel() {
                     )
                 )
 
-//                donations.fullName,
-//                donations.hospital,
-//                donations.id,
-//                donations.latitude,
-//                donations.location,
-//                donations.longitude,
-//                donations.diagnosis,
-//                time,
-//                date
 
                 if (response.isSuccessful) {
                     Log.d(TAG,"Success")

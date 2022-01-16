@@ -3,6 +3,7 @@ package com.kotlin.drops.view.identity
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.wifi.rtt.CivicLocationKeys.STATE
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,14 +16,17 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
 import com.kotlin.drops.view.main.*
+
+      lateinit var  sharedPreferences : SharedPreferences
+      lateinit var sharedPreferEdit: SharedPreferences.Editor
+
 private lateinit var progressDialog: ProgressDialog
 private const val TAG = "LoginActivity"
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val sharedPreferences = getSharedPreferences(SHARED_PREF_FILE,Context.MODE_PRIVATE)
-        val sharedPrefEditor = sharedPreferences.edit()
+
 
         var progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Loading...")
@@ -31,8 +35,7 @@ class LoginActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-//        sharedPref = getSharedPreferences("Auth", Context.MODE_PRIVATE)
-//        sharedPrefEditor = sharedPref.edit()
+
 
         val emailAddress: EditText = findViewById(R.id.editTextTextEmailAddress2)
         val password: EditText = findViewById(R.id.editTextNumberPassword2)
@@ -57,9 +60,10 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this, "User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
 
-                            sharedPrefEditor.putBoolean(com.kotlin.drops.view.main.STATE, true)
-                            sharedPrefEditor.putString(USER_ID, FirebaseAuth.getInstance().currentUser!!.uid)
-                            sharedPrefEditor.commit()
+                            sharedPreferEdit= sharedPreferences.edit()
+                            sharedPreferEdit.putBoolean(com.kotlin.drops.view.main.STATE, true)
+                            sharedPreferEdit.putString(USER_ID, FirebaseAuth.getInstance().currentUser!!.uid)
+                            sharedPreferEdit.commit()
 
                             // Navigate to main activity
 
