@@ -22,6 +22,9 @@ import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.view.viewmodel.HomeViewModel
 import java.io.ByteArrayOutputStream
 
+
+//==============================================================================================//
+
 private const val TAG = "PaitentInfoFragment"
 
 class PatientInfoFragment : Fragment() {
@@ -32,6 +35,8 @@ class PatientInfoFragment : Fragment() {
     private lateinit var sharedPrefEditor: SharedPreferences.Editor
     private lateinit var allPatientInfo: PatientInfo
 
+//==============================================================================================//
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +44,9 @@ class PatientInfoFragment : Fragment() {
         setHasOptionsMenu(true)
 
     }
+
+//==============================================================================================//
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,10 +57,17 @@ class PatientInfoFragment : Fragment() {
         return binding.root
     }
 
+
+//================================================================================================//
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel.callPatientList()
         observers()
+
+        // book button take the user to the booking fragment
+        // to choose Date & Time for the next donation
 
         binding.bookButton.setOnClickListener {
 
@@ -60,19 +75,36 @@ class PatientInfoFragment : Fragment() {
 
         }
 
+
+//============================================================================================//
+
+
+        // map button go to google map to show the location of the
+        // hospital in order the user can get the location easily..
+
+
         binding.mapButton.setOnClickListener {
 
             // assign lat & lng to the map button to find the location
             val hospitalLocation = allPatientInfo
             requireArguments().clear()
             val Uri =
-                Uri.parse("google.navigation:q= ${hospitalLocation.latitude},${hospitalLocation.longitude}")
+                Uri.parse(
+                    "google.navigation:q=" +
+                            " ${hospitalLocation.latitude},${hospitalLocation.longitude}"
+                )
             val mapIntent = Intent(Intent.ACTION_VIEW, Uri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
 
 //            val uri = Uri.parse("google.navigation: q =$")
         }
+
+
+ //=============================================================================================//
+
+
+        // share button give the user a choice to send the patient information to a friend
 
         binding.shareButton.setOnClickListener {
 
@@ -86,6 +118,11 @@ class PatientInfoFragment : Fragment() {
 
     }
 
+//==============================================================================================//
+
+
+    // change the view to bitmap
+
     fun getBitmapFromView(view: CardView): Bitmap? {
         val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val paint = Canvas(bitmap)
@@ -94,14 +131,23 @@ class PatientInfoFragment : Fragment() {
 
     }
 
+
+ //==============================================================================================//
+
+    // set Uri to the bitmap
+
     fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
         val byte = ByteArrayOutputStream()
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, byte)
         val path =
-            MediaStore.Images.Media.insertImage(inContext.contentResolver, inImage, "Title", null)
+            MediaStore.Images.Media
+                .insertImage(inContext.contentResolver, inImage, "Title", null)
         return Uri.parse(path)
 
     }
+
+
+//===============================================================================================//
 
 
     fun observers() {
@@ -117,10 +163,8 @@ class PatientInfoFragment : Fragment() {
             binding.hospitalTextview.text = it.hospital
             binding.paitentLeftTextView.text = it.left.toString()
             binding.paitentNeedTextview.text = it.need.toString()
-
         })
-
     }
-
-
 }
+
+//===============================================================================================//

@@ -69,6 +69,8 @@ class HomeAdapter(val homeViewModel: HomeViewModel) : RecyclerView.Adapter<HomeA
     }
 
 
+    // home_item_layout items
+
     class HomeViewHolder(val binding: HomeItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: PatientInfo) {

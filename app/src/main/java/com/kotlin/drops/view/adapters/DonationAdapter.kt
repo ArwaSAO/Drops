@@ -1,9 +1,12 @@
 package com.kotlin.drops.view.adapters
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog.show
+import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -11,12 +14,14 @@ import com.kotlin.drops.R
 import com.kotlin.drops.databinding.DonationsItemLayoutBinding
 import com.kotlin.drops.model.Donataitons
 import com.kotlin.drops.model.PatientInfo
+import com.kotlin.drops.view.fragments.EditAppointment
+import com.kotlin.drops.view.fragments.ThankYouDialog
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
 
 private const val TAG = "ProfileAdapter"
 
 
-class DonationAdapter(val donationsViewModel: DonationsViewModel) :
+class DonationAdapter(val context: Context, val donationsViewModel: DonationsViewModel) :
     RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
 
 
@@ -65,13 +70,13 @@ class DonationAdapter(val donationsViewModel: DonationsViewModel) :
         // edit appointment live data from api
         holder.binding.apointmentButton.setOnClickListener {
 
-            var listt = mutableListOf<Donataitons>()
-            listt.addAll(differ.currentList)
-            listt.add(item)
-            differ.submitList(listt.toList())
-            donationsViewModel.editDonation(item)
-            holder.itemView.findNavController()
-                .navigate(R.id.action_donationsFragment_to_bokkiingFragment)
+            val manager = (context as AppCompatActivity).supportFragmentManager
+            val editAppointment = EditAppointment(
+                item.date, item.fullName, item.hospital, item.id,
+                item.latitude, item.location, item.longitude, item.time, item.userId
+            )
+            editAppointment.show(manager, "editAppointment")
+
         }
 
         // this function is for delete appointment  live data from api
@@ -90,6 +95,8 @@ class DonationAdapter(val donationsViewModel: DonationsViewModel) :
         return differ.currentList.size
     }
 
+
+    // donation_item_layout items
 
     class DonationViewHolder(val binding: DonationsItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {

@@ -47,7 +47,7 @@ class DonationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        donationAdapter = DonationAdapter(donationViewModel)
+        donationAdapter = DonationAdapter(requireActivity(),donationViewModel)
         binding.donationsRecyclerView.adapter = donationAdapter
         observers()
         donationViewModel.callDonationsList()

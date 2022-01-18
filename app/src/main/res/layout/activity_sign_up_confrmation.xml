@@ -79,6 +79,7 @@
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:text="@string/startdonating"
+        android:textColor="@color/white"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -16,10 +16,23 @@ private const val BASE_URL = "https://61af59a53e2aba0017c49208.mockapi.io"
 class ApiServiceRepository(val context: Context) {
 
 
+    /***
+     *
+     * To work with Retrofit you basically need the following three classes:
+    Model class which is used as a JSON model
+    Interfaces that define the possible HTTP operations
+    Retrofit.Builder class - Instance which uses the interface and the Builder API to allow defining the URL end point for the HTTP operations.
+     * */
+
+    // Retrofit.Builder
+    // And we need to specify a factory for deserializing the response using the Gson library
+
     private val retrofitService = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    //  Builder API
 
     private val retrofitApi = retrofitService.create(IDropsApi::class.java)
 

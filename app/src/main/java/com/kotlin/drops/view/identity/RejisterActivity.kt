@@ -14,6 +14,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.kotlin.drops.R
 import com.kotlin.drops.view.main.MainActivity
+import com.kotlin.drops.view.main.USER_ID
+
 
 private const val TAG = "RejisterActivity"
 class RejisterActivity : AppCompatActivity() {
@@ -50,7 +52,19 @@ class RejisterActivity : AppCompatActivity() {
                             task ->
                         if(task.isSuccessful){
                             val fireBaseUser: FirebaseUser = task.result!!.user!!
+
                             Toast.makeText(this, "User Registered Successfully", Toast.LENGTH_SHORT).show()
+
+
+                            // assign shared preferences
+                            sharedPreferEdit = sharedPreferences.edit()
+                            sharedPreferEdit.putBoolean(com.kotlin.drops.view.main.STATE, true)
+                            sharedPreferEdit.putString(
+                                USER_ID,
+                                FirebaseAuth.getInstance().currentUser!!.uid
+                            )
+                            sharedPreferEdit.commit()
+
 
                             // Navigate to main activity
 

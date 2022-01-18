@@ -139,6 +139,7 @@ class DonationsViewModel: ViewModel() {
 
                 if (response.isSuccessful) {
                     response.body()?.run {
+                        callDonationsList()
                         Log.d(TAG, this.toString())
                         editDonationsLiveData.postValue("Successful")
                     }

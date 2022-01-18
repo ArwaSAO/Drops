@@ -73,5 +73,7 @@
     <string name="fullname2">Full Name</string>
     <string name="Booking_your_appointment">Booking your appointment</string>
     <string name="donations1">Donations</string>
+    <string name="Editappointment">Edit your appointment</string>
+    <string name="Update_your_appointment_Date"><![CDATA[Update your appointment Date & Time]]></string>
 
 </resources>

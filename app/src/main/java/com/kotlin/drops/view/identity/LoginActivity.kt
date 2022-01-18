@@ -17,11 +17,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
 import com.kotlin.drops.view.main.*
 
-      lateinit var  sharedPreferences : SharedPreferences
-      lateinit var sharedPreferEdit: SharedPreferences.Editor
+
+
+lateinit var sharedPreferences: SharedPreferences
+lateinit var sharedPreferEdit: SharedPreferences.Editor
 
 private lateinit var progressDialog: ProgressDialog
 private const val TAG = "LoginActivity"
+
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +36,8 @@ class LoginActivity : AppCompatActivity() {
         progressDialog.setCancelable(false)
 
 
-        supportActionBar?.hide()
 
+        supportActionBar?.hide()
 
 
         val emailAddress: EditText = findViewById(R.id.editTextTextEmailAddress2)
@@ -60,9 +63,13 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this, "User Logged in Successfully", Toast.LENGTH_SHORT)
                                 .show()
 
-                            sharedPreferEdit= sharedPreferences.edit()
+                            // assign shared preferences
+                            sharedPreferEdit = sharedPreferences.edit()
                             sharedPreferEdit.putBoolean(com.kotlin.drops.view.main.STATE, true)
-                            sharedPreferEdit.putString(USER_ID, FirebaseAuth.getInstance().currentUser!!.uid)
+                            sharedPreferEdit.putString(
+                                USER_ID,
+                                FirebaseAuth.getInstance().currentUser!!.uid
+                            )
                             sharedPreferEdit.commit()
 
                             // Navigate to main activity
@@ -72,8 +79,12 @@ class LoginActivity : AppCompatActivity() {
                             intent.putExtra("Email", FirebaseAuth.getInstance().currentUser!!.email)
                             startActivity(intent)
                             finish()
-                        } else{
-                            Toast.makeText(this, task.exception!!.message.toString(), Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(
+                                this,
+                                task.exception!!.message.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
             }

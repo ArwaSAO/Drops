@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.ThankyouDaialogLayoutBinding
 
-class ThankYouDialog: DialogFragment() {
+class ThankYouDialog : DialogFragment() {
 
     private lateinit var binding: ThankyouDaialogLayoutBinding
 
@@ -27,9 +27,10 @@ class ThankYouDialog: DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Close the dialog & return to HomeFragment
-        binding.closeImageButton.setOnClickListener {
-            dismiss()
+        // Close the dialog & return to Donations fragment
+
+        binding.closeImageButton2.setOnClickListener {
+
             findNavController().navigate(R.id.action_thankYouDialogFragment_to_donationsFragment)
 
         }

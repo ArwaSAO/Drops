@@ -60,6 +60,9 @@
         <action
             android:id="@+id/action_donationsFragment_to_bokkiingFragment"
             app:destination="@id/bokkiingFragment" />
+        <action
+            android:id="@+id/action_donationsFragment_to_editAppointment"
+            app:destination="@id/editAppointment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -68,4 +71,12 @@
             android:id="@+id/action_editProfileFragment_to_profileNewFragment"
             app:destination="@id/profileNewFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/editAppointment"
+        android:name="com.kotlin.drops.view.fragments.EditAppointment"
+        android:label="EditAppointment" >
+        <action
+            android:id="@+id/action_editAppointment_to_donationsFragment"
+            app:destination="@id/donationsFragment" />
+    </dialog>
 </navigation>
