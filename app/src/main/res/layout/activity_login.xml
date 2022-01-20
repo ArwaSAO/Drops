@@ -26,9 +26,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="401dp"
-        android:layout_height="421dp"
-        android:layout_margin="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,7 +100,9 @@
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="65dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
             android:backgroundTint="@color/red"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/LogIn"

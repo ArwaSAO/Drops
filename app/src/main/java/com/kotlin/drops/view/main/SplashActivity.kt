@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.ActivitySplashBinding
 import com.kotlin.drops.reposetories.ApiServiceRepository
+import com.kotlin.drops.reposetories.UserProfileRepositoryService
 import com.kotlin.drops.view.identity.LoginActivity
 import com.kotlin.drops.view.identity.sharedPreferences
 
@@ -42,6 +43,7 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         ApiServiceRepository.init(this)
+        UserProfileRepositoryService.init(this)
 
         // for the status bar to gone in the splash and set the fullscreen in android R
         @Suppress("DEPRECATION")

@@ -3,10 +3,13 @@ package com.kotlin.drops.view.adapters
 import android.annotation.SuppressLint
 import android.app.ProgressDialog.show
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -24,6 +27,8 @@ private const val TAG = "ProfileAdapter"
 class DonationAdapter(val context: Context, val donationsViewModel: DonationsViewModel) :
     RecyclerView.Adapter<DonationAdapter.DonationViewHolder>() {
 
+
+    private lateinit var allDonations: Donataitons
 
     // DiffUtil --> will keep old data and just change or add the new one
 
@@ -87,7 +92,6 @@ class DonationAdapter(val context: Context, val donationsViewModel: DonationsVie
             listt.remove(item)
             differ.submitList(listt.toList())
             donationsViewModel.deleteDonations(item)
-
         }
     }
 

@@ -24,7 +24,6 @@ class HomeFragment : Fragment() {
     private lateinit var homeAdapter: HomeAdapter
     private val homeViewModel: HomeViewModel by activityViewModels()
     private var allPatientInfo = listOf<PatientInfo>()
-    private lateinit var logoutItem: MenuItem
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,7 +84,7 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
                 if (error == "Unauthorized")
 
-                    //to transfer from home fragment to PatientInfo fragment
+                //to transfer from home fragment to PatientInfo fragment
                     findNavController().navigate(R.id.action_homeFragment_to_paitentInfoFragment)
 
 

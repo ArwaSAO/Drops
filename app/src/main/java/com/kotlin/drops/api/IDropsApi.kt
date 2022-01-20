@@ -1,7 +1,7 @@
 package com.kotlin.drops.api
 
 import com.kotlin.drops.model.Donataitons
-import com.kotlin.drops.model.DonorInfo
+//import com.kotlin.drops.model.DonorInfo
 import com.kotlin.drops.model.PatientInfo
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -34,32 +34,6 @@ interface IDropsApi {
 
     @DELETE("/PatientInfo/{id}")
     suspend fun deletePatientInfo(@Path("id")Id: String, ): Response<ResponseBody>
-
-
-
-    //================= Donor Info =========================================================//
-
-    //get data from DonorInfo data model
-
-    @GET("/donorInfo")
-    suspend fun getDonorInfo(): Response<DonorInfo>
-
-
-    //add new data to DonorInfo data model
-
-    @POST("/donorInfo")
-    suspend fun addDonorInfo(@Body donorInfoBody: DonorInfo): Response<ResponseBody>
-
-    // update data from DonorInfo data model
-
-    @PUT("/donorInfo/{id}")
-    suspend fun updateDonorInfo(@Path("id")Id: String,
-                                @Body donorInfoBody: DonorInfo): Response<DonorInfo>
-
-    // delete data from DonorInfo data model
-
-    @DELETE("/donorInfo/{id}")
-    suspend fun deleteDonorInfo(@Path("id")Id: String): Response<ResponseBody>
 
 
     //==================  Donation Info  ============================================================//

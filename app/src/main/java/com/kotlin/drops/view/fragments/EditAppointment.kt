@@ -19,15 +19,18 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 private const val TAG = "EditAppointment"
-class EditAppointment(val date: String,
-                      val fullName: String,
-                      val hospital: String,
-                      val id: String,
-                      val latitude: String,
-                      val location:String,
-                      val longitude: String,
-                      val time: String,
-                      val userId: String) : DialogFragment() {
+
+class EditAppointment(
+    val date: String,
+    val fullName: String,
+    val hospital: String,
+    val id: String,
+    val latitude: String,
+    val location: String,
+    val longitude: String,
+    val time: String,
+    val userId: String
+) : DialogFragment() {
 
     private lateinit var binding: EditApointmentLayoutBinding
     private val donationsViewModel: DonationsViewModel by activityViewModels()
@@ -49,9 +52,8 @@ class EditAppointment(val date: String,
         donationsViewModel.callDonationsList()
         observe()
 
-        var date2 = binding.bookingDonationDate2.text
-        var time2 =  binding.bookingDonationTime2.text
 
+        // date reschedule
 
         binding.calenderImagebutton2.setOnClickListener {
 
@@ -65,7 +67,8 @@ class EditAppointment(val date: String,
                 view.context,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                     // Display Selected date in TextView
-                    date2 = "" + dayOfMonth + " " + (monthOfYear +1).toString() + ", " + year
+                    binding.bookingDonationDate2.text =
+                        "" + dayOfMonth + " " + (monthOfYear + 1).toString() + ", " + year
                 },
                 year,
                 month,
@@ -76,13 +79,16 @@ class EditAppointment(val date: String,
 
         }
 
+        // Time reschedule
+
         binding.timeImageButton2.setOnClickListener {
             val calendar = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { view, hour, minute ->
                 calendar.set(Calendar.HOUR_OF_DAY, hour)
                 calendar.set(Calendar.MINUTE, minute)
                 // display time text
-                time2 = SimpleDateFormat("HH:mm a").format(calendar.time)
+                binding.bookingDonationTime2.text =
+                    SimpleDateFormat("HH:mm a").format(calendar.time)
             }
             // time picker
             TimePickerDialog(
@@ -93,37 +99,40 @@ class EditAppointment(val date: String,
         }
 
 
+        // edit data on the mock api  by click confirm button
+
         binding.confirmButton3.setOnClickListener {
 
-        if (date2.isNotEmpty() && time2.isNotEmpty() ){
+            var date2 = binding.bookingDonationDate2.text
+            var time2 = binding.bookingDonationTime2.text
 
-            val donation = Donataitons(
-                date2.toString(),
-                fullName,
-                hospital,
-                id,
-                latitude,
-                location,
-                longitude,
-                time2.toString(),
-                userId)
+            if (date2.isNotEmpty() && time2.isNotEmpty()) {
 
-            donationsViewModel.editDonation(donation)
+                val donation = Donataitons(
+                    date2.toString(),
+                    fullName,
+                    hospital,
+                    id,
+                    latitude,
+                    location,
+                    longitude,
+                    time2.toString(),
+                    userId
+                )
+
+                donationsViewModel.editDonation(donation)
+
+            }
 
         }
 
 
-
     }
 
-
-
-
-}
-    fun observe(){
+    fun observe() {
 
         donationsViewModel.editDonationsLiveData.observe(viewLifecycleOwner, {
-            it?.let{
+            it?.let {
                 Log.d(TAG, "donations Info Live Data observers ")
                 donationsViewModel.editDonationsLiveData.postValue(null)
                 dismiss()
@@ -133,4 +142,4 @@ class EditAppointment(val date: String,
     }
 
 
-                      }
+}

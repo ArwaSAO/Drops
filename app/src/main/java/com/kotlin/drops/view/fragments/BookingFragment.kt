@@ -2,6 +2,7 @@ package com.kotlin.drops.view.fragments
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.graphics.Color
 import android.location.Location
 import android.net.Uri
 import android.os.Build
@@ -31,7 +32,7 @@ class BookingFragment : Fragment() {
 
     private lateinit var binding: FragmentBokkiingBinding
     private val donationsViewModel: DonationsViewModel by activityViewModels()
-    private val homeViewModel:HomeViewModel by activityViewModels()
+    private val homeViewModel: HomeViewModel by activityViewModels()
     private lateinit var allPatientInfo: PatientInfo
     private lateinit var allDonataitons: Donataitons
 
@@ -47,6 +48,8 @@ class BookingFragment : Fragment() {
 
     }
 
+    //===========================================================================================//
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,8 +58,6 @@ class BookingFragment : Fragment() {
         observers()
         homeViewModel.callPatientList()
 
-        var date1 = binding.bookingDonationDate.text
-        var time1 =  binding.bookingDonationTime.text
 
         // code for pick date of the donation
 
@@ -71,8 +72,11 @@ class BookingFragment : Fragment() {
             val dpd = DatePickerDialog(
                 view.context,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
                     // Display Selected date in TextView
-                   date1 = "" + dayOfMonth + " " + (monthOfYear +1).toString() + ", " + year
+
+                    binding.bookingDonationDate.text =
+                        "" + dayOfMonth + " " + (monthOfYear + 1).toString() + ", " + year
                 },
                 year,
                 month,
@@ -91,7 +95,7 @@ class BookingFragment : Fragment() {
                 calendar.set(Calendar.HOUR_OF_DAY, hour)
                 calendar.set(Calendar.MINUTE, minute)
                 // display time text
-              time1 = SimpleDateFormat("HH:mm a").format(calendar.time)
+                binding.bookingDonationTime.text = SimpleDateFormat("HH:mm a").format(calendar.time)
             }
             // time picker
             TimePickerDialog(
@@ -100,34 +104,45 @@ class BookingFragment : Fragment() {
             ).show()
         }
 
+
         // confirm appointment
         binding.confirmButton.setOnClickListener {
 
             // put condition that the user could not book appointment if he is not choose Date & time
             // else if he didn't choose Date & Time a short message "Pick Date & Time for your next donation"
 
-            if (date1.isNotEmpty() && time1.isNotEmpty() ){
-                donationsViewModel.addDonations(allPatientInfo,date1.toString(),time1.toString())
-               val thankDialog = ThankYouDialog()
- //                thankDialog.show(childFragmentManager, "thank_you")
+            var date1 = binding.bookingDonationDate.text
+            var time1 = binding.bookingDonationTime.text
 
-                findNavController().navigate(R.id.action_bokkiingFragment_to_thankYouDialogFragment)
+            if (date1.isNotEmpty() && time1.isNotEmpty()) {
+                donationsViewModel.addDonations(allPatientInfo, date1.toString(), time1.toString())
+                val thankDialog = ThankYouDialog()
+                thankDialog.show(childFragmentManager, "thank_you")
 
             }
 
 
-           // else part
+            // else part
 
-           else{
-                Toast.makeText(requireActivity(), "Pick Date & Time for your next donation", Toast.LENGTH_SHORT).show()
-           }
+            else {
+                Toast.makeText(
+                    requireActivity(),
+                    "Pick Date & Time for your next donation",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
 
+    //============================================================================================//
+
+
+
+
     fun observers() {
 
-        donationsViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner,{
+        donationsViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {
 
             Log.d(TAG, "donations Info Live Data observers ")
             allDonataitons = it
@@ -135,7 +150,7 @@ class BookingFragment : Fragment() {
             binding.bookingDonationTime.text = it.time
         })
 
-        homeViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner,{
+        homeViewModel.selectedItemMutableLiveData.observe(viewLifecycleOwner, {
 
             Log.d(TAG, "patient Info Live Data observers ")
             allPatientInfo = it

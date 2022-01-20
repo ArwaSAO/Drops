@@ -3,7 +3,7 @@ package com.kotlin.drops.reposetories
 import android.content.Context
 import com.kotlin.drops.api.IDropsApi
 import com.kotlin.drops.model.Donataitons
-import com.kotlin.drops.model.DonorInfo
+//import com.kotlin.drops.model.DonorInfo
 import com.kotlin.drops.model.PatientInfo
 import com.kotlin.drops.view.main.SHARED_PREF_FILE
 import retrofit2.Retrofit
@@ -45,32 +45,16 @@ class ApiServiceRepository(val context: Context) {
 
 
     //add PatientInfo data model
-    suspend fun addPatientInfo(patientInfoBody: PatientInfo)
-    = retrofitApi.addPatientInfo(patientInfoBody)
+    suspend fun addPatientInfo(patientInfoBody: PatientInfo) =
+        retrofitApi.addPatientInfo(patientInfoBody)
 
     //update PatientInfo data model
-    suspend fun upDatePatientInfo(id:String, patientInfoBody: PatientInfo)
-    = retrofitApi.upDatePatientInfo(id, patientInfoBody)
+    suspend fun upDatePatientInfo(id: String, patientInfoBody: PatientInfo) =
+        retrofitApi.upDatePatientInfo(id, patientInfoBody)
 
     //delete data from PatientInfo data model
     suspend fun deletePatientInfo(id: String) = retrofitApi.deletePatientInfo(id)
 
-
-    //============ Functionality of Donor Info =================================================//
-
-    //get data from DonorInfo data model
-    suspend fun getDonorInfo() = retrofitApi.getDonorInfo()
-
-    //add new data to DonorInfo data model
-    suspend fun addDonorInfo(donorInfoBody: DonorInfo)
-    = retrofitApi.addDonorInfo(donorInfoBody)
-
-    // update data from DonorInfo data model
-    suspend fun updateDonorInfo(id:String, donorInfoBody: DonorInfo)
-    = retrofitApi.updateDonorInfo(id,donorInfoBody)
-
-    // delete data from DonorInfo data model
-    suspend fun deleteDonorInfo(id: String) = retrofitApi.deleteDonorInfo(id)
 
     //=============  Functionality of Donations Info ===========================================//
 
@@ -78,12 +62,12 @@ class ApiServiceRepository(val context: Context) {
     suspend fun getDonationsInfo() = retrofitApi.getDonationsInfo()
 
     //add the data to Donations data model
-    suspend fun addDonations(donataitonsBody: Donataitons)
-    = retrofitApi.addDonations(donataitonsBody)
+    suspend fun addDonations(donataitonsBody: Donataitons) =
+        retrofitApi.addDonations(donataitonsBody)
 
     //update Donations data model
-    suspend fun updateDonations(id: String, donataitons: Donataitons)
-    = retrofitApi.updateDonations(id,donataitons)
+    suspend fun updateDonations(id: String, donataitons: Donataitons) =
+        retrofitApi.updateDonations(id, donataitons)
 
     //delete from Donations data model
     suspend fun deleteDonations(id: String) = retrofitApi.deleteDonations(id)

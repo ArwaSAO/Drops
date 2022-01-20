@@ -13,11 +13,11 @@
             android:id="@+id/action_homeFragment_to_paitentInfoFragment"
             app:destination="@id/paitentInfoFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_profileNewFragment"
-            app:destination="@id/profileNewFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_donationsFragment"
             app:destination="@id/donationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userProfileFragment"
+            app:destination="@id/UserProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/bokkiingFragment"
@@ -47,14 +47,6 @@
             app:destination="@id/donationsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profileNewFragment"
-        android:name="com.kotlin.drops.view.fragments.ProfileNewFragment"
-        tools:layout="@layout/fragment_profile_new2">
-        <action
-            android:id="@+id/action_profileNewFragment_to_editProfileFragment"
-            app:destination="@id/editProfileFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/donationsFragment"
         android:name="com.kotlin.drops.view.fragments.DonationsFragment">
         <action
@@ -68,8 +60,8 @@
         android:id="@+id/editProfileFragment"
         android:name="com.kotlin.drops.view.fragments.EditProfileFragment">
         <action
-            android:id="@+id/action_editProfileFragment_to_profileNewFragment"
-            app:destination="@id/profileNewFragment" />
+            android:id="@+id/action_editProfileFragment_to_userProfileFragment"
+            app:destination="@id/UserProfileFragment" />
     </fragment>
     <dialog
         android:id="@+id/editAppointment"
@@ -79,4 +71,13 @@
             android:id="@+id/action_editAppointment_to_donationsFragment"
             app:destination="@id/donationsFragment" />
     </dialog>
+    <fragment
+        android:id="@+id/UserProfileFragment"
+        android:name="com.kotlin.drops.view.fragments.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
 </navigation>

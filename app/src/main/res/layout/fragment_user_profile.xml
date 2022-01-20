@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/profile"
-    tools:context=".view.fragments.ProfileNewFragment">
+    tools:context=".view.fragments.UserProfileFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -22,10 +22,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16">
 
-        <TextView
-            android:id="@+id/fullname_textview"
+        <EditText
+            android:id="@+id/full_name_edit_text2"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="75dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -33,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:background="@color/B6C6FF"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/Profile"
@@ -55,33 +62,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22">
 
-        <TextView
-            android:id="@+id/phone_number"
+        <EditText
+            android:id="@+id/phone_number_edit_text2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="75dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:inputType="phone"
+            android:textSize="14sp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
         android:layout_width="150dp"
-        android:layout_height="130dp"
+        android:layout_height="75dp"
         android:layout_marginStart="36dp"
         app:cardCornerRadius="15dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27">
 
-        <TextView
-            android:id="@+id/age_textview"
-            android:layout_width="156dp"
-            android:layout_height="113dp" />
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck" />
+
+        <EditText
+            android:id="@+id/age_edittext2"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:inputType="number"
+            tools:ignore="SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView9"
         android:layout_width="150dp"
-        android:layout_height="130dp"
+        android:layout_height="75dp"
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="15dp"
         app:cardUseCompatPadding="true"
@@ -90,13 +118,20 @@
         app:layout_constraintStart_toEndOf="@+id/cardView5"
         app:layout_constraintTop_toBottomOf="@+id/textView28">
 
-        <TextView
-            android:id="@+id/blood_group"
-            android:layout_width="151dp"
-            android:layout_height="113dp" />
+        <EditText
+            android:id="@+id/blood_group_edittext2"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginStart="32dp"
@@ -108,36 +143,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29">
 
-        <TextView
-            android:id="@+id/city_text_view"
+        <EditText
+            android:id="@+id/city_edit_text2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="75dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins_medium"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
-
-    <ImageButton
-        android:id="@+id/edit_button"
-        android:layout_width="62dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="60dp"
-        android:background="@color/B6C6FF"
-        android:src="@drawable/ic_baseline_edit_24"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/fullname2"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_button" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView22"
@@ -186,29 +218,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView5" />
 
-    <ImageButton
-        android:id="@+id/logout_imageButton"
-        android:layout_width="58dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/transparent"
-        android:src="@drawable/logout"
-        app:layout_constraintBottom_toTopOf="@+id/textView31"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="68dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="88dp"
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="45dp"
+        android:backgroundTint="@color/red"
+        android:fontFamily="@font/poppins_medium"
+        android:foregroundGravity="center"
         android:gravity="center"
         android:text="@string/logout"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        android:textColor="@color/white"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toEndOf="@+id/edit_button" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <ToggleButton
+        android:id="@+id/edit_button"
+        android:layout_width="60dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="35dp"
+        android:background="@color/transparent"
+        android:button="@drawable/ic_baseline_edit_24"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:isScrollContainer="false"
+        android:text="ToggleButton"
+        android:textOff="   "
+        android:textOn="  "
+        app:layout_constraintBottom_toTopOf="@+id/textView16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

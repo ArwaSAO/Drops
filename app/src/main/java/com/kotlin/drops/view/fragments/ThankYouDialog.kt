@@ -31,10 +31,11 @@ class ThankYouDialog : DialogFragment() {
 
         binding.closeImageButton2.setOnClickListener {
 
-            findNavController().navigate(R.id.action_thankYouDialogFragment_to_donationsFragment)
+            dismiss()
+
+            findNavController().navigate(R.id.donationsFragment)
 
         }
-
 
     }
 }

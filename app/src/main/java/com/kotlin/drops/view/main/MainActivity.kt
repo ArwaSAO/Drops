@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
     private fun sendNotification() {
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setSmallIcon(R.drawable.rrrr)
             .setContentTitle("Even drops could save a single")
             .setContentText("Start Donating")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)

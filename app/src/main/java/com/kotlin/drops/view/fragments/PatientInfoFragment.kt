@@ -87,7 +87,6 @@ class PatientInfoFragment : Fragment() {
 
             // assign lat & lng to the map button to find the location
             val hospitalLocation = allPatientInfo
-            requireArguments().clear()
             val Uri =
                 Uri.parse(
                     "google.navigation:q=" +
@@ -97,52 +96,38 @@ class PatientInfoFragment : Fragment() {
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
 
-//            val uri = Uri.parse("google.navigation: q =$")
+
         }
 
 
- //=============================================================================================//
+//=============================================================================================//
 
 
         // share button give the user a choice to send the patient information to a friend
 
         binding.shareButton.setOnClickListener {
+            val fullName = allPatientInfo.fullName
+            val bloodGroup = allPatientInfo.bloodGroup
+            val diagnosis = allPatientInfo.diagnosis
+            val location = allPatientInfo.location
+            val hospital = allPatientInfo.hospital
+            val need = allPatientInfo.need
+            val left = allPatientInfo.left
+            val patientId = allPatientInfo.userId
 
-            val image: Bitmap? = getBitmapFromView(binding.patientInfoCardview)
-            val share = Intent(Intent.ACTION_SEND)
-            share.type = "image/*"
-            share.putExtra(Intent.EXTRA_STREAM, getImageUri(requireActivity(), image!!))
-            startActivity(Intent.createChooser(share, "Share Via:"))
+
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            // shared text
+            intent.putExtra(
+                Intent.EXTRA_TEXT, " Even drop,s could save live,s let help our patient....\n " +
+                        "FullName: $fullName\n   PatientId: $patientId\n  Blood Group: $bloodGroup\n  Diagnosis: $diagnosis " +
+                        " Location: $location\n  Hospital: $hospital\n  Need: $need\n  Left: $left"
+            )
+
+            startActivity(Intent.createChooser(intent, "Share Link"))
         }
 
-
-    }
-
-//==============================================================================================//
-
-
-    // change the view to bitmap
-
-    fun getBitmapFromView(view: CardView): Bitmap? {
-        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
-        val paint = Canvas(bitmap)
-        view.draw(paint)
-        return bitmap
-
-    }
-
-
- //==============================================================================================//
-
-    // set Uri to the bitmap
-
-    fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
-        val byte = ByteArrayOutputStream()
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, byte)
-        val path =
-            MediaStore.Images.Media
-                .insertImage(inContext.contentResolver, inImage, "Title", null)
-        return Uri.parse(path)
 
     }
 
@@ -165,6 +150,7 @@ class PatientInfoFragment : Fragment() {
             binding.paitentNeedTextview.text = it.need.toString()
         })
     }
+
 }
 
 //===============================================================================================//

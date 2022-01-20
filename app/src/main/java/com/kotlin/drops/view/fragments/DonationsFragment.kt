@@ -16,6 +16,7 @@ import com.kotlin.drops.view.adapters.DonationAdapter
 import com.kotlin.drops.view.viewmodel.DonationsViewModel
 
 private const val TAG = "DonationsFragment"
+
 class DonationsFragment : Fragment() {
 
 
@@ -23,8 +24,6 @@ class DonationsFragment : Fragment() {
     private lateinit var donationAdapter: DonationAdapter
     private val donationViewModel: DonationsViewModel by activityViewModels()
     private var allDonations = listOf<Donataitons>()
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,11 +46,17 @@ class DonationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        donationAdapter = DonationAdapter(requireActivity(),donationViewModel)
+        donationAdapter = DonationAdapter(requireActivity(), donationViewModel)
         binding.donationsRecyclerView.adapter = donationAdapter
         observers()
         donationViewModel.callDonationsList()
     }
+
+
+
+   //============================================================================================//
+
+
 
     fun observers() {
 
@@ -70,18 +75,12 @@ class DonationsFragment : Fragment() {
                 Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show()
                 if (error == "Unauthorized")
 
-                donationViewModel.donationsErrorLiveData.postValue(null)
+                    donationViewModel.donationsErrorLiveData.postValue(null)
             }
         })
 
 
-
-
     }
-
-
-
-
 
 
 }
