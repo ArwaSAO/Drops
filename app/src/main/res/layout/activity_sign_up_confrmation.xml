@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     tools:context=".view.identity.SignUpConfrmationActivity">
 
@@ -11,12 +11,12 @@
         android:id="@+id/imageView11"
         android:layout_width="0dp"
         android:layout_height="377dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/donate2" />
+        app:srcCompat="@drawable/bloodgroup" />
 
     <TextView
         android:id="@+id/textView10"
@@ -28,8 +28,8 @@
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="@string/you_are_logged_in_successfully"
-        android:textColor="@color/darkblue"
-        android:textSize="14sp"
+        android:textColor="@color/red"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />

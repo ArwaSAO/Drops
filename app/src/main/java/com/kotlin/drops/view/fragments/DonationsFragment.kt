@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentDonationsBinding
 import com.kotlin.drops.model.Donataitons
@@ -24,6 +25,7 @@ class DonationsFragment : Fragment() {
     private lateinit var donationAdapter: DonationAdapter
     private val donationViewModel: DonationsViewModel by activityViewModels()
     private var allDonations = listOf<Donataitons>()
+    private val userID : String = " "
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,10 +64,22 @@ class DonationsFragment : Fragment() {
 
         donationViewModel.getDonationsLiveData.observe(viewLifecycleOwner, {
 
-            Log.d(TAG, "patient Info Live Data observers ")
-            binding.donatonsProgressBar.animate().alpha(0f).setDuration(1000)
-            donationAdapter.submitList(it)
-            allDonations = it
+            it?.let {
+
+                // Filtering the list that is coming from response based on the user ID
+
+                val filteredList = it.filter {
+                    it.userId == FirebaseAuth.getInstance().uid
+                }
+                Log.d(TAG, "patient Info Live Data observers ")
+                binding.donatonsProgressBar.animate().alpha(0f).setDuration(1000)
+                donationAdapter.submitList(filteredList)
+                allDonations = filteredList
+
+                donationViewModel.getDonationsLiveData.postValue(null)
+
+            }
+
 
         })
 

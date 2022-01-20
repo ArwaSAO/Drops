@@ -64,6 +64,9 @@ class UserProfileViewModel : ViewModel() {
                 apiRepo.getUser().addOnSuccessListener { documentSnapshot ->
                     val user = documentSnapshot.toObject<UserProfile>(UserProfile::class.java)
                     Log.d("Firebase", "document saved")
+                    if(user != null) {
+                        getUserLiveData.postValue(user!!)
+                    }
                 }.addOnFailureListener {
                     userErrorLiveData.postValue("")
                     Log.d("Firebase", it.message.toString())

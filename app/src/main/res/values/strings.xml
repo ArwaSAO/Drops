@@ -75,5 +75,7 @@
     <string name="donations1">Donations</string>
     <string name="Editappointment">Edit your appointment</string>
     <string name="Update_your_appointment_Date"><![CDATA[Update your appointment Date & Time]]></string>
+    <string name="appointment">appointment booked successfuly</string>
+    <string name="apointment">Thank you for donating to save a life</string>
 
 </resources>

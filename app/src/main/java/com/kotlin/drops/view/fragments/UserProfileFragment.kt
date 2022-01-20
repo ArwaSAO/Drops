@@ -11,9 +11,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.kotlin.drops.R
 import com.kotlin.drops.databinding.FragmentUserProfileBinding
+//import com.kotlin.drops.databinding.FragmentUserProfileBinding
 import com.kotlin.drops.model.UserProfile
 import com.kotlin.drops.view.identity.LoginActivity
 import com.kotlin.drops.view.identity.sharedPreferEdit
@@ -35,14 +37,6 @@ class UserProfileFragment : Fragment() {
     //=======================================================================================//
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // this line only wrote in fragment
-        setHasOptionsMenu(true)
-
-    }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -57,16 +51,6 @@ class UserProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // call observers to get the view
-        observers()
-
-        // get user info
-        userProfileViewModel.getUser()
-
-        // add donor Info
-        binding.editButton.setOnClickListener {
-
 
             // edit user data to the firestore
 
@@ -90,38 +74,50 @@ class UserProfileFragment : Fragment() {
 
                 }
 
-
+            }
         //======================================================================================//
 
 
                 // logout button
                 binding.logoutButton.setOnClickListener {
+                  MaterialAlertDialogBuilder(
+                      requireActivity(),android.R.style.ThemeOverlay_Material_Dialog_Alert
+                  )
+                      .setMessage("Are you Sure you want to logout?")
+                      .setNegativeButton("No"){
+                          _,_ ->
+                      }
+                      .setPositiveButton("yes"){
+                          _,_ ->
 
-                    //sign out from firebase
-                    FirebaseAuth.getInstance().signOut()
+                          //sign out from firebase
+                          FirebaseAuth.getInstance().signOut()
 
+                          // sign out from sharedPreferences
+                          sharedPreferences =
+                              requireActivity().getSharedPreferences(
+                                  SHARED_PREF_FILE,
+                                  Context.MODE_PRIVATE
+                              )
+                          sharedPreferEdit = sharedPreferences.edit()
+                          sharedPreferEdit.clear()
+                          sharedPreferEdit.commit()
 
-                    // sign out from sharedPreferences
-                    sharedPreferences =
-                        requireActivity().getSharedPreferences(
-                            SHARED_PREF_FILE,
-                            Context.MODE_PRIVATE
-                        )
-                    sharedPreferEdit = sharedPreferences.edit()
-                    sharedPreferEdit.clear()
-                    sharedPreferEdit.commit()
+                          // when the user logout it will return to Login activity
+                          val intent = Intent(requireActivity(), LoginActivity::class.java)
+                          startActivity(intent)
 
-                    // when the user logout it will return to Login activity
-                    val intent = Intent(requireActivity(), LoginActivity::class.java)
-                    startActivity(intent)
-
-                    requireActivity().finish()
-
+                          requireActivity().finish()
+                      }.show()
                 }
 
+                // call observers to get the view
+                observers()
 
+                // get user info
+                userProfileViewModel.getUser()
             }
-        }}
+
 
         //==============================================================================================//
 
@@ -161,19 +157,20 @@ class UserProfileFragment : Fragment() {
 
         //add profile live data
 
-        userProfileViewModel.saveUserLiveData.observe(viewLifecycleOwner, {
+//        userProfileViewModel.saveUserLiveData.observe(viewLifecycleOwner, {
+//
+//            userProfile = it
+//            binding.ageEdittext2.setText(it.Age)
+//            binding.fullNameEditText2.setText(it.FullName)
+//            binding.phoneNumberEditText2.setText(it.PhoneNumber)
+//            binding.bloodGroupEdittext2.setText(it.BloodGroup)
+//            binding.cityEditText2.setText(it.City)
+//            Log.d(ContentValues.TAG, it.toString())
+//        })
 
-            userProfile = it
-            binding.ageEdittext2.setText(it.Age)
-            binding.fullNameEditText2.setText(it.FullName)
-            binding.phoneNumberEditText2.setText(it.PhoneNumber)
-            binding.bloodGroupEdittext2.setText(it.BloodGroup)
-            binding.cityEditText2.setText(it.City)
 
-        })
+    }}
 
 
-    }
-    }
 
 

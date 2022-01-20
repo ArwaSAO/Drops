@@ -4,26 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="150dp"
-    android:background="@color/light"
-    android:orientation="vertical">
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:background="@color/neu"
+    android:backgroundTint="@color/light"
+    android:orientation="vertical"
+    app:cardUseCompatPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="173dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/groups" />
 
         <TextView
             android:id="@+id/textView32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
             android:text="@string/Update_your_appointment_Date"
             android:textColor="@color/red"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/cardView8"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.358"
@@ -34,9 +44,7 @@
             android:id="@+id/cardView7"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_marginStart="40dp"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="40dp"
             android:backgroundTint="@color/bluegray"
             android:foregroundGravity="center"
             app:cardCornerRadius="15dp"
@@ -58,7 +66,7 @@
 
             <TextView
                 android:id="@+id/booking_donation_time2"
-                android:layout_width="185dp"
+                android:layout_width="245dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right"
                 android:fontFamily="@font/poppins_light"
@@ -71,9 +79,7 @@
             android:id="@+id/cardView8"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="40dp"
             android:backgroundTint="@color/bluegray"
             android:foregroundGravity="center"
             app:cardCornerRadius="15dp"
@@ -96,7 +102,7 @@
 
             <TextView
                 android:id="@+id/booking_donation_date2"
-                android:layout_width="185dp"
+                android:layout_width="245dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right"
                 android:fontFamily="@font/poppins_light"
@@ -110,9 +116,7 @@
             android:id="@+id/confirm_button3"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginStart="45dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="45dp"
             android:layout_marginBottom="40dp"
             android:backgroundTint="@color/red"
             android:text="@string/confirm"
@@ -121,6 +125,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView7" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

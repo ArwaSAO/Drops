@@ -34,9 +34,9 @@
                 android:textColor="@color/red"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView19"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/patient_name_textview"
-                app:layout_constraintVertical_bias="0.333" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/donation_date_textview"
@@ -60,7 +60,7 @@
                 android:id="@+id/donation_Location_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="156dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
@@ -69,7 +69,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/apointment_button"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textView19"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
@@ -102,20 +102,6 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
-                android:id="@+id/textView19"
-                android:layout_width="56dp"
-                android:layout_height="89dp"
-                android:layout_marginStart="16dp"
-                android:gravity="center|fill_vertical"
-                android:text="@string/point"
-                android:textColor="@color/darkblue"
-                android:textSize="60sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
                 android:id="@+id/patient_name_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,8 +112,18 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/apointment_button"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textView19"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/donation_Location_textview" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="84dp"
+                android:layout_height="68dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/dd" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
