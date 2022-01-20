@@ -73,6 +73,6 @@ Solving the problems in the following order:
 <hr>
 
 ##  Final App
-![Final Project]()
+![Final Project](https://github.com/ArwaSAO/Drops/blob/fc164ff9526c7862e7131ee5f50abdd45d95079a/FinalCapstoneShots.png)
 
 
