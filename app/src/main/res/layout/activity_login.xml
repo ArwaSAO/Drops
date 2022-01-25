@@ -120,7 +120,7 @@
             android:gravity="center"
             android:text="@string/dont_have_an_acount"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
