@@ -72,6 +72,6 @@ Solving the problems in the following order:
 <hr>
 
 ##  Final App
-![Final Project](https://github.com/ArwaSAO/Drops/blob/fc164ff9526c7862e7131ee5f50abdd45d95079a/FinalCapstoneShots.png)
+![Final Project](https://github.com/ArwaSAO/Drops/blob/0ef5e03405da32f34b46a2f0d3f7190f8c8cdc9b/FinalCapstoneShots2.png)
 
 
