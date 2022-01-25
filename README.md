@@ -2,9 +2,6 @@
 
 
 # Android Final Capstone - Drops
-## Logo
-![Logo](https://github.com/ArwaSAO/Drops/blob/fe8aa66a2eb906b82baec7bb3f1e5641c5bf59d2/rrrr.png)
-
 
 ## Table of contents 📄
 - [List of Technologies](#list-of-technologies)
